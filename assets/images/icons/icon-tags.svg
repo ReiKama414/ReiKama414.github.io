@@ -1,0 +1,26 @@
+<svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.pictogram_een{fill:#F4D6B0;}
+	.pictogram_twee{fill:#F8AD89;}
+	.pictogram_vijf{fill:#01A59C;}
+	.pictogram_zes{fill:#0C6667;}
+	.st0{fill:#F27261;}
+	.st1{fill:#E54D2E;}
+	.st2{fill:none;}
+	.st3{fill:#F8AD89;}
+	.st4{clip-path:url(#SVGID_2_);fill:#01A59C;}
+	.st5{clip-path:url(#SVGID_2_);fill:none;}
+	.st6{clip-path:url(#SVGID_2_);fill:#0C6667;}
+	.st7{fill:#0C6667;}
+</style>
+<g>
+	<path class="pictogram_vijf" d="M32,29c0,1.65-1.35,3-3,3H3c-1.65,0-3-1.35-3-3V3c0-1.65,1.35-3,3-3h26c1.65,0,3,1.35,3,3V29z"/>
+	<path class="pictogram_zes" d="M3,0C1.35,0,0,1.35,0,3v26c0,1.65,1.35,3,3,3h13V0H3z"/>
+	<circle class="pictogram_zes" cx="7" cy="16.5" r="1.5"/>
+	<path class="pictogram_een" d="M26,8H10.559L4,14.559v3.382L10.559,25H26c1.65,0,3-1.35,3-3V11C29,9.35,27.65,8,26,8z
+		 M8.061,17.311c-0.586,0.586-1.536,0.586-2.121,0c-0.586-0.586-0.586-1.536,0-2.121c0.586-0.586,1.536-0.586,2.121,0
+		C8.646,15.775,8.646,16.725,8.061,17.311z"/>
+	<path class="pictogram_twee" d="M13,12l11,0v3H13L13,12z M13,20h8v-3h-8V20z"/>
+</g>
+</svg>

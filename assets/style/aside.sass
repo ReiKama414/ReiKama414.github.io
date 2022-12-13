@@ -1,0 +1,78 @@
+$imgdeg: 720deg
+    
+.card-widget
+    @include transition(background var(--delay-time) ease-out)
+    overflow: hidden
+    margin-bottom: 1rem
+    padding: var(--pd)
+    background: var(--module-bg-5)
+    border-radius: var(--br)
+    &:hover
+        background: var(--module-bg)
+
+.author-profile
+    @include d-flex-c(column)
+    @include font(500, .85rem)
+    div
+        &:nth-of-type(1)
+            @include size(110px)
+            margin: .65rem
+            padding: .25rem
+            border-radius: 50%
+            box-shadow: var(--box-shadow-4) 0px 2px 4px, var(--box-shadow-3) 0px 7px 13px -3px, var(--box-shadow-2) 0px -3px 0px inset
+            img
+                @include transition(transform .65s)
+                @include size(100%)
+                object-fit: cover
+                border-radius: 50%
+                &:hover
+                    transform: rotate($imgdeg)
+        &:nth-of-type(2)
+            @include font(700, 1.5rem)
+            color: var(--text-color-darken)
+        .fa-location-dot
+            color: var(--primary-color-lighter)
+            
+
+.info-data
+    @include d-flex-c
+    .info-data-item
+        @include font(500, .82rem)
+        flex: 1
+        div:first-of-type
+            @include d-flex-c
+            height: 26.25px
+        div:last-of-type
+            margin-top: .48rem
+            font-size: 1.15rem
+            color: var(--text-color-darken)
+    
+.urlList
+    @include d-flex-c
+    position: relative
+    margin-top: 1.5rem
+    padding: 12px 4px 8px
+    &::before
+        @include size(60%, 2px)
+        content: ""
+        position: absolute
+        top: 0
+        background: var(--c-divider)
+        border-radius: 2px
+    a
+        @include transition(color var(--delay-time))
+        margin: 0 .45rem
+        font-size: 1.32rem
+        color: var(--text-color-lighter)
+        &:hover
+            color: var(--primary-color-lighter)
+
+// .card-widget.ct
+//     .title
+//         display: flex
+//         img
+//             @include size(24px)
+//             object-fit: contain
+//         p
+//             margin: 0
+//             font-size: .82rem

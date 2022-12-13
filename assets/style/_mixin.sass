@@ -1,0 +1,26 @@
+@mixin size($w, $h: $w)
+    width: $w
+    height: $h
+@mixin d-flex-c($rc: unset, $jc: center, $ai: center)
+  display: flex
+  flex-direction: $rc
+  justify-content: $jc
+  align-items: $ai
+@mixin transition($value)
+    transition: $value
+    -o-transition: $value
+    -moz-transition: $value
+    -webkit-transition: $value
+@mixin font($fw: 500, $fs: 1rem, $lh: 1)
+    font-weight: $fw
+    font-size: $fs
+    line-height: $lh
+@mixin keyframes($animationName)
+  @keyframes #{$animationName}
+    @content
+  @-o-keyframes #{$animationName}
+    @content
+  @-moz-keyframes #{$animationName}
+    @content
+  @-webkit-keyframes #{$animationName}
+    @content

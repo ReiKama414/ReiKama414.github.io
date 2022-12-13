@@ -1,0 +1,31 @@
+nav.nl
+    @include d-flex-c(column, flex-start, flex-start)
+    @include size(100%)
+    .nb
+        width: 100%
+    a, p
+        @include font(700, 14px)
+    p
+        margin: 0
+        padding: 1.75rem .5rem .75rem
+        color: var(--text-color-darken)
+    a
+        @include transition((color .15s, background .15s))
+        @include size(100%, 2.4rem)
+        display: flex
+        align-items: center
+        margin-bottom: .42rem
+        padding: 0 1.15rem
+        letter-spacing: 1px
+        color: var(--text-color)
+        border-radius: var(--br)
+        img
+            @include size(1.2rem)
+            margin-right: .5rem
+            object-fit: contain
+        &:hover
+            color: var(--primary-color-lighter)
+            background: var(--module-bg-5)
+        &.nuxt-link-exact-active
+            color: var(--primary-color)
+            background: var(--module-bg-7)

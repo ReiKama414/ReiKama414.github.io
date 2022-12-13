@@ -1,0 +1,46 @@
+$snowflakes: 200
+
+@include keyframes(snowspin)
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+@media (min-width: 768px)
+  [data-theme= "dark"]
+    .mix
+      position: fixed
+      opacity: .65
+      inset: 0
+      background: linear-gradient(180deg, #000, #401f1f)
+    .snow
+      @include size(120vw, 100vh)
+      position: fixed
+      left: -10vw
+    .snowflake
+      position: absolute
+      top: -5vmin
+      @for $i from 1 through $snowflakes
+        &:nth-child(#{$i})
+          opacity: random(90) * 0.01
+          left: random(1200) * 0.1vw
+          font-size: (random(8) * 2px)
+          animation: fall-#{$i} (random(8) * 10s) (random(25) * -1.5s) ease-in infinite
+          span
+            animation: snowspin (random(5) * 4.5s) linear 0s infinite
+            filter: drop-shadow(0 0 (random(5) * 1px) #FFF)
+        @include keyframes(fall-#{$i})
+          #{percentage(calc(random(50) / 600))}
+            transform: rotate(90deg) translateX(0)
+          to
+            left: random(1200) * 0.1vw
+            transform: rotate(90deg) translateX(calc(100vh + 5vmin))
+      span
+        display: block
+        color: #FFF
+        &:before
+            content: "\2744"
+      &:nth-child(3n + 2) span:before
+        content: "\2745"
+      &:nth-child(3n + 3) span:before
+        content: "\2747"

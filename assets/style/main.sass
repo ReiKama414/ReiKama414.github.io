@@ -1,0 +1,192 @@
+.carouselWrapper
+    .slick-list
+        border: 1px solid var(--c-bg-bs)
+        border-radius: var(--br)
+    .slick-slide
+        aspect-ratio: 18/9
+        div
+            @include size(100%)
+    .carousel__item
+        position: relative
+        overflow: hidden
+        &::after
+            position: absolute
+            content: ""
+            inset: 0
+            box-shadow: 0 0 12px 0 var(--c-bg-bs) inset
+        img
+            @include transition((transform var(--delay-time), filter var(--delay-time)))
+            @include size(100%)
+            object-fit: cover
+            transform: scale(1)
+            filter: brightness(1) saturate(1) contrast(1)
+        a > div
+            @include transition(transform .4s)
+            @include d-flex-c(column, flex-end)
+            position: absolute
+            padding: 2.4rem
+            inset: 0
+            *
+                margin: 0
+                color: var(--text-color-white)
+            h3
+                @include font(lighter, 1.35rem, 1.4em)
+                opacity: 0.9
+                text-shadow: 2px 2px 6px rgb(0 0 0 / 80%)
+                text-transform: capitalize
+            span
+                padding: 0 3px
+                font-weight: bold
+            p
+                @include transition(opacity var(--delay-time) ease-in-out)
+                opacity: 0
+                font-size: .75rem
+        &:hover
+            img
+                transform: scale(1.07)
+                filter: brightness(.95) saturate(1.4) contrast(.9)
+            a > div
+                transform: translateY(-25%)
+                p
+                    opacity: .75
+
+    .slick-dots
+        display: flex !important
+        position: absolute
+        justify-content: center
+        padding: 0
+        bottom: .75rem
+        width: 100%
+        line-height: 0
+        li
+            font-size: 0
+            line-height: 0
+            button
+                display: block
+                margin: 0
+                padding: 4px
+                background: transparent
+                border: 0
+                cursor: pointer
+                &::before
+                    @include transition(var(--delay-time))
+                    @include size(.75rem, .55rem)
+                    content: ""
+                    display: block
+                    background-color: var(--c-bg-no)
+                    border-radius: var(--br)
+            &.slick-active
+                button::before
+                    @include size(1.75rem, .55rem)
+                    background-color: var(--primary-color-lighten)
+
+.post-wrapper
+    .header
+        .info
+            @include font(500, .75rem, 1.75)
+            flex-wrap: wrap
+            white-space: nowrap
+            p
+                margin: 0
+                padding-right: 1rem
+            a
+                color: var(--text-color)
+            .prtw
+                letter-spacing: .1rem
+        .title
+            @include font(700, 1.48rem, 1.45)
+            letter-spacing: 1.75px
+            color: var(--text-color-darken)
+        .image
+            overflow: hidden
+            aspect-ratio: 3/2
+            width: 100%
+            img
+                @include size(100%)
+                object-fit: cover
+                border-radius: var(--br)
+    .nuxt-content-container
+        padding: 1.25rem
+        text-align: left
+        h1
+            @include font(700, 1.25rem, 1.2)
+        p
+            text-indent: 2em
+    .licensing
+        @include font(500, .85rem)
+        text-align: left
+        padding: var(--pd3)
+        background: var(--c-bg-bs)
+        border-radius: var(--br)
+        p
+            margin-bottom: .65rem
+        a
+            @include transition((color var(--delay-time), text-decoration-color var(--delay-time)))
+            font-size: .75rem
+            line-height: 1.45
+            color: var(--text-color-lighter)
+            text-decoration: underline .05rem rgba(0, 0, 0, 0)
+            text-underline-offset: .25rem
+            &:hover
+                text-decoration-color: var(--text-color-lighter)
+            &[href="#"]
+                pointer-events: none
+    .tagslist
+        display: flex
+        flex-wrap: wrap
+        padding: 1rem .65rem 1.25rem
+        a
+            @include transition(color var(--delay-time))
+            @include font(400, .75rem, 1.25)
+            white-space: nowrap
+            color: var(--text-color-lighter)
+            &:hover
+                color: var(--primary-color-lighten)
+
+.prev-next
+    > div
+        &:first-of-type
+            padding-right: .55rem
+        &:last-of-type
+            padding-left: .55rem
+    a, span, p
+        color: var(--text-color-lighter)
+    p
+        font-size: .75rem
+    a
+        font-weight: 700
+        color: var(--text-color)
+    .p-prev
+        text-align: left
+    .p-next
+        text-align: right
+    .pn-item
+        display: flex
+        flex-direction: column
+        height: 100%
+        min-height: 100px
+        > div
+            @include transition(color var(--delay-time))
+            @include d-flex-c
+            flex: 1
+        &:hover
+            > div
+                color: var(--primary-color-lighter)
+
+@media (max-width: 1199.98px)
+    .prev-next > div
+        padding: 0 0 1rem !important
+@media (max-width: 991.98px)
+    .post-wrapper .header .title
+        font-size: 1.25rem
+@media (max-width: 767.98px)
+    .post-wrapper .header .title
+        font-size: 1rem
+@media (max-width: 575.98px)
+    .carouselWrapper .carousel__item a > div h3
+        font-size: 1.15rem
+    .carouselWrapper .carousel__item:hover a > div
+        transform: translateY(-15%)
+@media (max-width: 360.98px)
+    .carouselWrapper .carousel__item:hover a > div
+        transform: translateY(-10%)

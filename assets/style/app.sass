@@ -1,0 +1,207 @@
+$bg: url(assets/images/background/bg.jpg)
+
+@font-face
+  font-family: GenJyuuGothic
+  src: url(assets/fonts/GenJyuuGothic.ttf) format("opentype")
+
+:root
+  --primary-color: #F44133
+  --primary-color-lighter: #F44033D6
+  --primary-color-lighten: #FF796BE1
+  --box-shadow-2: rgba(0, 0, 0, 0.2)
+  --box-shadow-3: rgba(0, 0, 0, 0.3)
+  --box-shadow-4: rgba(0, 0, 0, 0.4)
+  --text-color-white: rgb(235, 235, 235, .95)
+  --text-color-lighter: rgba(0, 0, 0, .5)
+  --text-color: rgba(0, 0, 0, .7)
+  --text-color-darken: rgba(0, 0, 0, .9)
+  --module-bg: rgb(255, 255, 255, .9)
+  --module-bg-5: rgba(255, 255, 255, .5)
+  --module-bg-7: rgba(255, 255, 255, .7)
+  --c-divider: rgba(60, 60, 60, .3)
+  --c-bg: #E6E6E6
+  --c-bg-no: #E6E6E680
+  --c-bg-gary: #8E8E8E
+  --c-bg-mute: #F2F2F2
+  --c-bg-bs: #EAEAEA
+  --pd: 8px 16px
+  --pd2: 8px 28px
+  --pd3: 24px
+  --br: 8px
+  --delay-time: .25s
+
+:root[data-theme= "dark"]
+  --primary-color: #FFFFFF
+  --primary-color-lighter: #FFFFFFD6
+  --box-shadow-2: rgba(255, 255, 255, 0.2)
+  --box-shadow-3: rgba(255, 255, 255, 0.3)
+  --box-shadow-4: rgba(255, 255, 255, 0.4)
+  --text-color-lighter: rgba(255, 255, 255, .5)
+  --text-color: rgba(255, 255, 255, .7)
+  --text-color-darken: rgba(255, 255, 255, .9)
+  --module-bg: #000000
+  --module-bg-5: rgba(60, 60, 60, .5)
+  --module-bg-7: rgba(60, 60, 60, .7)
+  --c-divider: rgba(84, 84, 84, .65)
+  --c-bg: #222
+  --c-bg-mute: #2F2F2F
+  --c-bg-bs: #171717
+
+[data-theme= "dark"]
+  header img
+    filter: invert(50%) brightness(2)
+  .bg .img
+    filter: invert(0)
+  .author-profile div .fa-location-dot
+    color: var(--primary-color-lighten)
+
+
+*, *::before, *::after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  outline: none
+  background-repeat: no-repeat
+  -webkit-text-size-adjust: none
+
+*:focus:not(:focus-visible),
+*::before:focus:not(:focus-visible),
+*::after:focus:not(:focus-visible)
+  outline: none
+
+*
+  &::-webkit-scrollbar
+    width: 18px
+  &::-webkit-scrollbar-track
+    background: rgba(0, 0, 0, 0)
+    border-radius: 10px
+  &::-webkit-scrollbar-thumb
+    background: var(--primary-color-lighter)
+    background-clip: padding-box
+    border: 7px solid transparent
+    border-radius: 10px
+
+a
+  cursor: pointer
+  &:not(.ud)
+    text-decoration: none !important
+button
+  background: transparent
+  border: none
+input
+  outline: none
+  border: none
+ul[class]
+  margin: 0
+  padding: 0
+  list-style: none
+.col-12, .col-md-3, .col-md-9
+  padding: 0
+
+html
+  background: var(--c-bg)
+
+body
+  font-family: GenJyuuGothic, "Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, Helvetica , Arial , sans-serif , serif, Calibri
+  text-align: center
+  padding-top: 5.4rem
+  color: var(--text-color)
+  background: transparent !important
+  user-select: none
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.bg
+  position: fixed
+  inset: 0
+  z-index: -1
+  .img
+    @include transition(filter var(--delay-time))
+    @include size(100%)
+    position: absolute
+    opacity: .27
+    background: $bg 15%
+    background-size: cover
+    filter: invert(100%)
+
+main
+  @include d-flex-c(row, space-between, flex-start)
+  position: relative
+  .menu
+    margin-right: 1.3rem
+    width: 180px
+  .main
+    overflow: hidden
+    flex: 1
+    padding-bottom: 7vh
+    min-height: calc(100vh - 5.4rem - 67.9px)
+  .mixx
+    margin-left: 1.3rem
+    width: 250px
+
+footer
+  @include font(700, .8rem)
+  padding: 2.4rem 0 1rem
+  letter-spacing: .05rem
+  // background: url(assets/images/background/bg3.jpg)
+  // background-repeat: no-repeat
+  // background-attachment: fixed
+  // background-size: cover
+  // background-position: center
+  p
+    margin: 0
+  a
+    @include transition(color var(--delay-time))
+    color: var(--primary-color)
+    &:hover
+      color: var(--primary-color-lighter)
+  
+@media (max-width: 991.98px)
+  main
+    .mixx
+      display: none
+
+@media (max-width: 767.98px)
+  main .menu
+    @include transition(all var(--delay-time))
+    position: fixed
+    visibility: hidden
+    overflow-y: auto
+    opacity: 0
+    top: 3.6rem
+    left: 0
+    max-height: 200px
+    background: var(--module-bg-7)
+    border-bottom-right-radius: 12px
+    transform: translateY(-4px)
+    z-index: 9999
+    &.show
+      visibility: visible
+      opacity: 1
+      transform: translateY(0)
+  nav.nl a
+    border-radius: 0
+    background: transparent !important
+
+
+// .km-ud1
+//   position: relative
+//   overflow: hidden
+//   padding: .2em 0
+//   &::after
+//     @include transition(transform .45s)
+//     @include size(calc(100% + .1rem), .2rem)
+//     content: ''
+//     position: absolute
+//     left: -.1rem
+//     bottom: .2rem
+//     background: var(--primary-color-lighter)
+//     transform: translateX(-100%)
+//   &:hover
+//     &::after
+//       transform: translateX(0)
+
+.__nuxt-error-page
+  left: 218px
+  right: 288px
+  border-radius: var(--br)

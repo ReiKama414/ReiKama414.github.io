@@ -1,0 +1,76 @@
+.arc-card
+    padding: 1.75rem
+    .arc-img
+        overflow: hidden
+        margin-right: 1.2rem
+        max-width: 165px
+        border-radius: var(--br)
+        img
+            @include transition(transform .15s)
+            @include size(100%) 
+            aspect-ratio: 1/1
+            object-fit: cover
+            &:hover
+                transform: scale(1.05)
+    .arc-content
+        display: flex
+        flex-direction: column
+        flex: 1
+        a
+            white-space: nowrap
+            color: var(--text-color-darken)
+        .arc-title
+            @include font(700, 1.4rem, 1.45)
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+            text-align: left
+            // margin: .45rem 0 .35rem
+            a
+                @include transition(color var(--delay-time))
+                &:hover 
+                    color: var(--primary-color-lighter)
+        .arc-info
+            @include font(400, .75rem)
+            letter-spacing: 1px
+            p
+                margin: 0
+            span
+                margin: 0 .35rem
+            a
+                text-transform: uppercase
+            .rtw
+                letter-spacing: .1rem
+        .arc-intro
+            @include font(500, .85rem, 1.25)
+            text-align: left
+            flex: 1
+            margin: 1rem 0
+            span
+                display: -webkit-box
+                -webkit-box-orient: vertical
+                -webkit-line-clamp: 2
+                overflow: hidden
+        .arc-tagslist
+            @include d-flex-c(row, flex-end)
+            @include font(400, .75rem)
+            flex-wrap: wrap
+
+.arth-wrapper
+    .img-wpr
+        overflow: hidden
+        aspect-ratio: 18/9
+        border-radius: var(--br)
+    img
+        @include size(100%)
+        object-fit: cover
+
+@media (max-width: 575.98px)
+    .arc-card
+        flex-wrap: wrap
+        .arc-img
+            margin-right: 0
+            margin-bottom: .75rem
+            max-width: 100%
+            img
+                aspect-ratio: 18/6

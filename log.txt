@@ -1,0 +1,80 @@
+Awesome Vue.js
+Bootstrap
+spreadsheet-to-json 把 google sheet 文件轉成 JSON文件
+Vue I18n Composition API
+vue3-carousel
+yarn add cookie-universal-nuxt
+
+https://www.svgrepo.com/collection/pictogram-action-icons/
+
+2022/11/29
+建立檔案
+使用Cli建立
+新增Header與路由配置
+
+2022/11/30
+新增左方nav
+新增背景
+新增語系表單
+
+2022/12/1
+新增主題顏色更改
+修改nav UI
+路由Title設定
+
+2022/12/2
+導覽/主要內容/側欄 三個RWD設置
+Carousel Setting & mousewheel
+Profile photo 隨機兩張圖
+更改所有圖片路由(更清晰)
+修正語言一開始沒有設定會出現變數的問題
+新增Article樣板
+研究Nuxt.js生成靜態網頁方法
+(決定先去練習Nuxt.js，再回來blog page :)
+Create a Blog with Nuxt Content first try gogo)
+
+2022/12/5
+決定把現有專案嘗試移至Nuxt
+邊熟悉Nuxt架構與路由等設定邊搬家
+
+yarn add vue-slick-carousel
+
+2022/12/6
+新增背景，搬移sass/images
+新增Header
+新增切換主題
+
+2022/12/7
+新增visibilitychange關注網頁事件更換標題
+新增i18n語系切換
+新增dark背景動畫
+自動載入cookie切換語系與local存放主題
+
+2022/12/8
+新增Carousel
+引入@nuxt/content
+建立markdown.md
+在nuxt中引入moment
+翻譯切換新增詞彙
+計算天數
+路由樣式設定
+分類blog類別
+localePath 換頁面固定當前語言
+
+2022/12/9
+更改路由
+新增標籤換點連結
+新增更新時間
+部落格內頁設計
+翻譯包更新
+幾分鐘閱讀and字數
+
+2022/12/12
+錯誤頁面樣式add
+翻譯包更新
+上一篇 下一篇
+日期更新(創建時間/更新時間)
+
+2022/12/13
+上一篇 下一篇 樣式
+footer
