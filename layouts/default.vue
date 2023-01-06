@@ -4,11 +4,45 @@ export default {
     return {
       documentTitle: process.server ? '' : !!document.title,
       navshow: false,
-      posts: [],
+      post: [],
+      tags: [],
+      pl1: Number,
+      pl2: Number,
+      pl3: Number,
+      mixxt: 0,
     };
   },
   async fetch() {
-    this.posts = await this.$content('', { deep: true }).fetch();
+    this.post = await this
+      .$content('', { deep: true })
+      .only(['image', 'title', 'tags', 'slug', 'createdAt', 'category'])
+      .sortBy('createdAt', 'desc')
+      .fetch();
+    this.pl1 = this.post.length;
+      
+    const tl = [];
+    this.post.forEach(function(post) {
+      post.tags.forEach(function(pt) {
+        tl.push(pt.toLowerCase());
+      });
+    });
+    this.pl2 = [...new Set(tl)].length;
+
+    const obj = tl.reduce((allNum, num) => {
+      if (num in allNum) {
+        allNum[num]++;
+      } else {
+        allNum[num] = 1;
+      }
+      return allNum;
+    }, {});
+    this.tags = obj;
+
+    this.pl3 = await this
+      .$content('portfolio')
+      .only(['title'])
+      .fetch();
+    this.pl3 = this.pl3.length;
   },
   mounted () {
     document.addEventListener('visibilitychange', this.handleVisibility, false);
@@ -24,6 +58,9 @@ export default {
         document.querySelector("link[rel~='icon']").href = "/favicon.ico";
       };
     },
+    getChildData(param) {
+      this.mixxt = param;
+    }
   },
 };
 </script>
@@ -39,15 +76,21 @@ export default {
     </div>
     <HeaderItem :snb.sync="navshow"></HeaderItem>
     <main class="container-md">
+      <Nuxt />
+      <div class="shown-btn"> 
+        <img alt="Toggle Button - Red Pandas Icons by svgrepo.com" src="~/assets/images/icons/red-panda-svgrepo-com.svg" />
+      </div>
       <div class="menu" :class="{ show: navshow }">
         <NavbarItem />
       </div>
-      <Nuxt />
-      <div class="mixx">
-        <AsideItem :pl.sync="posts.length" />
+      <div class="mixx" :style="{ 'top': '-' + mixxt + 'px' }">
+        <AsideItem :pl.sync="pl1" :tl.sync="pl2" :ppl.sync="pl3" :postlist.sync="post" :taglist.sync="tags" @mixxTop="getChildData" />
       </div>
     </main>
     <FooterItem />
+    <back-to-top text="">
+      <fa :icon="['fa-solid', 'chevron-up']" />
+    </back-to-top>
   </div>
 </template>
 

@@ -1,4 +1,6 @@
-import readingTime from 'reading-time'
+import readingTime from 'reading-time';
+
+const mdAnchorLevel = [2, 3];
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -19,11 +21,18 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  publicRuntimeConfig: {
+    mdAnchorLevel,
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    { src: '~plugins/vue-backtotop.js', ssr: false },
+    // { src: '~plugins/vue-isotope.js', ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -31,9 +40,10 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     '@nuxtjs/fontawesome',
     '@nuxtjs/moment',
+    '@nuxtjs/vuetify',
   ],
 
   fontawesome: {
@@ -59,7 +69,7 @@ export default {
   hooks: {
     'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
-        document.readingTime = readingTime(document.text)
+        document.readingTime = readingTime(document.text);
       }
     },
   },
@@ -82,6 +92,14 @@ export default {
     cookieKey: 'i18n_redirected',
     redirectOn: 'root',
     alwaysRedirect: true,
+  },
+
+  markdownit: {
+    use: [
+      ['markdown-it-anchor', {
+        level: mdAnchorLevel,
+      }],
+    ],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

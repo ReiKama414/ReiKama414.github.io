@@ -1,0 +1,198 @@
+[ 
+    {
+        "date" : "Dec 28, 2022",
+        "content" : "The log.txt used for recording is transferred to the log.json file with python and some artificial modifications.",
+        "content_list" : [
+            "Added Log page style and layout settings, and progress bar style planning.",
+            "Concatenate Json to get update log data.",
+            "Translate the content of the update log to achieve the purpose of multilingual switching. (Source: myself, dictionaries, and Google Translate complement each other.)"
+        ]
+    },
+    {
+        "date" : "Dec 27, 2022",
+        "content" : "",
+        "content_list" : [
+            "Added read more/read less buttons.",
+            "Added layout settings for the website.",
+            "Added Log page."
+        ]
+    },
+    {
+        "date" : "Dec 23, 2022",
+        "content" : "Added about my layout settings (skills/experience).",
+        "content_list" : []
+    },
+    {
+        "date" : "Dec 22, 2022",
+        "content" : "Added about my layout settings (introduction/skills).",
+        "content_list" : []
+    },
+    {
+        "date" : "Dec 21, 2022",
+        "content" : "",
+        "content_list" : [
+            "Modify the style of blog pages.",
+            "Make individual lightbox enlargements without using kits.",
+            "Adjust inner page padding.",
+            "Update translation form.",
+            "Added to determine whether there is i18n display.",
+            "Added About Me background/avatar."
+        ]
+    },
+    {
+        "date" : "Dec 20, 2022",
+        "content" : "Added a page to modify resources.",
+        "content_list" : []
+    },
+    {
+        "date" : "Dec 16, 2022",
+        "content" : "",
+        "content_list" : [
+            "Turn Radio into Button style.",
+            "Automate portfolio labeling and formatting.",
+            "Added filtering and automatic counting functions.",
+            "Add tags, automatic counting of portfolio categories.",
+            "Routing updates."
+        ]
+    },
+    {
+        "date" : "Dec 15, 2022",
+        "content" : "",
+        "content_list" : [
+            "Layout the pages of the portfolio.",
+            "Create and call components.",
+            "Added category Filter to use Radio Button.",
+            "Change the overall Layout.",
+            "Change the individual layout of the blog directory.",
+            "Added Red Panda Icon.",
+            "Update translation form.",
+            "Keep the Blog Title separate from the Portfolio Title.",
+            "Added Card animation effect.",
+            "Add a link to the work.",
+            "Modify the switching animation color effect."
+        ]
+    },
+    {
+        "date" : "Dec 14, 2022",
+        "content" : "",
+        "content_list" : [
+            "Set Tag style, routing settings and Filter to display tagged articles.",
+            "Routes reset from nested routes to new directions. (Because the original structure is nested, if it is nested again, there will be serious bugs and sometimes it will not be displayed.)",
+            "Added a portfolio page."
+        ]
+    },
+    {
+        "date" : "Dec 13, 2022",
+        "content" : "",
+        "content_list" : [
+            "Added previous and next function button styles.",
+            "Added Footer.",
+            "Added Tags page and function, and automatically counted the number of Tags.",
+            "Added Header Image.",
+            "Added Home Page Carousel words.",
+            "Adjust the layout of the post (Tag moved to the bottom right)."
+        ]
+    },
+    {
+        "date" : "Dec 12, 2022",
+        "content" : "",
+        "content_list" : [
+            "Modify the error page display style.",
+            "Update translation form.",
+            "Added previous and next function buttons.",
+            "Update article date (creation time/update time)."
+        ]
+    },
+    {
+        "date" : "Dec 9, 2022",
+        "content" : "",
+        "content_list" : [
+            "Change the route.",
+            "Added tags links.",
+            "Added update time.",
+            "Design blog pages.",
+            "Update translation form.",
+            "Added reading time and word count statistics."
+        ]
+    },
+    {
+        "date" : "Dec 8, 2022",
+        "content" : "",
+        "content_list" : [
+            "Added Carousel.",
+            "Import @nuxt/content.",
+            "Build markdown.md.",
+            "Introduce @nuxtjs/moment in nuxt.js to calculate days and format time.",
+            "Translate toggle adds vocabulary.",
+            "Routing style settings.",
+            "Categorize Blog Category (Tech/Daily).",
+            "The currently used language (localePath) can be saved when switching pages."
+        ]
+    },
+    {
+        "date" : "Dec 7, 2022",
+        "content" : "",
+        "content_list" : [
+            "Added Visibilitychange to follow the page event to change the title.",
+            "Added i18n language switching.",
+            "Added Dark Theme background animation.",
+            "Automatically load cookies Switch language and local storage theme."
+        ]
+    },
+    {
+        "date" : "Dec 6, 2022",
+        "content" : "Officially moved from Vue3 Cli to Vue2 Nuxt.js.",
+        "content_list" : [
+            "Add background, move Sass/Images.",
+            "Add Header.",
+            "Added the ability to switch themes."
+        ]
+    },
+    {
+        "date" : "Dec 5, 2022",
+        "content" : "Try to move the existing project to Nuxt, and move while getting familiar with the Nuxt architecture and routing settings.",
+        "content_list" : []
+    },
+    {
+        "date" : "Dec 2, 2022",
+        "content" : "Decided to study and practice Nuxt.js first and then come back.\nCreate a Blog with Nuxt Content first try gogo !",
+        "content_list" : [
+            "Sets the navigation/main content/sidebar RWD.",
+            "Carousel Setting & Mousewheel Event",
+            "Routing Title setting.",
+            "Set Profile Photo to randomly pick one of two pictures.",
+            "Change all image routing (clearer).",
+            "Fix the problem that variables will appear if the language is not set at the beginning.",
+            "Added Article component.",
+            "Study how Nuxt.js generates static web pages."
+        ]
+    },
+    {
+        "date" : "Dec 1, 2022",
+        "content" : "",
+        "content_list" : [
+            "Added theme color change.",
+            "Modify Navbar UI.",
+            "Routing Title setting."
+        ]
+    },
+    {
+        "date" : "Nov 30, 2022",
+        "content" : "",
+        "content_list" : [
+            "Added a component for the left NavBar.",
+            "Added a static background.",
+            "Added translation form.",
+            "Added the function of switching languages."
+        ]
+    },
+    {
+        "date" : "Nov 29, 2022",
+        "content" : "",
+        "content_list" : [
+            "Create file.",
+            "Use the Cli to create the first version of the blog.",
+            "Added Header and routing configuration."
+        ]
+    }
+]

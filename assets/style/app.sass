@@ -8,16 +8,37 @@ $bg: url(assets/images/background/bg.jpg)
   --primary-color: #F44133
   --primary-color-lighter: #F44033D6
   --primary-color-lighten: #FF796BE1
+  --primary-color-lighten-static: #FF7768
+  --box-shadow-1: rgba(0, 0, 0, 0.1)
   --box-shadow-2: rgba(0, 0, 0, 0.2)
   --box-shadow-3: rgba(0, 0, 0, 0.3)
   --box-shadow-4: rgba(0, 0, 0, 0.4)
   --text-color-white: rgb(235, 235, 235, .95)
+  --text-color-white2: white
   --text-color-lighter: rgba(0, 0, 0, .5)
   --text-color: rgba(0, 0, 0, .7)
+  --text-color2: #000000b3
   --text-color-darken: rgba(0, 0, 0, .9)
+  --c-wb: white
+  --btn-bg-c1: rgb(28, 31, 30)
   --module-bg: rgb(255, 255, 255, .9)
   --module-bg-5: rgba(255, 255, 255, .5)
   --module-bg-7: rgba(255, 255, 255, .7)
+  --module-bg2: rgb(199 199 199 / 70%)
+  --module-bg2-hover: #63636382
+  --module-bg3: rgb(54 55 56 / 80%)
+  --module-bg4: #F0F8FF
+  --tag-text-c: #F5F5F5
+  --tag-text2-c: rgba(0, 0, 0, .75)
+  --tag-bg1-c: #FF6559
+  --tag-bg2-c: #F44133
+  --tag-bg2-c-t: #F4413300
+  --tag-bg3-c: rgb(207 205 205 / 50%)
+  --tag-bg4-c: #C9C9C9
+  --tag-bg5-c: #DBDBDB
+  --tag-bg5-c-static: #DBDBDB
+  --mark-c: #FCF8E3
+  --type-c: #2C2C2C
   --c-divider: rgba(60, 60, 60, .3)
   --c-bg: #E6E6E6
   --c-bg-no: #E6E6E680
@@ -33,15 +54,27 @@ $bg: url(assets/images/background/bg.jpg)
 :root[data-theme= "dark"]
   --primary-color: #FFFFFF
   --primary-color-lighter: #FFFFFFD6
+  --box-shadow-1: rgba(255, 255, 255, 0.1)
   --box-shadow-2: rgba(255, 255, 255, 0.2)
   --box-shadow-3: rgba(255, 255, 255, 0.3)
   --box-shadow-4: rgba(255, 255, 255, 0.4)
   --text-color-lighter: rgba(255, 255, 255, .5)
   --text-color: rgba(255, 255, 255, .7)
+  --text-color2: rgb(255 255 255 / 85%)
   --text-color-darken: rgba(255, 255, 255, .9)
+  --c-wb: black
+  --btn-bg-c1: white
   --module-bg: #000000
   --module-bg-5: rgba(60, 60, 60, .5)
   --module-bg-7: rgba(60, 60, 60, .7)
+  --module-bg2: rgb(0 0 0 / 70%)
+  --module-bg2-hover: #363636C9
+  --module-bg3: rgb(49 52 54 / 60%)
+  --module-bg4: #282828
+  --tag-bg3-c: rgb(131 66 66 / 50%)
+  --tag-bg4-c: #000
+  --tag-bg5-c: #2E2D2D
+  --mark-c: #484742
   --c-divider: rgba(84, 84, 84, .65)
   --c-bg: #222
   --c-bg-mute: #2F2F2F
@@ -54,6 +87,23 @@ $bg: url(assets/images/background/bg.jpg)
     filter: invert(0)
   .author-profile div .fa-location-dot
     color: var(--primary-color-lighten)
+  .hd-i-w
+    filter: invert(1) opacity(0.75)
+  .about-content
+    h2, .intro
+      text-shadow: 0 0 12px var(--text-color-darken)
+    .local
+      text-shadow: 0 0 3px var(--text-color-darken)
+    .skill-wrapper .skill-item
+      @include transition((filter .15s, transform .15s))
+      filter: invert(1) brightness(2) sepia(1) hue-rotate(313deg) drop-shadow(0 0 8px var(--primary-color))
+      &:hover
+        filter: none
+        transform: scale(1.2)
+    .divided-line
+      text-shadow: 0 0 12px var(--tag-bg2-c)
+    .hby-box
+      filter: drop-shadow(0px 0px 2px var(--tag-bg2-c))
 
 
 *, *::before, *::after
@@ -81,6 +131,14 @@ $bg: url(assets/images/background/bg.jpg)
     border: 7px solid transparent
     border-radius: 10px
 
+@media (max-width: 575.98px)
+  body::-webkit-scrollbar
+    display: none
+
+mark
+  color: var(--text-color-darken)
+  background-color: var(--mark-c)
+
 a
   cursor: pointer
   &:not(.ud)
@@ -103,8 +161,9 @@ html
 
 body
   font-family: GenJyuuGothic, "Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, Helvetica , Arial , sans-serif , serif, Calibri
+  overflow-x: hidden
   text-align: center
-  padding-top: 5.4rem
+  padding: 5.4rem 0 0 !important
   color: var(--text-color)
   background: transparent !important
   user-select: none
@@ -127,15 +186,56 @@ body
 main
   @include d-flex-c(row, space-between, flex-start)
   position: relative
+  .shown-btn
+    @include size(2.45rem)
+    display: none
+    position: fixed
+    top: 1.23rem
+    left: .5rem
+    cursor: pointer
+    z-index: 9999
   .menu
+    order: 1
     margin-right: 1.3rem
-    width: 180px
+    width: 190px
   .main
+    order: 2
     overflow: hidden
     flex: 1
     padding-bottom: 7vh
     min-height: calc(100vh - 5.4rem - 67.9px)
+  .main.pfl
+    overflow: visible
+    ~ .shown-btn
+      display: block
+    ~ .mixx
+      display: none
+    ~ .menu
+      @include transition(all var(--delay-time))
+      position: fixed
+      visibility: hidden
+      overflow-y: auto
+      opacity: 0
+      top: 3.6rem
+      left: 0
+      max-height: 260px
+      background: var(--module-bg-7)
+      border-bottom-right-radius: 12px
+      transform: translateY(-4px)
+      z-index: 9999  
+      nav.nl a
+        border-radius: 0
+        background: transparent !important
+    ~ .shown-btn:hover ~ .menu,
+    ~ .menu:hover
+      visibility: visible
+      opacity: 1
+      transform: translateY(0)
+
   .mixx
+    position: -webkit-sticky
+    position: sticky
+    order: 3
     margin-left: 1.3rem
     width: 250px
 
@@ -152,9 +252,21 @@ footer
     margin: 0
   a
     @include transition(color var(--delay-time))
-    color: var(--primary-color)
+    color: var(--tag-bg2-c)
     &:hover
-      color: var(--primary-color-lighter)
+      color: var(--tag-bg1-c)
+
+.vue-back-to-top
+  @include transition(var(--delay-time))
+  @include d-flex-c
+  @include size(2.8rem)
+  font-size: 1.45rem
+  color: var(--text-color-lighter)
+  background: var(--module-bg2)
+  border-radius: var(--br)
+  &:hover
+    color: var(--tag-bg5-c-static)
+    background: var(--module-bg2-hover)
   
 @media (max-width: 991.98px)
   main
@@ -170,18 +282,25 @@ footer
     opacity: 0
     top: 3.6rem
     left: 0
-    max-height: 200px
+    max-height: 260px
     background: var(--module-bg-7)
     border-bottom-right-radius: 12px
     transform: translateY(-4px)
     z-index: 9999
     &.show
-      visibility: visible
-      opacity: 1
-      transform: translateY(0)
+      visibility: visible !important
+      opacity: 1 !important
+      transform: translateY(0) !important
   nav.nl a
     border-radius: 0
     background: transparent !important
+  main .main.pfl ~ .shown-btn
+    display: none
+  .vue-back-to-top
+    @include size(2.25rem)
+    font-size: 1.2rem
+    bottom: 1.6rem !important
+    right: 1.2rem !important
 
 
 // .km-ud1
@@ -201,7 +320,41 @@ footer
 //     &::after
 //       transform: translateX(0)
 
+.multiline-ellipsis
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: 2
+  overflow: hidden
+
+.bg-primary-lighten
+  background-color: var(--primary-color-lighten)
+  filter: saturate(2.25) hue-rotate(-13deg)
+
 .__nuxt-error-page
   left: 218px
   right: 288px
   border-radius: var(--br)
+
+.underline--
+  &effect1
+    @include transition(background-size .1s ease-in)
+    background-image: linear-gradient(90deg, rgb(255, 129, 119) 0%, rgb(255, 134, 122) 0%, rgb(255, 140, 127) 21%, rgb(249, 145, 133) 52%, rgb(207, 85, 108) 78%, rgb(177, 42, 91) 100%)
+    background-repeat: no-repeat
+    background-size: 100% 0.35em
+    background-position: 0 88%
+    &:hover
+      background-size: 100% 40%
+
+.wpx-45
+  width: 45px
+  min-width: 45px
+
+.v-application--wrap
+  min-height: 0 !important
+
+.theme--light.v-application
+  color: var(--text-color-white2)
+  background: transparent
+.v-application .primary--text
+  color: var(--tag-bg1-c) !important
+  caret-color: var(--tag-bg1-c) !important

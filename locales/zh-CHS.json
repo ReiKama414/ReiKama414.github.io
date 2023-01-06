@@ -1,9 +1,10 @@
 {
   "home": "主页",
-  "tech": "程式",
+  "tech": "程序",
   "daily": "日常",
   "tags": "标签",
   "work": "作品",
+  "work2": "作品",
   "resource": "资源",
   "about": "关于",
   "log": "更新日志",
@@ -30,6 +31,18 @@
   "category": "分类",
   "previouspage": "上一页",
   "nextpage": "下一页",
-  "startpage": "这篇文章是最新一页喔~",
-  "endpage": "嗨! 这里是人生终点站喔 :3"
+  "startpage": "这篇文章是最早以前的喔~",
+  "endpage": "嗨! 这里是人生终点站喔 :3",
+  "demo": "演示",
+  "readmore": "阅读全文",
+  "all": "全部",
+  "typeweb": "网页",
+  "typewebnn": "网页 (无功能)",
+  "aboutwork-1": "关于",
+  "aboutwork-2": "的作品",
+  "tagss-1": "以下是我的博客作品集中，所有具备 \"",
+  "tagss-2": "\" 标签的列表。",
+  "tagss-3": "以下是我的博客作品集的列表。",
+  "portfolio": "作品展示集",
+  "onlineresource": "线上资源"
 }

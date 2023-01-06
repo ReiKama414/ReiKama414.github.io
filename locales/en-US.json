@@ -4,6 +4,7 @@
   "daily": "Daily",
   "tags": "Tags",
   "work": "Portfolio",
+  "work2": "Works",
   "resource": "Resource",
   "about": "About",
   "log": "Update",
@@ -30,6 +31,18 @@
   "category": "Category",
   "previouspage": "Previous",
   "nextpage": "Next",
-  "startpage": "This is the end, no more articles...",
-  "endpage": "This is already the latest article :)"
+  "startpage": "This is the starting point, no more articles before this...",
+  "endpage": "This is already the latest article :)",
+  "demo": "DEMO",
+  "readmore": "Read more",
+  "all": "All",
+  "typeweb": "Webpage",
+  "typewebnn": "Webpage (non-functional)",
+  "aboutwork-1": "Works on",
+  "aboutwork-2": "",
+  "tagss-1": "Here's a list of all my blog portfolios with the \"",
+  "tagss-2": "\" tag.",
+  "tagss-3": "Here's a list of all my blog portfolios.",
+  "portfolio": "Portfolio",
+  "onlineresource": "Online Resources"
 }

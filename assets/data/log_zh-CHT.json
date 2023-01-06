@@ -1,0 +1,242 @@
+[ 
+    {
+        "date" : "2023-01-05",
+        "content" : "",
+        "content_list" : [
+            "新增: 搜尋頁面的類別下拉選單",
+            "更新: 將 Footer 的 Copyright 年分文字設定成自動抓取當年年分",
+            "新增: 搜尋文字功能",
+            "新增: 搜尋沒有結果的畫面"
+        ]
+    },
+    {
+        "date" : "2023-01-04",
+        "content" : "",
+        "content_list" : [
+            "新增: 搜尋頁面的標籤下拉選單"
+        ]
+    },
+    {
+        "date" : "2023-01-03",
+        "content" : "",
+        "content_list" : [
+            "更新: 右側列表之章節目錄於滑動時固定上方",
+            "更新: 微調 UI RWD 間距",
+            "新增: 搜尋頁面搜尋框 UI"
+        ]
+    },
+    {
+        "date" : "2022-12-30",
+        "content" : "",
+        "content_list" : [
+            "新增文章自動生成錨鏈接和部落格目錄於右側列表 (子元件互通)",
+            "修改部分排版與字型"
+        ]
+    },
+    {
+        "date" : "2022-12-29",
+        "content" : "",
+        "content_list" : [
+            "新增右側列表標籤欄位與近期貼文版面調整",
+            "新增返回頂部按鈕",
+            "新增更新日誌查看更多功能",
+            "新增搜尋兼歸檔頁面"
+        ]
+    },
+    {
+        "date" : "2022-12-28",
+        "content" : "記錄用的 log.txt 利用 python 轉移至 log.json 檔與些許人為修改。",
+        "content_list" : [
+            "新增 Log 頁面樣式與版面設定、進度條樣式規劃",
+            "串接 Json 取得更新日誌資料",
+            "翻譯更新日誌的內容，達到多語系切換目的 (來源：自己、字典以及 Google 翻譯相輔相成)"
+        ]
+    },
+    {
+        "date" : "2022-12-27",
+        "content" : "",
+        "content_list" : [
+            "新增閱讀更多 / 閱讀更少按鈕",
+            "新增關於網站的版面設置",
+            "新增 Log 頁面"
+        ]
+    },
+    {
+        "date" : "2022-12-23",
+        "content" : "新增關於我的版面設置(技能/經歷)",
+        "content_list" : []
+    },
+    {
+        "date" : "2022-12-22",
+        "content" : "新增關於我的版面設置(介紹/技能)",
+        "content_list" : []
+    },
+    {
+        "date" : "2022-12-21",
+        "content" : "",
+        "content_list" : [
+            "修改部落格內頁樣式",
+            "不依賴套件製作個體燈箱放大",
+            "調整內頁 Padding",
+            "更新翻譯表單",
+            "新增判斷有無 i18n 顯示",
+            "新增關於我的背景 / 頭像"
+        ]
+    },
+    {
+        "date" : "2022-12-20",
+        "content" : "新增修改資源頁面",
+        "content_list" : []
+    },
+    {
+        "date" : "2022-12-16",
+        "content" : "",
+        "content_list" : [
+            "將 Radio 變成 Button 樣式",
+            "使作品集自動化標籤與排版",
+            "新增過濾篩選並自動計數功能",
+            "新增標籤、作品集類別自動計數",
+            "路由更新"
+        ]
+    },
+    {
+        "date" : "2022-12-15",
+        "content" : "",
+        "content_list" : [
+            "進行作品頁排版",
+            "建立以及呼叫組件",
+            "新增分類 Filter 利用 Radio Button",
+            "改變整體 Layout",
+            "改變 Blog 目錄個體排版",
+            "新增小熊貓 Icon",
+            "更新翻譯表單",
+            "將 Blog Title 與作品顯示 Title 分開獨立",
+            "新增 Card 動畫效果",
+            "新增作品連結",
+            "修改切換動畫顏色效果"
+        ]
+    },
+    {
+        "date" : "2022-12-14",
+        "content" : "",
+        "content_list" : [
+            "設定 Tag 樣式、路由設定與 Filter 顯示標籤分類文章",
+            "路由從嵌套重設為新定向 (因為原本就為嵌套的架構，再次嵌套的話會有嚴重 Bug 有時候會顯示不出來)",
+            "新增作品頁面"
+        ]
+    },
+    {
+        "date" : "2022-12-13",
+        "content" : "",
+        "content_list" : [
+            "新增上一篇與下一篇功能按鈕樣式",
+            "新增 Footer",
+            "新增 Tags 頁面與功能，並自動化計數 Tags 數量",
+            "新增 Header Image",
+            "新增 Home Page Carousel words",
+            "調整貼文排版 (Tag 移至右下方)"
+        ]
+    },
+    {
+        "date" : "2022-12-12",
+        "content" : "",
+        "content_list" : [
+            "修改錯誤頁面顯示樣式",
+            "更新翻譯表單",
+            "新增上一篇與下一篇功能按鈕",
+            "更新文章日期(創建時間/更新時間)"
+        ]
+    },
+    {
+        "date" : "2022-12-9",
+        "content" : "",
+        "content_list" : [
+            "更改路由",
+            "新增標連結",
+            "新增更新時間",
+            "設計部落格內頁",
+            "更新翻譯表單",
+            "新增閱讀時間與字數統計"
+        ]
+    },
+    {
+        "date" : "2022-12-8",
+        "content" : "",
+        "content_list" : [
+            "新增 Carousel",
+            "引入 @nuxt/content",
+            "建立 markdown.md",
+            "在 nuxt.js 中引入 @nuxtjs/moment，計算天數與格式化時間",
+            "翻譯切換新增詞彙",
+            "路由樣式設定",
+            "分類 Blog 類別 (Tech/Daily)",
+            "切換頁面時可以保存當前使用的語言 (localePath)"
+        ]
+    },
+    {
+        "date" : "2022-12-7",
+        "content" : "",
+        "content_list" : [
+            "新增 Visibilitychange 關注網頁事件更換標題",
+            "新增 i18n 語系切換",
+            "新增 Dark Theme 背景動畫",
+            "自動載入 cookie 切換語系與 local 存放主題"
+        ]
+    },
+    {
+        "date" : "2022-12-6",
+        "content" : "正式從 Vue3 Cli 轉移至 Vue2 Nuxt.js。",
+        "content_list" : [
+            "新增背景，搬移 Sass/Images",
+            "新增 Header",
+            "新增切換主題"
+        ]
+    },
+    {
+        "date" : "2022-12-5",
+        "content" : "把現有專案嘗試移至Nuxt，再邊熟悉 Nuxt 架構與路由等設定邊搬家。",
+        "content_list" : []
+    },
+    {
+        "date" : "2022-12-2",
+        "content" : "決定先去研究與練習 Nuxt.js 再回來。\nCreate a Blog with Nuxt Content first try gogo !",
+        "content_list" : [
+            "設置導覽/主要內容/側欄 RWD",
+            "Carousel Setting & Mousewheel Event",
+            "路由 Title 設定",
+            "設置 Profile Photo 隨機從兩張圖片挑選一張",
+            "更改所有圖片路由(更清晰)",
+            "修正語言一開始沒有設定會出現變數的問題",
+            "新增 Article 組件",
+            "研究 Nuxt.js 生成靜態網頁方法"
+        ]
+    },
+    {
+        "date" : "2022-12-1",
+        "content" : "",
+        "content_list" : [
+            "新增主題顏色更改",
+            "修改 Navbar UI",
+            "路由 Title 設定"
+        ]
+    },
+    {
+        "date" : "2022-11-30",
+        "content" : "",
+        "content_list" : [
+            "新增左方 NavBar",
+            "新增靜態背景",
+            "新增語系表單",
+            "新增切換語系功能"
+        ]
+    },
+    {
+        "date" : "2022-11-29",
+        "content" : "",
+        "content_list" : [
+            "建立檔案",
+            "使用 Cli 建立第一版本 blog",
+            "新增 Header 與路由配置"
+        ]
+    }
+]

@@ -40,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <header>
+  <header class="km-header">
     <div class="hctn container-md">
       <div class="hl">
         <button class="navtoggle ms-1 me-1" @click="NBToggle">
@@ -78,6 +78,9 @@ export default {
             </li>
           </ul>
         </div>
+        <NuxtLink :to="localePath('/search')" class="search">
+          <fa :icon="['fa-solid', 'magnifying-glass']" />
+        </NuxtLink>
       </div>
     </div>
   </header>

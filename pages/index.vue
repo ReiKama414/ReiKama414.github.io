@@ -6,7 +6,11 @@ export default {
     };
   },
   async fetch() {
-    this.posts = await this.$content('', { deep: true }).sortBy('createdAt', 'desc').fetch();
+    this.posts = await this
+      .$content('', { deep: true })
+      .without(['body'])
+      .sortBy('createdAt', 'desc')
+      .fetch();
   },
 };
 </script>

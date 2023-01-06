@@ -1,6 +1,14 @@
 <script>
 import moment from 'moment';
+import slugEventBus from "assets/js/slugEventBus.js";
 export default {
+  beforeRouteLeave(to, form, next) {
+    // window.confirm('ok?');
+    slugEventBus.$emit("title", "");
+    slugEventBus.$emit("readingTime", "");
+    slugEventBus.$emit("readingTimeWords", "");
+    next();
+  },
   async asyncData({ $content, params }) {
     const [prev, next] = await $content('', { deep: true })
       .only(['title', 'slug'])
@@ -16,25 +24,40 @@ export default {
     return {
       post: null,
       host: "",
+      lbimg: "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=",
+      sh: false,
     }
   },
   async fetch() {
     this.post = (
-      await this.$content('', { deep: true })
+      await this
+        .$content('', { deep: true })
         .where({ slug: this.$route.params.slug })
         .limit(1)
         .fetch()
     )?.[0]
   },
-  mounted () {
+  mounted() {
     this.host = window.location.host;
+  },
+  updated() {
+    slugEventBus.$emit("title", this.post.title);
+    slugEventBus.$emit("readingTime", Math.ceil(this.post.readingTime.minutes));
+    slugEventBus.$emit("readingTimeWords", this.post.readingTime.words);
   },
   methods: {
     formatDate(date) {
-        return moment(date).format('YYYY-MM-DD');
+      return moment(date).format('YYYY-MM-DD');
     },
     formatDate2(date) {
-        return moment(date).format('YYYY-MM-DD HH:mm:ss');
+      return moment(date).format('YYYY-MM-DD HH:mm:ss');
+    },
+    LBshow(e) {
+      this.sh = true;
+      this.lbimg = e.target.src;
+    },
+    LBclose() {
+      this.sh = false;
     },
   },
 }
@@ -43,76 +66,91 @@ export default {
 <template>
   <div class="main">
     <div v-if="post" class="post-wrapper card-widget">
-        <div class="header">
-            <div class="info d-flex mt-2">
-                <p :title="formatDate2(post.createdAt)">
-                    <fa :icon="['fa-solid', 'calendar-days']" class="mr-1" />
-                    {{ $t("releasedin") }}
-                    {{ formatDate(post.createdAt) }}
-                </p>
-                <p :title="formatDate2(post.updatedAt)">
-                    <fa :icon="['fa-solid', 'clock-rotate-left']" class="mr-1" />
-                    {{ $t("updatedin") }}
-                    {{ formatDate(post.updatedAt) }}
-                </p>
-                <NuxtLink :to="localePath(`${post.category}`)" :title="$t('category')">
-                    <fa :icon="['fa-solid', 'feather-pointed']" class="mr-1" />
-                    {{ $t(`${post.category}`) }}
-                </NuxtLink>
-                <p class="pl-3 prtw">
-                  <fa :icon="['fa-solid', 'book-open']" class="mr-1" />
-                  {{ $t("about2") }}{{ post.readingTime.words }}{{ $t("word") }}
-                  ({{ Math.ceil(post.readingTime.minutes) }}{{ $t("minread") }})
-                </p>
-                <!-- <p class="pl-3">
-                  <fa :icon="['fa-solid', 'eye']" class="mr-1" />
-                  {{ $t("visits") }} xxx {{ $t("times") }}
-                </p> -->
-            </div>
-            <div class="pt-4 pb-1">
-                <h3 class="title pl-3 pr-3">{{ post.title }}</h3>
-            </div>
-            <div class="image mt-3 mb-3 p-2">
-                <img alt="Title Image" :src="require(`~/assets/images/blog/${post.image}`)" />
-            </div>
+      <div class="header">
+        <div class="info d-flex mt-2">
+          <p :title="formatDate2(post.createdAt)">
+            <fa :icon="['fa-solid', 'calendar-days']" class="mr-1" />
+            {{ $t("releasedin") }}
+            {{ formatDate(post.createdAt) }}
+          </p>
+          <p :title="formatDate2(post.updatedAt)">
+            <fa :icon="['fa-solid', 'clock-rotate-left']" class="mr-1" />
+            {{ $t("updatedin") }}
+            {{ formatDate(post.updatedAt) }}
+          </p>
+          <NuxtLink :to="localePath(`/${post.category}`)" :title="$t('category')" class="pr-3">
+            <fa :icon="['fa-solid', 'feather-pointed']" class="mr-1" />
+            {{ $t(`${post.category}`) }}
+          </NuxtLink>
+          <p class="prtw">
+            <fa :icon="['fa-solid', 'book-open']" class="mr-1" />
+            {{ $t("about2") }}{{ post.readingTime.words }}{{ $t("word") }}
+            ({{ Math.ceil(post.readingTime.minutes) }}{{ $t("minread") }})
+          </p>
+          <!-- <p class="pl-3">
+            <fa :icon="['fa-solid', 'eye']" class="mr-1" />
+            {{ $t("visits") }} xxx {{ $t("times") }}
+          </p> -->
         </div>
-        <nuxt-content :document="post" />
+        <div class="pt-4 pb-1">
+          <h1 class="title pl-3 pr-3">{{ post.title }}</h1>
+        </div>
+        <div class="image my-3 mx-2">
+          <img alt="Title Image" :src="require(`~/assets/images/blog/${post.image}`)" @click="LBshow" />
+        </div>
+        <p v-if="post.sourceimg2_n != 'Kama'" class="img-origin mt-1 mb-3">
+          Photo by 
+          <a :href="post.sourceimg1_u" class="ud">
+            {{ post.sourceimg1_n }}
+          </a>
+           on 
+          <a :href="post.sourceimg2_u" target="_blank" class="ud">
+            {{ post.sourceimg2_n }}
+          </a>
+        </p>
+      </div>
+      <nuxt-content :document="post" />
 
-        <div class="licensing">
-          <div class="title d-flex flex-wrap">
-            <div class="col-12 mb-3">
-              <p>{{ post.title }}</p>
-              <p>
-                <a :href="$nuxt.$route.path" class="ud">
-                  {{ host }}{{ $nuxt.$route.path }}
-                </a>
-              </p>
-            </div>
-            <div class="col-6 col-sm-4 col-xl-2 p-0">
-              <p>{{ $t("author") }}</p>
-              <p><a href="#">Kama</a></p>
-            </div>
-            <div class="col-6 col-sm-6 col-xl-3 p-0">
-              <p>{{ $t("releasedin") }}</p>
-              <p><a href="#">{{ formatDate2(post.createdAt) }}</a></p>
-            </div>
-            <div class="col-12 col-xl-6 p-0">
-              <p>{{ $t("agreement") }}</p>
-              <p>
-                <a :href="`https://creativecommons.org/licenses/by-nc/4.0/deed.${$t('cc0-2')}`" target="_blank" class="ud">
-                  <fa :icon="['fa-brands', 'creative-commons']" />
-                  {{ $t("cc0-1") }} (CC BY-NC 4.0)
-                </a>
-              </p>
-            </div>
+      <div class="licensing">
+        <div class="title d-flex flex-wrap">
+          <div class="col-12 mb-3">
+            <p>{{ post.title }}</p>
+            <p>
+              <a :href="$nuxt.$route.path" class="ud">
+                {{ host }}{{ $nuxt.$route.path }}
+              </a>
+            </p>
+          </div>
+          <div class="col-6 col-sm-4 col-xl-2 p-0">
+            <p>{{ $t("author") }}</p>
+            <p><a href="#">Kama</a></p>
+          </div>
+          <div class="col-6 col-sm-6 col-xl-3 p-0">
+            <p>{{ $t("releasedin") }}</p>
+            <p><a href="#">{{ formatDate2(post.createdAt) }}</a></p>
+          </div>
+          <div class="col-12 col-xl-6 p-0">
+            <p>{{ $t("agreement") }}</p>
+            <p>
+              <a :href="`https://creativecommons.org/licenses/by-nc/4.0/deed.${$t('cc0-2')}`" target="_blank" class="ud">
+                <fa :icon="['fa-brands', 'creative-commons']" />
+                {{ $t("cc0-1") }} (CC BY-NC 4.0)
+              </a>
+            </p>
           </div>
         </div>
-        
-        <div class="tagslist">
-          <span v-for="tag of post.tags" :key="tag" class="mr-2">
-              <a href="#">#{{ tag }}</a>
-          </span>
-        </div>
+      </div>
+      
+      <div class="tagslist">
+        <span v-for="tag of post.tags" :key="tag" class="mr-2">
+          <NuxtLink v-if="$te(tag)" :to="localePath(`/tags/${tag.toLowerCase()}`)">
+            #{{ $t(`${tag}`) }}
+          </NuxtLink>
+          <NuxtLink v-else :to="localePath(`/tags/${tag.toLowerCase()}`)">
+            #{{ tag }}
+          </NuxtLink>
+        </span>
+      </div>
     </div>
     <div class="prev-next d-flex flex-wrap">
       <div class="col-12 col-xl-6">
@@ -146,5 +184,12 @@ export default {
         </div>
       </div>
     </div>
+
+    <section :class="{showstate: sh}" class="km-lightbox" @click="LBclose">
+      <div class="mask"></div>
+      <div class="lbiw">
+        <img alt="lightbox-image" :src="lbimg" />
+      </div>
+    </section>
   </div>
 </template>

@@ -4,6 +4,11 @@ spreadsheet-to-json 把 google sheet 文件轉成 JSON文件
 Vue I18n Composition API
 vue3-carousel
 yarn add cookie-universal-nuxt
+npm install vue-backtotop --save
+// npm install vueisotope
+yarn add markdown-it-anchor
+VUe router
+yarn add @nuxtjs/vuetify
 
 https://www.svgrepo.com/collection/pictogram-action-icons/
 
@@ -78,3 +83,58 @@ localePath 換頁面固定當前語言
 2022/12/13
 上一篇 下一篇 樣式
 footer
+新增tags
+計數tags數量 (由大到小)
+新增header img
+新增carousel words
+調整貼文post排版 (tag移右下)
+
+2022/12/14
+設定tag樣式
+tag路由設定
+tag filter 顯示標籤分類文章
+路由從內嵌內嵌重設為新定向 (內嵌再內嵌有嚴重bug 有時候會顯示不出來)
+新增作品頁面
+
+2022/12/15
+作品頁排版
+建立以及呼叫元件
+filter手刻利用radio btn
+改變整體layout
+改變blog目錄個體排版
+新增小熊貓icon
+翻譯包更新
+將blog title與作品顯示title分開獨立
+card動畫
+作品連結牽起來
+切換動畫 顏色
+
+2022/12/16
+radio 利用 label 變成 button
+作品集自動化標籤
+作品集排版
+過濾篩選自動計數
+新增標籤、作品自動計數
+路由更新
+
+2022/12/20
+新增修改資源頁面
+
+2022/12/21
+修改部落格內頁
+不依賴套件製作個體燈箱放大
+調整內頁padding
+更新翻譯包
+新增判斷有無i18n顯示
+新增關於我的背景/頭像
+
+2022/12/22
+關於我的版面設置(介紹/技能)
+
+2022/12/23
+關於我的版面設置(技能/經歷)
+
+2022/12/27
+Read more btn
+About site add
+新增 log 頁面

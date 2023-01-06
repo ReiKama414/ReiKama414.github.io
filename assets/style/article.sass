@@ -1,14 +1,22 @@
+@include keyframes(arrow)
+    from
+        transform: translateX(.26rem)
+    to
+        transform: translateX(.52rem)
+    
 .arc-card
-    padding: 1.75rem
+    // padding: 1.25rem
+    padding: 0
     .arc-img
         overflow: hidden
-        margin-right: 1.2rem
-        max-width: 165px
-        border-radius: var(--br)
+        // margin-right: 1.2rem
+        // max-width: 165px
+        // border-radius: var(--br)
         img
             @include transition(transform .15s)
             @include size(100%) 
-            aspect-ratio: 1/1
+            // aspect-ratio: 1/1
+            aspect-ratio: 3/2
             object-fit: cover
             &:hover
                 transform: scale(1.05)
@@ -20,7 +28,7 @@
             white-space: nowrap
             color: var(--text-color-darken)
         .arc-title
-            @include font(700, 1.4rem, 1.45)
+            @include font(700, 1.25rem, 1.45)
             overflow: hidden
             white-space: nowrap
             text-overflow: ellipsis
@@ -32,7 +40,7 @@
                     color: var(--primary-color-lighter)
         .arc-info
             @include font(400, .75rem)
-            letter-spacing: 1px
+            letter-spacing: .025rem
             p
                 margin: 0
             span
@@ -40,37 +48,398 @@
             a
                 text-transform: uppercase
             .rtw
-                letter-spacing: .1rem
+                letter-spacing: .045rem
         .arc-intro
             @include font(500, .85rem, 1.25)
             text-align: left
             flex: 1
-            margin: 1rem 0
-            span
-                display: -webkit-box
-                -webkit-box-orient: vertical
-                -webkit-line-clamp: 2
-                overflow: hidden
+            margin: .75rem 0 .55rem
+            min-height: 35px
         .arc-tagslist
             @include d-flex-c(row, flex-end)
-            @include font(400, .75rem)
+            @include font(400, .75rem, 1.25)
             flex-wrap: wrap
 
 .arth-wrapper
     .img-wpr
-        ov
+        overflow: hidden
         aspect-ratio: 18/9
         border-radius: var(--br)
     img
+        @include transition((transform .45s, filter .45s))
         @include size(100%)
         object-fit: cover
+        transform: scale(1.15)
+        &:hover
+            transform: scale(1)
+            filter: brightness(.95) saturate(1.4) contrast(.9)
+
+.works-wrapper
+    &:hover .wks-card:not(:hover) .imgWpr
+        filter: brightness(.5) saturate(1) contrast(1) blur(16px)
+    .wks-card
+        position: relative
+        color: var(--text-color-white)
+        box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 20%)
+        .imgWpr
+            @include transition(filter var(--delay-time))
+            aspect-ratio: 9/12
+            filter: brightness(.7) saturate(1.8) contrast(.9)
+            img
+                @include size(100%)
+                object-fit: cover
+            &:hover
+                filter: brightness(.95) saturate(1.4) contrast(.9)
+        .textCntent
+            @include d-flex-c(column, space-between, flex-start)
+            position: absolute
+            text-align: left
+            inset: 0
+            div:last-of-type
+                background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .6) 95%)
+            a
+                color: var(--text-color-white)
+            .dm_a
+                @include transition(background var(--delay-time))
+                opacity: .95
+                font-size: .95rem
+                background: var(--tag-bg1-c)
+                border-radius: var(--br)
+                &:hover
+                    background: var(--primary-color-lighten)
+                &:active
+                    background: var(--tag-bg2-c)
+            .rm_a
+                @include transition((color var(--delay-time), text-decoration-color var(--delay-time)))
+                position: relative
+                padding-right: 1.05rem
+                font-size: .75rem
+                text-decoration: underline .05rem rgba(0, 0, 0, 0)
+                text-underline-offset: .25rem
+                &::after
+                    @include transition(transform var(--delay-time))
+                    content: '→'
+                    position: absolute
+                    transform: translateX(.26rem)
+                &:hover
+                    color: var(--primary-color-lighten)
+                    text-decoration-color: var(--primary-color-lighten)
+                    &::after
+                        animation: arrow .35s infinite alternate ease-out
+            span
+                @include font(600, .75rem, 1.4)
+                white-space: nowrap
+                width: max-content
+                color: var(--type-c)
+                border-radius: var(--br)
+            h3
+                font-size: 1.6rem
+            p
+                @include transition((opacity var(--delay-time), max-height .35s ease-in-out))
+                opacity: 0
+                max-height: 0
+                font-size: .95rem
+        &:hover
+            .textCntent p
+                opacity: 1
+                max-height: 2.875rem
+    > article
+        padding: 0 .5rem
+
+$typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "typetools": #1AA3CF, "type2": #49CFAE, "type3": #898cff)
+
+.area-tf ~ .works-wrapper > .area-wks
+    @include transition(all .75s)
+    transform-origin: top
+
+@each $t, $c in $typelist
+    .works-wrapper .wks-card .textCntent span[data-tgflt=#{$t}]
+        background: $c
+    .area-tf[data-selected=#{$t}]
+        ~ .works-wrapper > .area-wks:not([data-tgflt=#{$t}])
+            transform: scale(0)
+            padding: 0
+            max-height: 0
+            max-width: 0
+        ~ .works-wrapper > .area-wks[data-tgflt=#{$t}]
+            @include transition(all 1.25s)
+            transform: scale(1)
+            max-height: none
+            max-width: none
+
+.area-tf
+    letter-spacing: .035rem
+    h3
+        @include font(700, 1.8rem, 1.4)
+        color: var(--text-color-darken)
+    p
+        font-size: .85rem
+    input[type="radio"]
+        display: none
+    label
+        @include font(400, .9rem, 1.6)
+        @include transition(var(--delay-time))
+        padding: .125rem .5rem
+        color: var(--text-color-white)
+        background: rgb(71 85 105 / 1)
+        border-radius: var(--br)
+        text-transform: uppercase
+        cursor: pointer
+        &:hover
+            transform: translateY(-.215rem)
+    input:checked + label, label:hover
+        background: var(--primary-color-lighten)
+        filter: saturate(2.25) hue-rotate(-13deg)
+
+.rscp-card
+    .post-img
+        overflow: hidden
+        aspect-ratio: 5/3
+        border-radius: var(--br)
+        img
+            @include transition(transform .5s cubic-bezier(.4,0,.2,1))
+            @include size(100%)
+            object-fit: cover
+            transform: scale(1)
+        &:hover img
+            transform: scale(1.1)
+    .post-info
+        letter-spacing: .025rem
+        font-size: .85rem
+        .post-tag
+            margin: .85rem 0
+            a
+                @include transition((color var(--delay-time), background var(--delay-time)))
+                padding: .375rem .75rem
+                color: var(--text-color2)
+                background: var(--tag-bg3-c)
+                border-radius: var(--br)
+                &:hover
+                    color: var(--text-color-white)
+                    background: var(--tag-bg1-c)
+        h3
+            font-size: 1.45rem
+            a
+                @include transition(color var(--delay-time))
+                color: var(--text-color-darken)
+                &:hover
+                    color: var(--tag-bg2-c)
+        p  
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 2
+            overflow: hidden
+            color: var(--text-color-lighter)
+        > div:last-of-type
+            > div
+                font-weight: 600
+                color: var(--text-color-lighter)
+            > a
+                @include transition(opacity var(--delay-time))
+                opacity: 1
+                font-size: 1.15rem
+                color: var(--tag-bg1-c)
+                &:hover
+                    opacity: .65
+
+.pg-search
+    .filterWrp
+        margin: 1.25rem 2rem 2.5rem
+        padding: 1rem
+        background-color: var(--primary-color-lighten)
+        border-radius: 20px
+        box-shadow: 0 5px 1.125rem var(--primary-color-lighten), 0 0 0 1.15rem var(--module-bg-7)
+        input[type="text"]
+            @include transition(opacity var(--delay-time))
+            @include size(100%, 1.875rem)
+            @include font(700, 1.05rem, 1.6)
+            opacity: .85
+            color: var(--text-color-white2)
+            background-color: transparent
+            &::placeholder
+                color: var(--text-color-white2)
+            &:hover
+                opacity: .95
+            &:focus, &:active
+                opacity: 1
+        .ftbtnWrp
+            position: relative
+            margin-left: .75rem
+            width: 32px
+            transform: scale(.85)
+            button
+                .ftbtnIcon
+                    @include transition(.45s)
+                    @include size(24px)
+                    position: relative
+                    margin-top: 0
+                    top: -4px
+                    left: 0
+                    border: 4px solid var(--text-color-white2)
+                    background: transparent
+                    border-radius: 50%
+                span
+                    @include transition(.45s)
+                    @include size(15px, 3px)
+                    position: absolute
+                    top: 24px
+                    left: 15px
+                    background: transparent
+                    transform: rotateZ(52deg)
+                    &::before,
+                    &::after
+                        @include size(16px, 4px)
+                        content: ''
+                        position: absolute
+                        bottom: 0
+                        right: 0
+                        background: var(--text-color-white2)
+                        border-radius: 10px
+                        transform: rotateZ(0)
+                        transition: .5s ease all
+            &:hover
+                .ftbtnIcon
+                    @include size(24px, 4px)
+                    top: 3px
+                    border-width: 0
+                    background-color: var(--text-color-white2)
+                    border-radius: 20px
+                span
+                    top: 85%
+                    left: 7px
+                    width: 25px
+                    margin-top: -9px
+                    transform: rotateZ(0)
+                button span
+                    &::before,
+                    &::after
+                        right: 3px
+                        width: 14px
+                        background-color: var(--text-color-white2)
+                    &::before
+                        bottom: 4px
+                        transform: rotateZ(52deg)
+                    &::after
+                        bottom: -4px
+                        transform: rotateZ(-52deg)
+    .cancelBtn,
+    .filterSHBtn
+        @include transition(transform .45s)
+        @include size(1.75rem)
+        transform-origin: center
+        margin-left: .5rem
+        filter: invert(1)
+        img
+            @include size(100%)
+    .cancelBtn
+        padding: .15rem .05rem
+        &:hover
+            transform: rotate(-359deg)
+    .filterSHBtn
+        padding: .1rem 0 0
+        &:hover
+            transform: rotate(270deg) translateX(-2px)
+    article > p.mb-0.p-2
+        font-size: .9rem
+    .search-item
+        padding: .3rem .25rem
+        font-size: .9rem
+        border-top: 1px solid var(--c-divider)
+        a
+            overflow: hidden
+            text-overflow: ellipsis
+            white-space: nowrap
+            color: var(--primary-color-lighter)
+            &:hover
+                color: var(--primary-color-lighten)
+        div, span
+            white-space: nowrap
+    .filterSHWrp
+        padding: .85rem 1.25rem
+        background: var(--module-bg3)
+        border-radius: 1rem
+        // box-shadow: var(--box-shadow-2) 0px 10px 20px, var(--box-shadow-3) 0px 6px 6px
+        box-shadow: var(--box-shadow-1) 0px 0px 0px 12px, var(--box-shadow-1) 0px 0px 0px 5px
+        .theme--light.v-application
+            margin: 1rem auto
+            max-width: 37.5rem
+        .v-list-item__content
+            text-align: left
+        .v-text-field .v-label:not(.v-label--active)
+            top: 12px
+        .v-application--is-ltr .v-list-item__action:first-child
+            margin: .75rem 1rem .75rem 0
+        .theme--light.v-label,
+        .v-icon.v-icon
+            color: var(--text-color-white)
+        .theme--light.v-label
+            font-weight: 700
+        .theme--light.v-text-field > .v-input__control > .v-input__slot:before
+            border-color: var(--text-color-white)
+        .v-application--is-ltr .v-text-field .v-input__append-inner,
+        .v-select.v-select--chips .v-select__selections
+            padding: .45rem 0
+        .v-select.v-input--dense .v-chip
+            margin: .25rem
+            font-weight: 700
+        .theme--light.v-chip
+            @include transition(background var(--delay-time))
+            color: var(--text-color-white2)
+            background: #989FA4
+            &.v-chip--active,
+            &:hover
+                background: black
+        .v-input--is-focused .theme--light.v-chip
+            background: black
+        .theme--light.v-list
+            padding: 0
+            background: var(--module-bg4)
+        .v-list-item:not(.v-list-item--active) .v-list-item__title
+            color: var(--text-color)
+        .v-input
+            margin: .45rem 0
+    &:not(.FTshow)
+        .filterSHWrp
+            overflow: hidden
+            margin: 0 !important
+            padding: 0
+            height: 0
+            box-shadow: none
+    &.FTshow
+        .filterSHBtn
+            transform: rotate(90deg) translateX(2px)
+    .nonequery
+        font-size: .9rem
+        b, h5
+            color: var(--text-color-darken)
+        li
+            list-style-position: inside
+            span
+                position: relative
+                left: -8px
+        button span
+            @include transition(var(--delay-time))
+            color: var(--primary-color-lighten-static)
+            &:hover
+                text-decoration: dashed
+                text-decoration-line: underline
+                filter: brightness(0.95) saturate(2.5)
+        img
+            @include size(100%)
+            max-width: 25rem
+            max-height: 15rem
+            object-fit: contain
 
 @media (max-width: 575.98px)
     .arc-card
         flex-wrap: wrap
         .arc-img
             margin-right: 0
-            margin-bottom: .75rem
+            margin-bottom: .45rem
             max-width: 100%
             img
-                aspect-ratio: 18/6
+                aspect-ratio: 5/2
+        .arc-content
+            padding-top: 0 !important
+    .pg-search .filterWrp .ftbtnWrp
+        transform: scale(.75)

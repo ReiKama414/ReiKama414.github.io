@@ -3,8 +3,10 @@
   justify-content: space-between
   align-items: center
   height: 100%
+  .hl
+    white-space: nowrap
 
-header
+.km-header
   position: fixed
   padding: 10px 0
   top: 0
@@ -105,6 +107,23 @@ header
     @include size(100%)
     object-fit: contain
 
+.search:hover
+  color: var(--text-color-darken)
+  opacity: .65
+
 @media (max-width: 767.98px)
   .navtoggle
     display: inline-block
+  .hr > *
+    margin-left: .75rem
+
+@media (max-width: 327.98px)
+  .hr > *
+    @include size(20px)
+    margin-left: .45rem
+  .switch
+    @include size(68px, 26px)
+    .time .day img
+      @include size(1rem)
+    input:checked ~ .time img:last-of-type
+      transform: translateX(22px) rotate(240deg)

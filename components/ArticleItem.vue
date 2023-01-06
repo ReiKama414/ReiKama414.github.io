@@ -36,10 +36,10 @@ export default {
 
 <template>
   <article class="arc-card card-widget d-flex">
-    <div class="col-12 col-md-3 arc-img">
-      <img alt="" :src="require(`~/assets/images/blog/${post.image}`)"  />
+    <div class="col-12 col-sm-4 arc-img">
+      <img alt="Title img" :src="require(`~/assets/images/blog/${post.image}`)" />
     </div>
-    <div class="col-12 col-md-9 arc-content pr-3">
+    <div class="col-12 col-sm-8 arc-content p-3">
       <h2 class="arc-title">
         <nuxt-link :to="localePath(`/blog/${post.slug}`)" :title="post.title">
             {{ post.title }}
@@ -53,16 +53,21 @@ export default {
         <p v-else-if="(Countmin > 0)">{{ Countmin }}{{ $t("timemin") }}</p>
         <p v-else>{{ $t("justnow") }}</p>
         <span>|</span>
-        <NuxtLink :to="localePath(`${post.category}`)">{{ $t(`${post.category}`) }}</NuxtLink>
+        <NuxtLink :to="localePath(`/${post.category}`)">{{ $t(`${post.category}`) }}</NuxtLink>
         &emsp;
         <p class="rtw">{{ $t("about2") }}{{ post.readingTime.words }}{{ $t("word") }}</p>
       </div>
       <div class="arc-intro">
-        <span>{{ post.description }}</span>
+        <span class="multiline-ellipsis">{{ post.description }}</span>
       </div>
       <div class="arc-tagslist">
         <span v-for="tag of post.tags" :key="tag" class="ml-2">
-            <a href="#">#{{ tag }}</a>
+          <NuxtLink v-if="$te(tag)" :to="localePath(`/tags/${tag.toLowerCase()}`)">
+            #{{ $t(`${tag}`) }}
+          </NuxtLink>
+          <NuxtLink v-else :to="localePath(`/tags/${tag.toLowerCase()}`)">
+            #{{ tag }}
+          </NuxtLink>
         </span>
       </div>
     </div>

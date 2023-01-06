@@ -4,6 +4,7 @@
   "daily": "日常",
   "tags": "標籤",
   "work": "作品",
+  "work2": "作品",
   "resource": "資源",
   "about": "關於",
   "log": "更新日誌",
@@ -30,6 +31,18 @@
   "category": "分類",
   "previouspage": "上一頁",
   "nextpage": "下一頁",
-  "startpage": "這是最新一頁啦~",
-  "endpage": "恭喜! 這裡是終點站喔 :3"
+  "startpage": "這是起點站呦~",
+  "endpage": "恭喜! 這裡是終點站喔 :3",
+  "demo": "示範",
+  "readmore": "查看更多",
+  "all": "全部",
+  "typeweb": "網頁",
+  "typewebnn": "網頁 (無功能)",
+  "aboutwork-1": "關於",
+  "aboutwork-2": "的作品",
+  "tagss-1": "以下是我的部落格內的作品集中，所有帶有 \"",
+  "tagss-2": "\" 標籤的列表。",
+  "tagss-3": "以下是我的部落格內作品集的列表。",
+  "portfolio": "作品集",
+  "onlineresource": "線上資源"
 }
