@@ -50,7 +50,7 @@ export default {
         <!-- <nuxt-link :to="localePath(`/blog/${post.slug}`)" :title="post.title">
             {{ post.title }}
         </nuxt-link> -->
-        <a :href="`https://${host}/blog/${post.slug}`" :title="post.title">
+        <a :href="`https://${host}/reikama/blog/${post.slug}`" :title="post.title">
             {{ post.title }} 
         </a>
       </h2>
