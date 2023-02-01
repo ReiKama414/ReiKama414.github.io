@@ -30,12 +30,18 @@ export default {
           <p class="mb-2 multiline-ellipsis">
             {{ post.introduction }}
           </p>
-          <nuxt-link
+          <!-- <nuxt-link
             :to="localePath(`/blog/${post.slug}`)"
             class="rm_a font-weight-normal align-self-end ud"
           >
             {{ $t("readmore") }}
-          </nuxt-link>
+          </nuxt-link> -->
+          <a
+            :href="`https://${host}/reikama/blog/${post.slug}`"
+            class="rm_a font-weight-normal align-self-end ud"
+          >
+            {{ $t("readmore") }}
+          </a>
         </div>
       </div>
     </div>

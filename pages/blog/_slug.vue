@@ -140,7 +140,7 @@ export default {
             <p>{{ post.title }}</p>
             <p>
               <a :href="$nuxt.$route.path" class="ud">
-                https://{{ host }}{{ $nuxt.$route.path }}
+                https://{{ host }}/reikama{{ $nuxt.$route.path }}
               </a>
             </p>
           </div>
@@ -177,14 +177,22 @@ export default {
     </div>
     <div class="prev-next d-flex flex-wrap">
       <div class="col-12 col-custom-6">
-        <NuxtLink v-if="prev" :to="localePath({ params: { slug: prev.slug } })">
+        <!-- <NuxtLink v-if="prev" :to="localePath({ params: { slug: prev.slug } })">
           <div class="pn-item card-widget">
             <p class="mb-0 p-prev">←&ensp;{{ $t("previouspage") }}</p>
             <div>
               {{ prev.title }}
             </div>
           </div>
-        </NuxtLink>
+        </NuxtLink> -->
+        <a v-if="prev" :href="`https://${ host }${localePath({ params: { slug: prev.slug } })}`">
+          <div class="pn-item card-widget">
+            <p class="mb-0 p-prev">←&ensp;{{ $t("previouspage") }}</p>
+            <div>
+              {{ prev.title }}
+            </div>
+          </div>
+        </a>
         <div v-else class="pn-item card-widget">
           <div>
             <span> {{ $t("startpage") }} </span>

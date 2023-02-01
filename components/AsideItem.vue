@@ -183,9 +183,12 @@ export default {
           <div>
             <p class="mb-0">{{ formatDate(post.createdAt) }}</p>
             <h6 class="mb-1" :title="post.title">
-              <nuxt-link :to="localePath(`/blog/${post.slug}`)">
+              <!-- <nuxt-link :to="localePath(`/blog/${post.slug}`)">
                 {{ post.title }}
-              </nuxt-link>
+              </nuxt-link> -->
+              <a :href="`https://${host}/reikama/blog/${post.slug}`">
+                  {{ post.title }} 
+              </a>
             </h6>
             <span>
               <NuxtLink :to="localePath(`/${post.category}`)">
