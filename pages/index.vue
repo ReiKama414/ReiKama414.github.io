@@ -49,7 +49,7 @@ export default {
     this.$nextTick(() => {
       setTimeout(() => {
           this.loadState = false;
-      }, 2250);
+      }, 1800);
     });
   },
   methods: {
@@ -62,7 +62,7 @@ export default {
       this.$nextTick(() => {
         setTimeout(() => {
             this.loadState2 = false;
-        }, 2250);
+        }, 1800);
       });
       // this.$router.push({ query: { page: this.page } });
     },

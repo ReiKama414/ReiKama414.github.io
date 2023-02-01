@@ -1,5 +1,13 @@
 [ 
     {
+        "date" : "2023-02-01",
+        "content" : "推送 Blog 部屬至 github page 上，修整版本與相容 UI 套件問題，找尋 Bug 並修復。(紀錄：路由跳轉無渲染最大問題為 ... 需要給每個 Vue 頁面一個 name !!! 很重要ㄚㄚㄚ !!!!!! 找了超久 (´;ω;`) )",
+        "content_list" : [
+            "更新：Skeleton Loader",
+            "更新：Log Page 翻譯"
+        ]
+    },
+    {
         "date" : "2023-01-31",
         "content" : "",
         "content_list" : [

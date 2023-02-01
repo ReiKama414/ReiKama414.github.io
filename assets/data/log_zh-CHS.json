@@ -1,5 +1,13 @@
 [ 
     {
+        "date" : "2023/02/01",
+        "content" : "将博客部署推送到 github page，修复版本和兼容的 UI 工具包问题，查找 Bug 并修复。（记录：没有渲染的路由跳转最大的问题是... 需要给每个 Vue 页面起个名字！！！很重要 RRR！！！！！！找了好久 QAQ）",
+        "content_list" : [
+            "更新：Skeleton Loader",
+            "更新：日志页面翻译"
+        ]
+    },
+    {
         "date" : "2023/01/31",
         "content" : "",
         "content_list" : [

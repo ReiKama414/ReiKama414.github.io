@@ -47,7 +47,7 @@ export default {
     this.$nextTick(() => {
       setTimeout(() => {
           this.loadState = false;
-      }, 2250);
+      }, 1800);
     });
   },
 };

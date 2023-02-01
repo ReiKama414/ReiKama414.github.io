@@ -8,6 +8,8 @@ export default {
       pageSize: 6,
       startIndex: 0,
       endIndex: 6, // same as pageSize
+      loadState: true,
+      loadState2: false,
     };
   },
   async fetch() {
@@ -51,6 +53,11 @@ export default {
     if (this.$route.query.page) {
       this.updatePage(Number(this.$route.query.page));
     };
+    this.$nextTick(() => {
+      setTimeout(() => {
+          this.loadState = false;
+      }, 1800);
+    });
   },
   methods: {
     updatePage(pageIndex) {
@@ -58,6 +65,12 @@ export default {
       this.startIndex = (pageIndex - 1) * this.pageSize;
       this.endIndex = pageIndex * this.pageSize;
       this.page = pageIndex;
+      this.loadState2 = true;
+      this.$nextTick(() => {
+        setTimeout(() => {
+            this.loadState2 = false;
+        }, 1800);
+      });
       // this.$router.push({ query: { page: this.page } });
     },
   },
@@ -65,7 +78,7 @@ export default {
 </script>
 
 <template>
-  <div class="main">
+  <div class="main position-relative">
     <div class="card-widget">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-0 pr-1 pl-1">
@@ -82,21 +95,46 @@ export default {
         </ol>
       </nav>
     </div>
-    
-    <div class="al">
-      <ArticleItem v-for="(post, index) of HistoryList" :key="index" :post="post"></ArticleItem>
-    </div>
 
-    <v-app v-if="posts.length > pageSize" class="mt-4">
-      <v-pagination
-        v-model="page"
-        :length="pages"
-        :total-visible="7"
-        circle
-        prev-icon="mdi-arrow-left"
-        next-icon="mdi-arrow-right"
-        @input="updatePage"
-      ></v-pagination>
-    </v-app>
+    <div v-if="loadState" class="position-absolute w-100">
+        <div v-for="n in HistoryList.length" :key="n" class="SkeletonArticle arc-card card-widget d-flex">
+          <div class="col-12 col-sm-4 arc-img"></div>
+          <div class="col-12 col-sm-8 arc-content p-3">
+            <h2 class="arc-title"></h2>
+            <div class="arc-info d-flex"></div>
+            <div class="arc-intro"></div>
+            <div class="arc-tagslist"></div>
+          </div>
+        </div>
+    </div>
+    
+    <div class="niam" :class="{show: !loadState}">
+      <div class="al position-relative">
+        <div v-if="loadState2" class="position-absolute w-100">
+            <div v-for="n in HistoryList.length" :key="n" class="SkeletonArticle arc-card card-widget d-flex">
+              <div class="col-12 col-sm-4 arc-img"></div>
+              <div class="col-12 col-sm-8 arc-content p-3">
+                <h2 class="arc-title"></h2>
+                <div class="arc-info d-flex"></div>
+                <div class="arc-intro"></div>
+                <div class="arc-tagslist"></div>
+              </div>
+            </div>
+        </div>
+        <ArticleItem v-for="(post, index) of HistoryList" :key="index" class="niam" :class="{show: !loadState2}" :post="post"></ArticleItem>
+      </div>
+
+      <v-app v-if="posts.length > pageSize" class="mt-4">
+        <v-pagination
+          v-model="page"
+          :length="pages"
+          :total-visible="7"
+          circle
+          prev-icon="mdi-arrow-left"
+          next-icon="mdi-arrow-right"
+          @input="updatePage"
+        ></v-pagination>
+      </v-app>
+    </div>
   </div>
 </template>
