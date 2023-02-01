@@ -73,7 +73,7 @@ export default {
 
 <template>
   <div class="main pfl position-relative">
-    <div class="hd-i-w" style="background-image: url(/_nuxt/assets/images/background/art5.jpg); opacity: .75;"></div>
+    <div class="hd-i-w r" style="opacity: .75;"></div>
 
     <section class="area-tf mt-3">
       <h3 v-if="loadState" class="mx-auto"></h3>
