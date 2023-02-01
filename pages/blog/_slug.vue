@@ -185,7 +185,7 @@ export default {
             </div>
           </div>
         </NuxtLink> -->
-        <a v-if="prev" :href="`https://${ host }${localePath({ params: { slug: prev.slug } })}`">
+        <a v-if="prev" :href="`https://${ host }/reikama${localePath({ params: { slug: prev.slug } })}`">
           <div class="pn-item card-widget">
             <p class="mb-0 p-prev">←&ensp;{{ $t("previouspage") }}</p>
             <div>
@@ -200,14 +200,22 @@ export default {
         </div>
       </div>
       <div class="col-12 col-custom-6">
-        <NuxtLink v-if="next" :to="localePath({ params: { slug: next.slug } })">
+        <!-- <NuxtLink v-if="next" :to="localePath({ params: { slug: next.slug } })">
           <div class="pn-item card-widget">
               <p class="mb-0 p-next">{{ $t("nextpage") }}&ensp;→</p>
               <div>
                 {{ next.title }}
               </div>
           </div>
-        </NuxtLink>
+        </NuxtLink> -->
+        <a v-if="next" :href="`https://${ host }/reikama${localePath({ params: { slug: next.slug } })}`">
+          <div class="pn-item card-widget">
+              <p class="mb-0 p-next">{{ $t("nextpage") }}&ensp;→</p>
+              <div>
+                {{ next.title }}
+              </div>
+          </div>
+        </a>
         <div v-else class="pn-item card-widget">
           <div>
             <span> {{ $t("endpage") }} </span>
