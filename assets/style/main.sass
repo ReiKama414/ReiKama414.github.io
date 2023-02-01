@@ -96,7 +96,8 @@
                 letter-spacing: .1rem
         .title
             @include font(700, 1.48rem, 1.45)
-            letter-spacing: 1.75px
+            text-align: left
+            letter-spacing: .035rem
             color: var(--text-color-darken)
         .image
             overflow: hidden
@@ -111,6 +112,8 @@
     .nuxt-content-container
         padding: 1.25rem
         text-align: left
+        del
+            pointer-events: none
         img
             cursor: zoom-in
         a
@@ -135,17 +138,45 @@
             scroll-margin-top: 3.8rem
             + *
                 font-size: .9rem
-        // p
-        //     text-indent: 2em
         ul, ol
             list-style-position: inside
             li
                 padding-left: 1.25em
-        blockquote p
-            padding: 0.66001rem 1rem 1rem
-            border-left: 3px solid #a0aabf
-        p
+        blockquote
+            p
+                // padding: 0.66001rem 1rem 1rem
+                padding: .75rem 1rem
+                border-left: 3px solid #A0AABF
+                background: #E7E7E7CF
+        p:not(.img-origin)
             text-align: justify
+            font-size: .9rem
+        img
+            @include size(100%)
+            padding: .5rem
+            object-fit: contain
+            max-height: 28.5rem
+        code
+            padding: 0 .5rem
+        table
+            margin-bottom: 1rem
+            width: 100%
+            td, th
+                padding: .65rem
+                font-size: .9rem
+                color: var(--text-color-darken)
+                border: 1px solid #DEE2E6
+            th
+                border-bottom: 3px solid #DEE2E6
+        hr 
+            margin-top: 2rem
+            margin-bottom: 2rem
+            border-top: 3px solid var(--box-shadow-2)
+            border-style: dashed
+        pre[class*="language-"]
+            margin-bottom: 1rem
+            font-size: .95rem
+            background: rgb(223, 223, 223)
     .licensing
         @include font(500, .85rem)
         text-align: left
@@ -203,6 +234,7 @@
             @include transition(color var(--delay-time))
             @include d-flex-c
             flex: 1
+            font-size: .85rem
         &:hover
             > div
                 color: var(--primary-color-lighter)
@@ -240,7 +272,7 @@
     letter-spacing: .02rem
     a
         @include transition(color var(--delay-time))
-        color: var(--text-color-darken)
+        color: var(--text-color-darken) !important
         text-decoration: underline
         &:hover
             color: var(--primary-color-lighten)
@@ -584,6 +616,7 @@ $circle-color4: #7D81EA
             h3
                 margin: 2rem
                 font-size: 1.35rem
+                color: var(--text-color-white2)
             h6
                 margin-top: auto
                 font-size: .85rem
@@ -722,12 +755,98 @@ $blur_length: 1
                 &::before
                     height: 0%
 
+.niam
+    @include transition(opacity .4s)
+    opacity: 0
+    pointer-events: none
+    &.show
+        opacity: 1
+        pointer-events: auto
+
+@keyframes Shine
+    to
+        background-position-x: -60%
+
+%skeleton
+    background: linear-gradient(120deg, #FFFFFF00 40%, #FFFFFF26 50%, #FFFFFF00 60%) var(--box-shadow-15)
+    background-size: 200% 100%
+    background-position-x: 160%
+    border-radius: var(--br)
+    animation: 1.6s Shine ease-in-out infinite
+
+.SkeletonCarouse
+    @extend %skeleton
+    aspect-ratio: 18/9
+.SkeletonArticle
+    .arc-img,
+    .arc-content *
+        @extend %skeleton
+    .arc-img
+        aspect-ratio: 3/2
+        border-radius: 0
+    .arc-title
+        @include size(100%, 28px)
+    .arc-info
+        @include size(160px, 12px)
+    .arc-intro
+        @include size(100%, 34px)
+    .arc-tagslist
+        @include size(130px, 15px)
+        align-self: flex-end
+.SkeletonResource
+    .post-img,
+    .post-info > *:not(div:last-of-type),
+    .post-info div:last-of-type *
+        @extend %skeleton
+    .post-tag
+        @include size(120px, 31px)
+    .post-info h3:empty
+        @include size(90%, 24px)
+    .post-info p:empty 
+        height: 4.15em
+    .post-info div:last-of-type
+        div
+            @include size(92px, 27px)
+        a
+            @include size(25px)
+.SkeletonPortfolio .card-widget:hover
+    background: var(--module-bg-5)
+.tagspg-wpr h3:empty
+    @include size(44px, 13.6px)
+    @extend %skeleton
+.area-tf h3:empty
+    @include size(120px, 39.2px)
+    @extend %skeleton
+.area-tf p:empty
+    @include size(260px, 20.4px)
+    @extend %skeleton
+.tagspg-wpr .tags-item .tags.load,
+.area-tf .skeleton label,
+.area-tf .skeleton input:checked + label
+    @extend %skeleton
+    color: transparent
+    pointer-events: none
+.tagspg-wpr .tags-item .tags.load div
+    background-color: transparent
+.works-wrapper .wks-card .imgWpr:empty
+    background: linear-gradient(120deg, #FFFFFF00 40%, #FFFFFF26 50%, #FFFFFF00 60%) var(--box-shadow-1)
+    background-size: 200% 100%
+    background-position-x: 160%
+    border-radius: var(--br)
+    animation: 1.6s Shine ease-in-out infinite
+    pointer-events: none
+.works-wrapper.SkeletonPortfolio:hover .wks-card:not(:hover) .imgWpr
+    filter: none
+
 @supports (mix-blend-mode: screen)
     .about-content .circles .warning
         display: none
 
 
-
+@media (min-width: 1200px)
+    .col-custom-6
+        flex: 0 0 50%
+        max-width: 50%
 @media (max-width: 1199.98px)
     .prev-next > div
         padding: 0 0 1rem !important
@@ -751,3 +870,5 @@ $blur_length: 1
                 padding-left: 1rem
         .skill-item
             @include size(2.6rem)
+    .SkeletonArticle .arc-img
+        aspect-ratio: 5/2

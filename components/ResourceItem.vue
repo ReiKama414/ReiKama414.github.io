@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <article class="rscp-card col-12 col-sm-6 col-lg-4">
+  <article class="rscp-card">
     <div class="post-img">
       <nuxt-link :to="localePath(`/blog/${post.slug}`)">
         <img alt="Title img" :src="require(`~/assets/images/blog/${post.image}`)" />
@@ -48,11 +48,3 @@ export default {
     </div>
   </article>
 </template>
-
-<style lang="sass">
-.rscp-card.col-12,
-.rscp-card.col-sm-6,
-.rscp-card.col-lg-4
-    padding-right: 15px
-    padding-left: 15px
-</style>

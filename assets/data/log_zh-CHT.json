@@ -1,5 +1,85 @@
 [ 
     {
+        "date" : "2023-01-31",
+        "content" : "",
+        "content_list" : [
+            "新增：Skeleton Loader",
+            "修復：部份 UI",
+            "更新：翻譯表單、Log Page 翻譯"
+        ]
+    },
+    {
+        "date" : "2023-01-17",
+        "content" : "將貼文內容，測試文 -> 正式文。",
+        "content_list" : [
+            "更新：上下一頁從 slug 名稱排序改為 CreatedTime 排序"
+        ]
+    },
+    {
+        "date" : "2023-01-13",
+        "content" : "",
+        "content_list" : [
+            "更新：翻譯表單、Log Page 翻譯"
+        ]
+    },
+    {
+        "date" : "2023-01-12",
+        "content" : "！注: Slug 路由取得 Title, Meta 需特別設定。",
+        "content_list" : [
+            "新增：文章頁籤(資源)",
+            "新增：各頁 Title, Meta 設定、Title, Meta 多國語言設定",
+            "修復：搜尋頁籤判別",
+            "更新：翻譯表單"
+        ]
+    },
+    {
+        "date" : "2023-01-11",
+        "content" : "修復因為引用 Vuetify 產生的跑版問題。",
+        "content_list" : [
+            "更新：搜尋範圍新增內文搜尋",
+            "更新：依 UX 調整字型大小、顏色",
+            "新增：不依賴現有套件建立換頁頁籤功能",
+            "新增：搜尋頁面路由傳遞、調用參數換頁",
+            "新增：文章頁籤(主頁/程式/日常/標籤內頁)"
+        ]
+    },
+    {
+        "date" : "2023-01-10",
+        "content" : "修復 'Cannot read properties of null (reading 'querySelector')' 找無元素問題，研究換頁頁籤。",
+        "content_list" : [
+            "更新：搜尋過濾按鈕觸發收合選單動畫",
+            "新增：搜尋範圍與搜尋字詞螢光字詞顯示",
+            "新增：搜尋總數行",
+            "新增：頁籤 UI"
+        ]
+    },
+    {
+        "date" : "2023-01-09",
+        "content" : "修復因為引用 Vuetify 產生的跑版問題，以及定位點 position: sticky 莫名失效 BUG。",
+        "content_list" : []
+    },
+    {
+        "date" : "2023-01-07",
+        "content" : "",
+        "content_list" : [
+            "新增：搜尋結果排序功能 (Title or Date)",
+            "修復：篩選結果全選取消後無搜尋結果的 BUG 事件",
+            "更新：搜尋框排版方式、表單按鈕觸發事件改即時搜尋、收合動畫效果",
+            "修復：無搜尋結果隨機圖片增加與跳轉頁後無圖片顯示的 BUG 問題",
+            "新增：Radio Button & CheckBox Button UI",
+            "新增：新增簡介是否顯示的勾選功能"
+        ]
+    },
+    {
+        "date" : "2023-01-06",
+        "content" : "將搜尋文字功能達成防止 XSS 攻擊事件以及搜尋字詞螢光顯示。",
+        "content_list" : [
+            "更新：搜尋文字功能防禦機制與關鍵詞顯示",
+            "更新：多重關鍵字搜尋",
+            "更新：根據 Category、HushTags 篩選後顯示搜尋結果"
+        ]
+    },
+    {
         "date" : "2023-01-05",
         "content" : "",
         "content_list" : [

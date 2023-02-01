@@ -8,6 +8,21 @@ export default {
         return {
             logs: [],
             sm_state: false,
+            loadState: true,
+        };
+    },
+    head() {
+        return {
+            title: `${this.$i18n.t('log')} | Kama's Blog`,
+            htmlAttrs: {
+                lang: this.$i18n.t('localeSetting'),
+            },
+            meta: [
+                { hid: 'description', name: 'description', content: this.$i18n.t('indexmd') },
+                { property: 'og:title', content: `${this.$i18n.t('log')} | Kama's Blog` },
+                { property: 'og:description', content: this.$i18n.t('indexmd') },
+                { property: 'og:locale', content: this.$i18n.t('localeSetting') }
+            ],
         };
     },
     computed: {
@@ -15,6 +30,13 @@ export default {
             this.change_locale();
             return this.logs;
         },
+    },
+    mounted() {
+        this.$nextTick(() => {
+            setTimeout(() => {
+                this.loadState = false;
+            }, 2250);
+        });
     },
     methods: {
         change_locale() {
@@ -41,8 +63,14 @@ export default {
 </script>
 
 <template>
-  <div class="main">
-    <CatHeaderItem :imgsrc="'art7.jpg'" />
+  <div class="main position-relative">
+    <div v-if="loadState" class="position-absolute w-100">
+      <div class="SkeletonCarouse mb-4"></div>
+    </div>
+    <div class="niam" :class="{show: !loadState}">
+      <CatHeaderItem :imgsrc="'art7'" />
+    </div>
+
     <div class="timeline-wrapper card-widget text-left p-3 pl-4 position-relative" :class="{showmore: sm_state}">
         <ul class="timeline pb-4">
             <li v-for="(log, index) of i18nlogjson" :key="index" class="tl-item">

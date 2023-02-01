@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <article :data-tgflt="post.type" class="area-wks col-12 col-sm-6 col-lg-4" >
+  <article :data-tgflt="post.type" class="area-wks" >
     <div class="wks-card p-0 card-widget">
       <div class="imgWpr">
         <img alt="portfolioImg" :src="require(`~/assets/images/blog/${post.image}`)" />

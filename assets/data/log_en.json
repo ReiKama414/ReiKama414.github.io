@@ -1,5 +1,129 @@
 [ 
     {
+        "date" : "Jan 31, 2023",
+        "content" : "",
+        "content_list" : [
+            "Added: Skeleton Loader.",
+            "Bug Fixes: Partial UI.",
+            "Updated: Translate forms, Log Page translation."
+        ]
+    },
+    {
+        "date" : "Jan 17, 2023",
+        "content" : "Change the content of the post, test text -> official text.",
+        "content_list" : [
+            "Updated: Previous and next page changed from sorting by slug name to sorting by CreatedTime."
+        ]
+    },
+    {
+        "date" : "Jan 13, 2023",
+        "content" : "",
+        "content_list" : [
+            "Updated: Translate forms, Log Page translation."
+        ]
+    },
+    {
+        "date" : "Jan 12, 2023",
+        "content" : "! Note: The Slug route obtains Title and Meta need to be specially set.",
+        "content_list" : [
+            "Added: Articles tab (resources).",
+            "Added: Title and Meta settings for each page, Title and Meta multilingual settings.",
+            "Bug Fixes: Determine whether the search tab needs to exist.",
+            "Updated: Translated forms."
+        ]
+    },
+    {
+        "date" : "Jan 11, 2023",
+        "content" : "Fix the running version problem caused by referencing Vuetify.",
+        "content_list" : [
+            "Updated: Added context search to the search scope.",
+            "Updated: Adjust font size, color according to UX.",
+            "Added: Create page-changing tab function without relying on existing packages.",
+            "Added: search page routing pass, call parameter page change.",
+            "Added: Article tab (homepage/program/daily/tab inner page)."
+        ]
+    },
+    {
+        "date" : "Jan 10, 2023",
+        "content" : "Fix the problem of 'Cannot read properties of null (reading 'querySelector')' to find no elements, study the page change tab.",
+        "content_list" : [
+            "Updated: The search filter button triggers the collapse menu animation.",
+            "Added: search scope and search term fluorescent word display.",
+            "Added: Search total row.",
+            "Added: Tab UI."
+        ]
+    },
+    {
+        "date" : "Jan 9, 2023",
+        "content" : "Fix the running version problem caused by referencing Vuetify and the bug that the positioning point position: sticky fails inexplicably.",
+        "content_list" : []
+    },
+    {
+        "date" : "Jan 7, 2023",
+        "content" : "",
+        "content_list" : [
+            "Added: Search results sorting function (Title or Date).",
+            "Bug Fixes: BUG event that there is no search result after the filter result is selected and canceled.",
+            "Updated: Search box typesetting, form button trigger event changed to instant search, collapse animation effect.",
+            "Bug Fixes: There is a BUG problem that there is no random picture added in search results and no picture displayed after the jump page.",
+            "Added: Radio Button & CheckBox Button UI.",
+            "Added: Added a check function for whether the profile is displayed."
+        ]
+    },
+    {
+        "date" : "Jan 6, 2023",
+        "content" : "The search text function is implemented to prevent XSS attacks and display search words in fluorescent light.",
+        "content_list" : [
+            "Updated: Search text function defense mechanism and keyword display.",
+            "Updated: Multiple keyword searches.",
+            "Updated: The search results are displayed after filtering by Category and HushTags."
+        ]
+    },
+    {
+        "date" : "Jan 5, 2023",
+        "content" : "",
+        "content_list" : [
+            "Added: Category drop-down menu for search page.",
+            "Updated: Set Footer's Copyright year text to automatically grab the current year.",
+            "Added: Search text function.",
+            "Added: Layout with no results in the search page."
+        ]
+    },
+    {
+        "date" : "Jan 4, 2023",
+        "content" : "",
+        "content_list" : [
+            "Added: Label drop-down menu for search page."
+        ]
+    },
+    {
+        "date" : "Jan 3, 2023",
+        "content" : "",
+        "content_list" : [
+            "Updated: The chapter directory of the list on the right is fixed at the top when sliding.",
+            "Updated: Fine-tuned UI RWD spacing.",
+            "Added: Search page search box UI."
+        ]
+    },
+    {
+        "date" : "Dec 30, 2022",
+        "content" : "",
+        "content_list" : [
+            "Added articles to automatically generate anchor links and blog directories in the list on the right (sub-components are interoperable).",
+            "Modified some typography and fonts."
+        ]
+    },
+    {
+        "date" : "Dec 29, 2022",
+        "content" : "",
+        "content_list" : [
+            "Added a column for the list tab on the right and adjusted the layout of recent posts.",
+            "Added a button to return to the top of the page.",
+            "Added the \"View More\" button function in the \"Change Log\" page.",
+            "Added search and archive page."
+        ]
+    },
+    {
         "date" : "Dec 28, 2022",
         "content" : "The log.txt used for recording is transferred to the log.json file with python and some artificial modifications.",
         "content_list" : [

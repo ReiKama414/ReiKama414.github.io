@@ -27,6 +27,10 @@ export default {
           return {}
       },
     },
+    loadingstate: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -35,6 +39,7 @@ export default {
       postTitle: "",
       postReadTime: "",
       postReadTimeWord: "",
+      windowScrollY: 0,
       filterHeightCount: 0,
     };
   },
@@ -42,9 +47,14 @@ export default {
     profilerandom() {
       return this.profileList[Math.floor(Math.random() * 2)];
     },
+    FixedAnchor() {
+      // console.log(this.windowScrollY, this.filterHeightCount);
+      if (this.windowScrollY >= this.filterHeightCount) return true;
+      else return false;
+    },
   },
   updated() {
-    this.filterHeightCount = this.$refs.ref_asdwrp.offsetHeight - this.$refs.ref_asdwrp.lastElementChild.offsetHeight - 86.4 + 16;
+    this.filterHeightCount = this.$refs.ref_asdwrp.offsetHeight - this.$refs.ref_asdwrp.lastElementChild.offsetHeight; // - 86.4 + 16;
     this.$emit('mixxTop', this.filterHeightCount);
   },
   created() {
@@ -64,10 +74,16 @@ export default {
       slugEventBus.$on("readingTimeWords", (params) => {
         this.postReadTimeWord = params;
       });
+      slugEventBus.$on("windowScrollY", (params) => {
+        this.windowScrollY = params;
+      });
     },
     getNuxtHeading() {
       if (process.browser) {
-        const tags = document.querySelector('.nuxt-content').querySelectorAll('h2, h3');
+        let tags = [];
+        if (document.querySelector('.nuxt-content') !== null) {
+          tags = document.querySelector('.nuxt-content').querySelectorAll('h2, h3');
+        }
         if (tags.length > 0) return tags;
         else return '';
       }
@@ -144,7 +160,20 @@ export default {
       </button>
     </div>
 
-    <div class="aside-item recent_post_area p-2 text-left mb-1">
+    <div v-if="loadingstate" class="aside-item recent_post_area p-2 text-left mb-1">
+      <h3 class="font-weight-bold pb-1 mb-3">近期貼文</h3>
+      <div>
+        <div v-for="n of 2" :key="n" class="rp_item d-flex my-4">
+          <a class="mr-2"></a>
+          <div class="w-100">
+            <p class="my-1"></p>
+            <h6 class="mb-1"></h6>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-else class="aside-item recent_post_area p-2 text-left mb-1">
       <h3 class="font-weight-bold pb-1 mb-3">近期貼文</h3>
       <div v-if="pl <= recentpostLimit">
         <div v-for="(post, index) of postlist" :key="index" class="rp_item d-flex my-4">
@@ -201,7 +230,18 @@ export default {
       </div>
     </div>
 
-    <div v-if="postTitle && getNuxtHeading()" class="card-widget mb-4">
+    <div v-if="postTitle && getNuxtHeading()" class="anchor card-widget mb-4 show" :class="{ fixed: FixedAnchor }">
+      <div class="dot-widget text-left anchor-wrapper">
+        <div v-for="(a, index) of getSlugTagsID()" :key="index" class="anchor-item py-2">
+          <span v-if="a[0] == 'H2'">
+            <fa :icon="['fa-solid', 'seedling']" class="mr-1" />
+          </span>
+          <span v-else-if="a[0] == 'H3'" class="ml-3">⦁</span>
+          <button @click="goAuchor(`#${a[1]}`)">{{ a[2] }}</button>
+        </div>
+      </div>
+    </div>
+    <div v-if="postTitle && getNuxtHeading()" class="anchor card-widget mb-4 hide" :class="{ fixed: !FixedAnchor }">
       <div class="dot-widget text-left anchor-wrapper">
         <div v-for="(a, index) of getSlugTagsID()" :key="index" class="anchor-item py-2">
           <span v-if="a[0] == 'H2'">

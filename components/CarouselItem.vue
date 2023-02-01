@@ -53,7 +53,7 @@ export default {
         <a href="#">
           <img
             :alt="'carousel image' + slideNum"
-            :src="require(`~/assets/images/test/${slideNum}.jpg`)"
+            :src="require(`~/assets/images/test/${slideNum}.webp`)"
           />
           <div>
             <h3><span> {{ quotes[slideNum - 1].im }} </span> {{ quotes[slideNum - 1].quote }} </h3>

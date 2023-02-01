@@ -10,6 +10,7 @@ $bg: url(assets/images/background/bg.jpg)
   --primary-color-lighten: #FF796BE1
   --primary-color-lighten-static: #FF7768
   --box-shadow-1: rgba(0, 0, 0, 0.1)
+  --box-shadow-15: rgba(0, 0, 0, 0.15)
   --box-shadow-2: rgba(0, 0, 0, 0.2)
   --box-shadow-3: rgba(0, 0, 0, 0.3)
   --box-shadow-4: rgba(0, 0, 0, 0.4)
@@ -55,6 +56,7 @@ $bg: url(assets/images/background/bg.jpg)
   --primary-color: #FFFFFF
   --primary-color-lighter: #FFFFFFD6
   --box-shadow-1: rgba(255, 255, 255, 0.1)
+  --box-shadow-15: rgba(255, 255, 255, 0.15)
   --box-shadow-2: rgba(255, 255, 255, 0.2)
   --box-shadow-3: rgba(255, 255, 255, 0.3)
   --box-shadow-4: rgba(255, 255, 255, 0.4)
@@ -84,7 +86,7 @@ $bg: url(assets/images/background/bg.jpg)
   header img
     filter: invert(50%) brightness(2)
   .bg .img
-    filter: invert(0)
+    filter: invert(0) opacity(1)
   .author-profile div .fa-location-dot
     color: var(--primary-color-lighten)
   .hd-i-w
@@ -104,6 +106,17 @@ $bg: url(assets/images/background/bg.jpg)
       text-shadow: 0 0 12px var(--tag-bg2-c)
     .hby-box
       filter: drop-shadow(0px 0px 2px var(--tag-bg2-c))
+  .pg-search .search-item mark
+    background: var(--orange)
+  .post-wrapper .nuxt-content-container
+    blockquote p
+      border-left: 3px solid #181818
+      background: #3C3C3CCf
+    pre[class*="language-"]
+      background: rgb(16, 16, 16)
+      text-shadow: 0 .032rem
+      .token.unit
+        color: var(--tag-text-c)
 
 
 *, *::before, *::after
@@ -181,7 +194,7 @@ body
     opacity: .27
     background: $bg 15%
     background-size: cover
-    filter: invert(100%)
+    filter: invert(100%) opacity(0.75)
 
 main
   @include d-flex-c(row, space-between, flex-start)
@@ -233,8 +246,8 @@ main
       transform: translateY(0)
 
   .mixx
-    position: -webkit-sticky
-    position: sticky
+    // position: -webkit-sticky
+    // position: sticky
     order: 3
     margin-left: 1.3rem
     width: 250px
@@ -345,9 +358,8 @@ footer
     &:hover
       background-size: 100% 40%
 
-.wpx-45
-  width: 45px
-  min-width: 45px
+.custom-mw1
+  min-width: 6.438rem
 
 .v-application--wrap
   min-height: 0 !important
@@ -358,3 +370,8 @@ footer
 .v-application .primary--text
   color: var(--tag-bg1-c) !important
   caret-color: var(--tag-bg1-c) !important
+
+@media (min-width: 576px)
+  .col-sm-4
+      flex: 0 0 33.333333%
+      max-width: 33.333333%

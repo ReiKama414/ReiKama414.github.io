@@ -27,6 +27,7 @@
         a
             white-space: nowrap
             color: var(--text-color-darken)
+            text-underline-offset: 2px
         .arc-title
             @include font(700, 1.25rem, 1.45)
             overflow: hidden
@@ -54,7 +55,7 @@
             text-align: left
             flex: 1
             margin: .75rem 0 .55rem
-            min-height: 35px
+            min-height: 38px
         .arc-tagslist
             @include d-flex-c(row, flex-end)
             @include font(400, .75rem, 1.25)
@@ -84,10 +85,11 @@
         .imgWpr
             @include transition(filter var(--delay-time))
             aspect-ratio: 9/12
-            filter: brightness(.7) saturate(1.8) contrast(.9)
+            // filter: brightness(0.85) saturate(1.8) contrast(1.2)
             img
                 @include size(100%)
                 object-fit: cover
+                object-position: 5%
             &:hover
                 filter: brightness(.95) saturate(1.4) contrast(.9)
         .textCntent
@@ -121,6 +123,7 @@
                     content: '→'
                     position: absolute
                     transform: translateX(.26rem)
+                    text-decoration: none
                 &:hover
                     color: var(--primary-color-lighten)
                     text-decoration-color: var(--primary-color-lighten)
@@ -133,7 +136,7 @@
                 color: var(--type-c)
                 border-radius: var(--br)
             h3
-                font-size: 1.6rem
+                font-size: 1.45rem
             p
                 @include transition((opacity var(--delay-time), max-height .35s ease-in-out))
                 opacity: 0
@@ -151,6 +154,8 @@ $typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "type
 .area-tf ~ .works-wrapper > .area-wks
     @include transition(all .75s)
     transform-origin: top
+    flex: 0 0 33.333333%
+    max-width: 33.333333%
 
 @each $t, $c in $typelist
     .works-wrapper .wks-card .textCntent span[data-tgflt=#{$t}]
@@ -170,7 +175,7 @@ $typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "type
 .area-tf
     letter-spacing: .035rem
     h3
-        @include font(700, 1.8rem, 1.4)
+        @include font(700, 1.75rem, 1.4)
         color: var(--text-color-darken)
     p
         font-size: .85rem
@@ -192,6 +197,11 @@ $typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "type
         filter: saturate(2.25) hue-rotate(-13deg)
 
 .rscp-card
+    margin-bottom: 2.75rem
+    padding-right: 15px
+    padding-left: 15px
+    flex: 0 0 33.333333%
+    max-width: 33.333333%
     .post-img
         overflow: hidden
         aspect-ratio: 5/3
@@ -218,8 +228,12 @@ $typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "type
                     color: var(--text-color-white)
                     background: var(--tag-bg1-c)
         h3
-            font-size: 1.45rem
+            font-size: 1.3rem
             a
+                display: -webkit-box
+                -webkit-box-orient: vertical
+                -webkit-line-clamp: 2
+                overflow: hidden
                 @include transition(color var(--delay-time))
                 color: var(--text-color-darken)
                 &:hover
@@ -229,6 +243,7 @@ $typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "type
             -webkit-box-orient: vertical
             -webkit-line-clamp: 2
             overflow: hidden
+            height: 3em
             color: var(--text-color-lighter)
         > div:last-of-type
             > div
@@ -242,7 +257,44 @@ $typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "type
                 &:hover
                     opacity: .65
 
+@include keyframes(fade-in)
+    from 
+        opacity: 0
+        transform: translateY(-2rem)
+    to
+        opacity: 1
+        transform: translateY(0)
+@include keyframes(fade-out)
+    from
+        opacity: 1
+        transform: translateY(0)
+    to
+        opacity: 0
+        transform: translateY(-2rem)
+
+%inputSetting
+    @include size(1.25rem)
+    position: relative
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    appearance: none
+    margin-right: .25rem
+    border: 2px solid var(--text-color-white)
+    transform: translateY(.25rem)
+    &::before
+        @include transition(transform var(--delay-time))
+        @include size(.625rem)
+        content: ''
+        position: absolute
+        transform: scale(0)
+        box-shadow: inset 1em 1em var(--tag-bg1-c)
+    &:checked::before
+        transform: scale(1) 
+
 .pg-search
+    max-width: 50rem
+    margin: auto
     .filterWrp
         margin: 1.25rem 2rem 2.5rem
         padding: 1rem
@@ -264,7 +316,7 @@ $typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "type
                 opacity: 1
         .ftbtnWrp
             position: relative
-            margin-left: .75rem
+            margin-right: .75rem
             width: 32px
             transform: scale(.85)
             button
@@ -339,73 +391,134 @@ $typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "type
         padding: .1rem 0 0
         &:hover
             transform: rotate(270deg) translateX(-2px)
+    .resultsCounter
+        font-size: .75rem
+        transform: translateY(-5px)
+        span
+            color: var(--text-color-lighter)
+        b
+            color: var(--text-color-darken)
     article > p.mb-0.p-2
         font-size: .9rem
+        cursor: pointer
+        span
+            color: cadetblue
+            animation: fade-in .45s
+            svg
+                @include transition(transform var(--delay-time))
+            &.inverse svg
+                transform: rotateY(180deg) rotateZ(180deg)
     .search-item
         padding: .3rem .25rem
         font-size: .9rem
         border-top: 1px solid var(--c-divider)
-        a
+        div.header
+            display: inline-flex
+            a
+                overflow: hidden
+                text-overflow: ellipsis
+                white-space: nowrap
+                color: var(--primary-color-lighter)
+                &:hover
+                    color: var(--primary-color-lighten)
+            div, span
+                white-space: nowrap
+        div.content
+            white-space: normal
             overflow: hidden
             text-overflow: ellipsis
-            white-space: nowrap
-            color: var(--primary-color-lighter)
-            &:hover
-                color: var(--primary-color-lighten)
-        div, span
-            white-space: nowrap
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            padding: 0 .25rem
+            font-size: .85rem
+        mark
+            padding: 0
+            background: yellow
     .filterSHWrp
         padding: .85rem 1.25rem
         background: var(--module-bg3)
         border-radius: 1rem
         // box-shadow: var(--box-shadow-2) 0px 10px 20px, var(--box-shadow-3) 0px 6px 6px
         box-shadow: var(--box-shadow-1) 0px 0px 0px 12px, var(--box-shadow-1) 0px 0px 0px 5px
-        .theme--light.v-application
-            margin: 1rem auto
-            max-width: 37.5rem
-        .v-list-item__content
-            text-align: left
-        .v-text-field .v-label:not(.v-label--active)
-            top: 12px
-        .v-application--is-ltr .v-list-item__action:first-child
-            margin: .75rem 1rem .75rem 0
-        .theme--light.v-label,
-        .v-icon.v-icon
-            color: var(--text-color-white)
-        .theme--light.v-label
-            font-weight: 700
-        .theme--light.v-text-field > .v-input__control > .v-input__slot:before
-            border-color: var(--text-color-white)
-        .v-application--is-ltr .v-text-field .v-input__append-inner,
-        .v-select.v-select--chips .v-select__selections
-            padding: .45rem 0
-        .v-select.v-input--dense .v-chip
-            margin: .25rem
-            font-weight: 700
-        .theme--light.v-chip
-            @include transition(background var(--delay-time))
-            color: var(--text-color-white2)
-            background: #989FA4
-            &.v-chip--active,
-            &:hover
+        .v-application
+            &.theme--light
+                margin: .875rem auto
+                max-width: 37.5rem
+            .v-list-item__content
+                text-align: left
+            .v-text-field .v-label:not(.v-label--active)
+                top: 12px
+            &.v-application--is-ltr .v-list-item__action:first-child
+                margin: .75rem 1rem .75rem 0
+            .theme--light.v-label,
+            .v-icon.v-icon
+                color: var(--text-color-white)
+            .theme--light.v-label
+                font-weight: 700
+            .theme--light.v-text-field > .v-input__control > .v-input__slot:before
+                border-color: var(--text-color-white)
+            &.v-application--is-ltr .v-text-field .v-input__append-inner,
+            .v-select.v-select--chips .v-select__selections
+                padding: .45rem 0
+            .v-select.v-input--dense .v-chip
+                margin: .25rem
+                font-weight: 700
+            .theme--light.v-chip
+                @include transition(background var(--delay-time))
+                color: var(--text-color-white2)
+                background: #989FA4
+                &.v-chip--active,
+                &:hover
+                    background: black
+            .v-input--is-focused .theme--light.v-chip
                 background: black
-        .v-input--is-focused .theme--light.v-chip
-            background: black
-        .theme--light.v-list
-            padding: 0
-            background: var(--module-bg4)
-        .v-list-item:not(.v-list-item--active) .v-list-item__title
-            color: var(--text-color)
-        .v-input
-            margin: .45rem 0
-    &:not(.FTshow)
+            .theme--light.v-list
+                padding: 0
+                background: var(--module-bg4)
+            .v-list-item:not(.v-list-item--active) .v-list-item__title
+                color: var(--text-color)
+            .v-input
+                margin: .45rem 0
+        fieldset
+            font-family: "Roboto", sans-serif
+            margin: .875rem auto
+            max-width: 37.5rem
+            color: var(--text-color-white)
+            legend
+                @include font(700, 1rem, 1.25rem)
+                transform: scale(0.75)
+                transform-origin: top left
+            label
+                @include font(700, .875rem, 1.25rem)
+                white-space: nowrap
+                margin-right: 1rem
+            input
+                cursor: pointer
+            input[type="radio"]
+                @extend %inputSetting
+                border-radius: 50%
+                &::before
+                    border-radius: 50%
+            input[type="checkbox"]
+                @extend %inputSetting
+                border-radius: 2px
+                &::before
+                    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%)
+    &.FThide
         .filterSHWrp
             overflow: hidden
-            margin: 0 !important
+            margin-top: 0 !important
+            margin-bottom: 0 !important
             padding: 0
             height: 0
             box-shadow: none
+            animation: fade-out .45s
+            transition-delay: .05s
+            transition-duration: .25s
     &.FTshow
+        .filterSHWrp
+            animation: fade-in .45s
         .filterSHBtn
             transform: rotate(90deg) translateX(2px)
     .nonequery
@@ -430,7 +543,42 @@ $typelist: ("typewebnn": #FDCD5B, "typeweb": #FFA1A9, "typeinfo": #A2D171, "type
             max-height: 15rem
             object-fit: contain
 
+.v-pagination.theme--light
+    .v-pagination__item,
+    .v-pagination__more
+        @include font(700, .85rem, 1.2)
+        color: var(--text-color-darken)
+        background-color: transparent !important
+    .v-pagination__item
+        box-shadow: 0px -2px 1px -2px var(--box-shadow-3), 0px 2px 2px 0px var(--box-shadow-2), 0px 1px 5px 0px var(--box-shadow-1)
+        &:not(.v-pagination__item--active):hover
+            opacity: .85
+            color: var(--c-wb)
+            background-color: var(--primary-color-lighten) !important
+    .v-pagination__item--active
+        color: var(--c-wb)
+        background-color: var(--tag-bg1-c) !important
+    .v-pagination__navigation
+        background-color: transparent
+        .v-icon
+            color: var(--text-color-darken)
+        &:hover
+            background-color: var(--text-color-darken)
+            .v-icon
+                color: var(--c-wb)
+
+    
+
+@media (max-width: 991.98px)
+    .area-tf ~ .works-wrapper > .area-wks,
+    .rscp-card
+        flex: 0 0 50%
+        max-width: 50%
 @media (max-width: 575.98px)
+    .area-tf ~ .works-wrapper > .area-wks,
+    .rscp-card
+        flex: 0 0 100%
+        max-width: 100%
     .arc-card
         flex-wrap: wrap
         .arc-img

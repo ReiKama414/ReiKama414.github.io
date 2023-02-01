@@ -3,7 +3,7 @@ import moment from 'moment';
 export default {
   data() {
     return {
-      skill_Proficiency: ["HTML5", "Css3", "RWD", "Sass", "Less", "Bootstrap", "TailwindCSS", "Javascript", "jQuery", "Node.js", "Vue.js", "AJAX", "Json", "Python", "ASP.NET", "Git", "Markdown", "App Inventor"],
+      skill_Proficiency: ["HTML5", "Css3", "RWD", "Sass", "Less", "Bootstrap", "BootstrapVue", "TailwindCSS", "Vuetify", "Javascript", "jQuery", "Node.js", "Vue.js", "NuxtJS", "AJAX", "Json", "Python", "ASP.NET", "Git", "Markdown", "App Inventor"],
       skill_Familiarity: ["Swift", "Java", "C", "C++", "CSharp", "Unity2D", "Django", "VB.NET", "Flask", "PHP", "PostCss", "MaterializeCSS", "React.js", "TypeScript"],
       skill_Tools: ["VSCode", "VisualStudio2017_2019_2022", "Anaconda", "Notepad++", "PyCharm", "colab", "Xcode", "Android (Android Studio)", "Sourcetree", "GitHub", "GitHubPages", "Heroku", "Trello", "WinSCP", "Proteus", "Arduino", "Raspberry Pi"],
       skill_Database: ["MSSQL", "MySQL", "GoogleSheets", "MongoDB", "PostgreSQL"],
@@ -22,7 +22,7 @@ export default {
       ],
       wkeList: [
         {
-            img: "company-taipay.gif",
+            img: "company-taipay.webp",
             title: "Front-end developer",
             jobname: "台景達金融科技股份有限公司",
             begindate: "2022/6",
@@ -38,7 +38,7 @@ export default {
             ],
             skills: ["JavaScript", "HTML", "Sass/Scss", "Css", "ajax", "API", "ASP.NET", "C#", "Git"],
         }, {
-            img: "company-stust.png",
+            img: "company-stust.webp",
             title: "Teaching Assistant (TA)",
             jobname: "南臺學校財團法人南臺科技大學",
             begindate: "2021/9",
@@ -50,11 +50,11 @@ export default {
                 "文書處理、簡報製作",
                 "跑公文及協助教授出課後習題",
                 "批改學生作業、監考與成績資料輸入",
-                "指導課堂及課後討論教材內容及進行問題解答",
+                "指導課堂及課後討論教材內容並進行問題解答",
             ],
             skills: ["規劃與執行教學活動", "文書處理╱排版能力", "文件或資料輸入建檔處理", "設計規劃教材及教具"],
         }, {
-            img: "company-moli.png",
+            img: "company-moli.webp",
             title: "Part-time worker",
             jobname: "魔力牛牛排館",
             begindate: "2019/6",
@@ -73,6 +73,20 @@ export default {
       ],
       todaytime: moment().format("YYYY-MM"),
       state_readmore: false,
+    };
+  },
+  head() {
+    return {
+      title: `${this.$i18n.t('about')} | Kama's Blog`,
+      htmlAttrs: {
+        lang: this.$i18n.t('localeSetting'),
+      },
+      meta: [
+        { hid: 'description', name: 'description', content: this.$i18n.t('indexmd') },
+        { property: 'og:title', content: `${this.$i18n.t('about')} | Kama's Blog` },
+        { property: 'og:description', content: this.$i18n.t('indexmd') },
+        { property: 'og:locale', content: this.$i18n.t('localeSetting') }
+      ],
     };
   },
   methods: {
@@ -239,31 +253,46 @@ export default {
                         <h5 class="mb-3"><span>Proficiency</span></h5>
                         <div class="d-flex flex-wrap mb-4">
                             <div v-for="(sn, index) in skill_Proficiency" :key="index" class="skill-item">
-                                <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                <picture>
+                                    <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
+                                    <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                </picture>
                             </div>
                         </div>
                         <h5 class="mb-3"><span>Familiarity</span></h5>
                         <div class="d-flex flex-wrap mb-4">
                             <div v-for="(sn, index) in skill_Familiarity" :key="index" class="skill-item">
-                                <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                <picture>
+                                    <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
+                                    <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                </picture>
                             </div>
                         </div>
                         <h5 class="mb-3"><span>Tools</span></h5>
                         <div class="d-flex flex-wrap mb-3">
                             <div v-for="(sn, index) in skill_Tools" :key="index" class="skill-item">
-                                <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                <picture>
+                                    <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
+                                    <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                </picture>
                             </div>
                         </div>
                         <h3 class="mb-3">Database</h3>
                         <div class="d-flex flex-wrap justify-content-center mb-3">
                             <div v-for="(sn, index) in skill_Database" :key="index" class="skill-item">
-                                <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                <picture>
+                                    <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
+                                    <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                </picture>
                             </div>
                         </div>
                         <h3 class="mb-3">Office Application</h3>
                         <div class="d-flex flex-wrap justify-content-center mb-3">
                             <div v-for="(sn, index) in skill_Office" :key="index" class="skill-item">
-                                <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                <picture>
+                                    <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
+                                    <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -275,7 +304,7 @@ export default {
             </div>
             <div class="d-flex flex-wrap justify-content-center">
                 <div class="d-inline-flex flex-wrap justify-content-center col-10 px-2 mt-3">
-                    <div v-for="hobby of hobbies" :key="hobby" class="hby-box m-2">
+                    <div v-for="(hobby, index) of hobbies" :key="index" class="hby-box m-2">
                         <fa :icon="['fa-solid', hobby.icon]" :title="hobby.title" />
                     </div>
                 </div>
@@ -331,11 +360,11 @@ export default {
                                   {{ wkei.content }}
                                 </div>
                                 <ul class="mb-2">
-                                    <li v-for="ci of wkei.contentlist" :key="ci">{{ ci }}</li>
+                                    <li v-for="ci of wkei.contentlist" :key="wkei.contentlist.indexOf(ci)">{{ ci }}</li>
                                 </ul>
                             </div>
                             <span v-if="wkei.skills.length != 0">Skills：
-                                <em v-for="skill of wkei.skills" :key="skill">{{ skill }} , </em>
+                                <em v-for="skill of wkei.skills" :key="wkei.skills.indexOf(skill)">{{ skill }} , </em>
                                 etc.
                             </span>
                         </div>

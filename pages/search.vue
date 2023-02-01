@@ -4,25 +4,43 @@ export default {
   data() {
     return {
       posts: [],
-      queryText: '',
-      searchQuery: null,
+      searchQuery: '',
       toolsJg: false,
       tagsList: [],
       tagsSelected: '',
-      categoryList: ['all', 'tech', 'daily', 'work', 'resource'],
+      categoryList: ['all', 'tech', 'daily', 'portfolio', 'resource'],
       categorySelected: 'all',
+      ctbList: ['rangea', 'ranget', 'ranged', 'ranget+d'],
       memeList: [],
-      memeGifLength: 3,
-      memePngLength: 7,
-      memeRd: 'meme1.gif',
+      memeState: true,
+      memeGifLength: 6,
+      memePngLength: 15,
+      sortType: 'createdAt',
+      isReverse: false,
+      showcontentTB: "ranget+d",
+      showdescription: true,
+      page: 1,
+      pageSize: 7,
+      startIndex: 0,
+      endIndex: 7, // same as pageSize
     };
   },
   async fetch() {
-    this.posts = await this
-      .$content('', { deep: true })
-      .only(['title', 'category', 'tags', 'slug', 'createdAt', 'body'])
-      .sortBy('createdAt', 'desc')
-      .fetch();
+    if (this.categorySelected === 'all') {
+      this.posts = await this
+        .$content('', { deep: true })
+        .only(['title', 'category', 'tags', 'slug', 'createdAt', 'body', 'description'])
+        .sortBy('createdAt', 'desc')
+        .search(this.searchQuery)
+        .fetch();
+    } else {
+      this.posts = await this
+        .$content(this.categorySelected)
+        .only(['title', 'category', 'tags', 'slug', 'createdAt', 'body', 'description'])
+        .sortBy('createdAt', 'desc')
+        .search(this.searchQuery)
+        .fetch();
+    }
     const tl = [];
     this.posts.forEach(function(post) {
       post.tags.forEach(function(pt) {
@@ -30,34 +48,108 @@ export default {
       });
     });
     this.tagsList = [...new Set(tl)];
+    this.tagsSelected = '';
+  },
+  head() {
+    return {
+      title: this.searchQuery ? `${this.$i18n.t('searchresultsforUP')} ${this.searchQuery} ${this.$i18n.t('searchresultsforDN')} | Kama's Blog` : `${this.$i18n.t('search')} | Kama's Blog`,
+      htmlAttrs: {
+        lang: this.$i18n.t('localeSetting'),
+      },
+      meta: [
+        { hid: 'description', name: 'description', content: this.$i18n.t('indexmd') },
+        { property: 'og:title', content: this.searchQuery ? `${this.$i18n.t('searchresultsforUP')} ${this.searchQuery} ${this.$i18n.t('searchresultsforDN')} | Kama's Blog` : `${this.$i18n.t('search')} | Kama's Blog`, },
+        { property: 'og:description', content: this.$i18n.t('indexmd') },
+        { property: 'og:locale', content: this.$i18n.t('localeSetting') }
+      ],
+    };
   },
   computed: {
+    MemeRandom() {
+      if (!this.memeState) return;
+      this.ChangeState(false);
+      return this.memeList[Math.floor(Math.random() * this.memeList.length)];
+    },
     tagsAllCheck() {
       return this.tagsSelected.length === this.tagsList.length;
     },
     filteredPosts() {
-      if (!this.searchQuery || this.searchQuery === '') return this.posts;
-      
-      const strArr = this.searchQuery.split(' ');
-      const arr = [];
-      strArr.forEach((str) => {
-        this.posts.forEach((post) => {
-          const query = str.toLowerCase();
-          if (post.title.toLowerCase().includes(query)) {
-            arr.push(post);
-          };
-        });
-      });
-      return [...new Set(arr)];
+      let postsList = '';
+      if (!this.searchQuery || this.searchQuery === '') {
+        postsList = this.posts;
+      } else {
+        let Searchmode = null;
 
-      // return this.posts.filter(post => {
-      //   const query = this.searchQuery.toLowerCase();
-      //   return post.title.toLowerCase().includes(query);
-      // });
+        const strArr = this.searchQuery.split(' ');
+        const arr = [];
+        if (this.showcontentTB !== 'rangea') {
+          strArr.forEach((str) => {
+            this.posts.forEach((post) => {
+              const query = str.toLowerCase();
+              switch(this.showcontentTB) {
+                case 'ranget':
+                  Searchmode = post.title.toLowerCase().includes(query);
+                  break;
+                case 'ranged':
+                  Searchmode = post.description.toLowerCase().includes(query);
+                  break;
+                default:
+                  Searchmode = post.title.toLowerCase().includes(query) || post.description.toLowerCase().includes(query);
+                  break;
+              };
+              if (Searchmode) {
+                arr.push(post);
+              };
+            });
+          });
+          postsList = [...new Set(arr)];
+        } else {
+          postsList = this.posts;
+        };
+      };
+      if (this.tagsSelected.length > 0) {
+        const arr2 = [];
+        postsList.forEach((post) => {
+          const lower = post.tags.map(element => {
+            return element.toLowerCase();
+          });
+          if (this.tagsSelected.some(el => lower.includes(el))) {
+            arr2.push(post);
+          }
+          postsList = arr2;
+        });
+      };
+      if (postsList.length > 0) {
+        this.ChangeState(true);
+      }
+      return postsList;
     },
-    isEmpty () {
+    isEmpty() {
       return this.filteredPosts.length === 0;
     },
+    sortData() {
+      const type = this.sortType;
+      const state = this.isReverse;
+      const arr = this.filteredPosts.slice().sort(function(x, y) {
+        if (state) return x[type] < y[type] ? -1 : 1;
+        else return x[type] > y[type] ? -1 : 1;
+      });
+      return arr;
+    },
+    CountResult() {
+      return this.sortData.length;
+    },
+    pages() {
+      return Math.ceil(this.sortData.length / this.pageSize);
+    },
+    HistoryList() {
+      if (this.CountResult < this.pageSize) return this.sortData;
+      else return this.sortData.slice(this.startIndex, this.endIndex);
+    },
+  },
+  watch: {
+    categorySelected: '$fetch',
+    searchQuery: '$fetch',
   },
   mounted() {
     for (let i = 1; i <= this.memePngLength; i++) {
@@ -65,6 +157,9 @@ export default {
       if (i <= this.memeGifLength) {
         this.memeList.push(`meme${i}.gif`);
       }
+    };
+    if (this.$route.query.page) {
+      this.updatePage(Number(this.$route.query.page));
     };
   },
   methods: {
@@ -77,47 +172,55 @@ export default {
         else this.tagsSelected = this.tagsList.slice();
       });
     },
-    GetSearchValue() {
-      this.searchQuery = this.queryText;
-      this.MemeRandom();
-    },
     ClearSearchValue() {
-      this.queryText = '';
+      this.searchQuery = '';
     },
-    GobackSearchValue() {
-      this.searchQuery = this.queryText = '';
+    ChangeType(type) {
+      if (this.sortType === type) {
+        this.isReverse = !this.isReverse;
+      } else {
+        this.isReverse = false;
+      }
+      this.sortType = type;
     },
-    MemeRandom() {
-      this.memeRd = this.memeList[Math.floor(Math.random() * this.memeList.length)];
+    ChangeState(state) {
+      this.memeState = state;
+    },
+    updatePage(pageIndex) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      this.startIndex = (pageIndex - 1) * this.pageSize;
+      this.endIndex = pageIndex * this.pageSize;
+      this.page = pageIndex;
+      this.$router.push({ query: { page: this.page } });
     },
   },
 };
 </script>
 
 <template>
-  <div class="main pfl overflow-hidden pg-search" :class="{FTshow: toolsJg}">
-    <!-- <CatHeaderItem :imgsrc="'art8.jpg'" /> -->
+  <div class="main pfl overflow-hidden pg-search" :class="{FTshow: toolsJg, FThide: !toolsJg}">
+    <!-- <CatHeaderItem :imgsrc="'art8'" /> -->
 
     <div class="filterWrp">
-      <form @submit.prevent="GetSearchValue">
+      <div>
         <div class="d-flex w-100">
-          <div class="d-inline-flex flex-fill">
-            <input v-model.trim="queryText" type="text" autocomplete="off" placeholder="Search..." />
-          </div>
-          <button type="reset" class="cancelBtn" @click="ClearSearchValue">
-            <img alt="Filter Icon" src="~/assets/images/icons/icon-cancel.svg" />
-          </button>
           <div class="ftbtnWrp d-inline-flex">
-            <button type="submit">
+            <button type="button">
               <div class="ftbtnIcon"></div>
               <span></span>
             </button>
           </div>
+          <div class="d-inline-flex flex-fill">
+            <input v-model.trim="searchQuery" type="text" autocomplete="off" placeholder="Search..." />
+          </div>
+          <button type="reset" class="cancelBtn" @click="ClearSearchValue">
+            <img alt="Filter Icon" src="~/assets/images/icons/icon-cancel.svg" />
+          </button>
           <button type="button" class="filterSHBtn" @click="ToolsToggle">
             <img alt="Filter Icon" src="~/assets/images/icons/icon-filter.svg" />
           </button> 
         </div>
-      </form>
+      </div>
     </div>
 
     <div class="filterSHWrp m-4">
@@ -130,7 +233,7 @@ export default {
           dense
         >
           <template #item="{ item, attrs, on }">
-            <v-list-item v-bind="attrs" v-on="on">
+            <v-list-item v-bind="attrs" v-on="on" @click="updatePage(1)">
               <v-list-item-content>
                 <v-list-item-title>
                   {{ $t(item) }}
@@ -169,7 +272,7 @@ export default {
             <v-divider class="m-0"></v-divider>
           </template>
           <template #item="{ item, attrs, on }">
-            <v-list-item v-slot="{ active }" v-bind="attrs" v-on="on">
+            <v-list-item v-slot="{ active }" v-bind="attrs" v-on="on" @click="updatePage(1)">
               <v-list-item-action>
                 <v-checkbox :ripple="false" :input-value="active"></v-checkbox>
               </v-list-item-action>
@@ -193,40 +296,94 @@ export default {
           </template>
         </v-select>
       </v-app>
-      {{ searchQuery }}
-      {{ queryText }}
-      {{ categorySelected }}
-      {{ tagsSelected }}
+
+      <fieldset class="d-flex flex-wrap text-left mt-4">
+        <label v-for="(ctb, index) of ctbList" :key="index">
+          <input v-model="showcontentTB" type="radio" :value="ctb" @click="updatePage(1)">
+          {{ $t(ctb) }}
+        </label>
+        <legend>{{ $t('searchrange') }}</legend>
+      </fieldset>
+      
+      <fieldset class="d-flex flex-wrap text-left">
+        <label>
+            <input v-model="showdescription" type="checkbox">
+            {{ $t('description') }}
+        </label>
+        <legend>{{ $t('display') }}</legend>
+      </fieldset>
     </div>
 
     <div class="al card-widget px-3 py-4 mx-3">
       <div v-if="isEmpty" class="nonequery text-left p-3">
-        <p>Your search "
+        <p>{{ $t('nonesamtc1') }}
           <b>
-            {{searchQuery}}
+            {{ searchQuery }}
           </b>
-          " did not match any documents. Search suggestions:
+          {{ $t('nonesamtc2') }}
         </p>
         <ul>
-          <li><span>Make sure all words are spelled correctly.</span></li>
-          <li><span>Try different keywords.</span></li>
-          <li><span>Try more general keywords.</span></li>
+          <li><span>{{ $t('nonesamtc3') }}</span></li>
+          <li><span>{{ $t('nonesamtc4') }}</span></li>
+          <li><span>{{ $t('nonesamtc5') }}</span></li>
         </ul>
-        <p>Or you just want to see this sentence ...</p>
-        <h5 class="text-center font-weight-bold">No results match that query !!!</h5>
+        <p>{{ $t('nonesamtc6') }}</p>
+        <h5 class="text-center font-weight-bold">{{ $t('noresultsmtcq') }}</h5>
         <h5 class="text-center font-weight-bold">¯\_(ツ)_/¯</h5>
-        <div class="w-100 text-center my-4">
-          <img alt="no way" :src="require('~/assets/images/fun/' + memeRd)" />
+        <div v-if="MemeRandom" class="w-100 text-center my-4">
+          <img alt="no way" :src="require('~/assets/images/fun/' + MemeRandom)" />
         </div>
         <hr />
-        <button @click="GobackSearchValue"><span>Go back</span></button>
+        <button @click="ClearSearchValue"><span>{{ $t('goback') }}</span></button>
       </div>
-      <article v-else class="d-flex justify-content-between">
-        <p class="mb-0 p-2 wpx-45">編號</p>
-        <p class="mb-0 p-2 flex-fill text-left">標題</p>
-        <p class="mb-0 p-2">日期</p>
+      <article v-else class="d-flex flex-wrap justify-content-between">
+        <div class="resultsCounter col-12 text-left px-2">
+          <span v-if="!searchQuery">{{ $t('totalofarticlesUP') }} {{ CountResult }} {{ $t('totalofarticlesDN') }}</span>
+          <span v-else>
+            <span v-if="$i18n.locale === 'en'">
+              About
+              <span v-if="CountResult > 1">
+                {{ startIndex + 1 }}-<span v-if="endIndex <= CountResult">{{ endIndex }}</span><span v-else>{{ CountResult }}</span> of
+              </span>
+              {{ CountResult }}
+              result<span v-if="CountResult > 1">s</span> for "<b>{{ searchQuery }}</b>"
+            </span>
+            <span v-else>
+              {{ $t('nonesamtc7') }}<b>{{ searchQuery }}</b>{{ $t('nonesamtc8') }} {{ CountResult }} <span v-if="CountResult > 1">{{ $t('nonesamtc9') }} {{ startIndex + 1 }} ~ <span v-if="endIndex <= CountResult">{{ endIndex }}</span><span v-else>{{ CountResult }}</span></span>
+              {{ $t('nonesamtc10') }}
+            </span>
+          </span>
+        </div>
+        <!-- <p class="mb-0 p-2 wpx-45">
+          編號
+        </p> -->
+        <p class="mb-0 p-2 flex-fill text-left" @click="ChangeType('title')">
+          {{ $t('title') }}
+          <span v-if="sortType === 'title'" :class="{'inverse': isReverse}">
+            <fa :icon="['fa-solid', 'arrow-up-wide-short']" />
+            <!-- <fa v-else :icon="['fa-solid', 'arrow-up-z-a']" class="ml-1" /> -->
+          </span>
+        </p>
+        <p class="mb-0 p-2 custom-mw1 text-right" @click="ChangeType('createdAt')">
+          <span v-if="sortType === 'createdAt'" :class="{'inverse': isReverse}">
+            <fa :icon="['fa-solid', 'arrow-up-wide-short']" />
+            <!-- <fa v-else :icon="['fa-solid', 'arrow-up-9-1']" class="ml-1" /> -->
+          </span>
+          {{ $t('date') }}
+        </p>
       </article>
-      <SearchItem v-for="(post, index) of filteredPosts" :key="index" :post="post" :index="posts.length - index" :keyword="searchQuery"></SearchItem>
+      <SearchItem v-for="(post, index) of HistoryList" :key="index" :post="post" :keyword="searchQuery" :showd="showdescription" :searchrange="showcontentTB"></SearchItem>
+      <v-app v-if="CountResult > pageSize" class="mt-3">
+        <v-pagination
+          v-model="page"
+          :length="pages"
+          :total-visible="7"
+          circle
+          prev-icon="mdi-arrow-left"
+          next-icon="mdi-arrow-right"
+          @input="updatePage"
+        ></v-pagination>
+      </v-app>
     </div>
   </div>
 </template>

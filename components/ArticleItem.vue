@@ -37,7 +37,9 @@ export default {
 <template>
   <article class="arc-card card-widget d-flex">
     <div class="col-12 col-sm-4 arc-img">
-      <img alt="Title img" :src="require(`~/assets/images/blog/${post.image}`)" />
+      <picture>
+        <img alt="Title img" :src="require(`~/assets/images/blog/${post.image}`)" />
+      </picture>
     </div>
     <div class="col-12 col-sm-8 arc-content p-3">
       <h2 class="arc-title">
@@ -62,10 +64,10 @@ export default {
       </div>
       <div class="arc-tagslist">
         <span v-for="tag of post.tags" :key="tag" class="ml-2">
-          <NuxtLink v-if="$te(tag)" :to="localePath(`/tags/${tag.toLowerCase()}`)">
+          <NuxtLink v-if="$te(tag)" :to="localePath(`/tags/${tag.toLowerCase()}`)" class="ud">
             #{{ $t(`${tag}`) }}
           </NuxtLink>
-          <NuxtLink v-else :to="localePath(`/tags/${tag.toLowerCase()}`)">
+          <NuxtLink v-else :to="localePath(`/tags/${tag.toLowerCase()}`)" class="ud">
             #{{ tag }}
           </NuxtLink>
         </span>

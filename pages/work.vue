@@ -7,6 +7,7 @@ export default {
       tagFilter: "all",
       tagList: {},
       tagName: [],
+      loadState: true,
     };
   },
   async fetch() {
@@ -31,14 +32,39 @@ export default {
     }, {});
     this.tagList = obj;
   },
+  head() {
+    return {
+      title: `${this.$i18n.t('work')} | Kama's Blog`,
+      htmlAttrs: {
+        lang: this.$i18n.t('localeSetting'),
+      },
+      meta: [
+        { hid: 'description', name: 'description', content: this.$i18n.t('indexmd') },
+        { property: 'og:title', content: `${this.$i18n.t('work')} | Kama's Blog` },
+        { property: 'og:description', content: this.$i18n.t('indexmd') },
+        { property: 'og:locale', content: this.$i18n.t('localeSetting') }
+      ],
+    };
+  },
+  mounted() {
+    this.$nextTick(() => {
+      setTimeout(() => {
+          this.loadState = false;
+      }, 2250);
+    });
+  },
 };
 </script>
 
 <template>
-  <div class="main pfl">
+  <div class="main pfl position-relative">
     <div class="hd-i-w"></div>
     <section :data-selected="tagFilter" class="area-tf mt-3">
-      <div v-if="tagFilter === 'all'">
+      <div v-if="loadState">
+        <h3 class="mx-auto"></h3>
+        <p class="mx-auto"></p>
+      </div>
+      <div v-else-if="tagFilter === 'all'">
         <h3>
           {{ $t("portfolio") }}
         </h3>
@@ -56,14 +82,14 @@ export default {
       </div>
 
       <fieldset class="px-3 mb-5 mt-3">
-        <div class="d-inline-block">
+        <div class="d-inline-block" :class="{skeleton: loadState}">
           <input id="tagsChoice1" v-model="tagFilter" type="radio" name="tagsChoice" value="all">
           <label for="tagsChoice1" class="mx-1">
             {{ $t("all") }} ({{ Object.keys(tagList).length }})
           </label>
         </div>
 
-        <div v-for="(tn, index) of tagName" :key="index" class="d-inline-block">
+        <div v-for="(tn, index) of tagName" :key="index" class="d-inline-block" :class="{skeleton: loadState}">
           <input :id="`tagsChoice${index + 2}`" v-model="tagFilter" type="radio" name="tagsChoice" :value="tn">
           <label :for="`tagsChoice${index + 2}`" class="mx-1">
             {{ $t(`${tn}`) }}
@@ -74,7 +100,16 @@ export default {
       </fieldset>
     </section>
 
-    <div ref="wksc" class="works-wrapper d-flex flex-wrap">
+    
+    <div v-if="loadState" class="SkeletonPortfolio works-wrapper d-flex flex-wrap position-absolute w-100">
+      <div v-for="n in posts.length" :key="n" class="area-wks px-2">
+        <div class="wks-card p-0 card-widget">
+          <div class="imgWpr"></div>
+        </div>
+      </div>
+    </div>
+
+    <div ref="wksc" :class="{show: !loadState}" class="niam works-wrapper d-flex flex-wrap position-relative">
       <PortfolioItem v-for="(post, index) of posts" :key="index" :post="post"></PortfolioItem>
     </div>
   </div>

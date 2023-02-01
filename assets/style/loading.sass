@@ -1,0 +1,35 @@
+.ldiwp
+  position: fixed
+  display: flex
+  justify-content: center
+  align-items: center
+  inset: 0
+  background: #1D1E22
+  z-index: 10000
+  .progressbar
+    position: relative
+    margin: -20px 0 0 -100px
+    padding: 2px
+    width: 200px
+    height: 26px
+    background: rgba(186, 186, 186, 0.459)
+    border-radius: 10px
+    .loading
+      position: absolute
+      margin: 3px
+      top: 0
+      left: 0
+      width: calc(100% - 10px)
+      height: 20px
+      background: #171717
+      border-radius: 8px
+      transition: all .25s ease
+      animation: load 2.5s cubic-bezier(.04,.09,.07,.91)
+    .load
+      margin-top: -30px
+      color: #FFFFFF
+    @keyframes load
+      0%
+        width: 2%
+      10%
+        width: 10%

@@ -97,6 +97,24 @@ $imgdeg: 720deg
                     color: var(--text-color-darken)
                     &:hover
                         color: var(--tag-bg2-c)
+        > a:empty,
+        p:empty,
+        div h6:empty,
+        div div:empty
+            background: linear-gradient(120deg, #FFFFFF00 40%, #FFFFFF26 50%, #FFFFFF00 60%) var(--box-shadow-15)
+            background-size: 200% 100%
+            background-position-x: 160%
+            border-radius: var(--br)
+            animation: 1.6s Shine ease-in-out infinite
+        p:empty
+            @include size(4.375rem, 1.6em)
+        div h6:empty
+            @include size(100%, 1.5em)
+        div div:empty
+            @include size(2rem, 1.4em)
+        @keyframes Shine
+            to
+                background-position-x: -60%
 
 .tag_area
     .tags-item
@@ -131,9 +149,22 @@ $imgdeg: 720deg
                     &:last-of-type
                         background-color: var(--tag-bg2-c)
 
+.mixx > div > div.anchor
+    &.hide, &.show
+        opacity: 0
+        pointer-events: none
+    &.show
+        position: fixed
+        top: 5.4rem
+        width: 250px
+    &.fixed
+        &.hide, &.show
+            opacity: 1
+            pointer-events: auto
+
 .dot-widget
     @include transition(.15s)
-    @include d-flex-c(column, center, flex-start)
+    @include d-flex-c(column, flex-start, flex-start)
     padding: .45rem .85rem
     line-height: 1.7
     font-size: .8rem

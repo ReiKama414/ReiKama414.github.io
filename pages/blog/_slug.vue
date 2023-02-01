@@ -12,7 +12,7 @@ export default {
   async asyncData({ $content, params }) {
     const [prev, next] = await $content('', { deep: true })
       .only(['title', 'slug'])
-      .sortBy('slug', 'asc')
+      .sortBy('createdAt', 'asc')
       .surround(params.slug)
       .fetch()
     return {
@@ -37,6 +37,26 @@ export default {
         .fetch()
     )?.[0]
   },
+  head() {
+    return {
+      title: this.post ? `${this.post.title} | Kama's Blog` : 'Kama\'s Blog',
+      htmlAttrs: {
+        lang: this.$i18n.t('localeSetting'),
+      },
+      meta: [
+        { hid: 'description', name: 'description', content: this.post ? this.post.description : this.$i18n.t('indexmd') },
+        { property: 'og:title', content: this.post ? `${this.post.title} | Kama's Blog` : 'Kama\'s Blog' },
+        { property: 'og:description', content: this.post ? this.post.description : this.$i18n.t('indexmd') },
+        { property: 'og:locale', content: this.$i18n.t('localeSetting') }
+      ],
+    };
+  },
+  beforeMount () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   mounted() {
     this.host = window.location.host;
   },
@@ -58,6 +78,9 @@ export default {
     },
     LBclose() {
       this.sh = false;
+    },
+    handleScroll(e) {
+      slugEventBus.$emit("windowScrollY", window.scrollY);
     },
   },
 }
@@ -100,7 +123,7 @@ export default {
         </div>
         <p v-if="post.sourceimg2_n != 'Kama'" class="img-origin mt-1 mb-3">
           Photo by 
-          <a :href="post.sourceimg1_u" class="ud">
+          <a :href="post.sourceimg1_u" target="_blank" class="ud">
             {{ post.sourceimg1_n }}
           </a>
            on 
@@ -153,7 +176,7 @@ export default {
       </div>
     </div>
     <div class="prev-next d-flex flex-wrap">
-      <div class="col-12 col-xl-6">
+      <div class="col-12 col-custom-6">
         <NuxtLink v-if="prev" :to="localePath({ params: { slug: prev.slug } })">
           <div class="pn-item card-widget">
             <p class="mb-0 p-prev">←&ensp;{{ $t("previouspage") }}</p>
@@ -168,7 +191,7 @@ export default {
           </div>
         </div>
       </div>
-      <div class="col-12 col-xl-6">
+      <div class="col-12 col-custom-6">
         <NuxtLink v-if="next" :to="localePath({ params: { slug: next.slug } })">
           <div class="pn-item card-widget">
               <p class="mb-0 p-next">{{ $t("nextpage") }}&ensp;→</p>
