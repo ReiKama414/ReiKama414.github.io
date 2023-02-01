@@ -25,7 +25,7 @@ export default {
           <img :src="require(`~/assets/images/icons/icon-${ml.icon}`)" :alt="`${ml.title} menu icon`" />
           <span> {{ $t(`${ml.title}`) }} </span>
         </NuxtLink> -->
-        <a :href="`https://${host}/reikama/`">
+        <a :href="`https://reikama414.github.io/reikama/`">
           <img src="~/assets/images/icons/icon-home.svg" alt="home menu icon" />
           <span> {{ $t('home') }} </span>
         </a>
