@@ -183,12 +183,9 @@ export default {
           <div>
             <p class="mb-0">{{ formatDate(post.createdAt) }}</p>
             <h6 class="mb-1" :title="post.title">
-              <!-- <nuxt-link :to="localePath(`/blog/${post.slug}`)">
+              <nuxt-link :to="localePath(`/blog/${post.slug}`)">
                 {{ post.title }}
-              </nuxt-link> -->
-              <a :href="`https://${host}/reikama/blog/${post.slug}`">
-                  {{ post.title }} 
-              </a>
+              </nuxt-link>
             </h6>
             <span>
               <NuxtLink :to="localePath(`/${post.category}`)">
@@ -206,12 +203,9 @@ export default {
           <div>
             <p class="mb-0">{{ formatDate(postlist[(n - 1)].createdAt) }}</p>
             <h6 class="mb-1" :title="postlist[(n - 1)].title">
-              <!-- <nuxt-link :to="localePath(`/blog/${postlist[(n - 1)].slug}`)">
+              <nuxt-link :to="localePath(`/blog/${postlist[(n - 1)].slug}`)">
                 {{ postlist[(n - 1)].title }}
-              </nuxt-link> -->
-              <a :href="`https://${host}/reikama/blog/${postlist[(n - 1)].slug}`">
-                {{ postlist[(n - 1)].title }}
-              </a>
+              </nuxt-link>
             </h6>
             <span>
               <NuxtLink :to="localePath(`/${postlist[(n - 1)].category}`)">

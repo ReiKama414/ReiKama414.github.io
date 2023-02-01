@@ -31,12 +31,9 @@ export default {
         </NuxtLink>
       </div>
       <h3 class="font-weight-bold">
-        <!-- <nuxt-link :to="localePath(`/blog/${post.slug}`)" :title="post.title">
+        <nuxt-link :to="localePath(`/blog/${post.slug}`)" :title="post.title">
           {{ post.title }}
-        </nuxt-link> -->
-        <a :href="`https://${host}/reikama/blog/${post.slug}`" :title="post.title">
-            {{ post.title }} 
-        </a>
+        </nuxt-link>
       </h3>
       <p>{{ post.description }}</p>
       <div class="d-flex justify-content-between align-items-end">

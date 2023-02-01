@@ -42,14 +42,11 @@ export default {
   <article class="search-item d-flex justify-content-between flex-wrap">
     <!-- <span class="pl-1 pr-3 wpx-45">{{ index }}</span> -->
     <div class="col-12 mt-2 header">
-      <a :href="`https://${host}/reikama/blog/${post.slug}`" :title="post.title" class="flex-fill text-left">
-        <span v-if="searchrange !== 'ranged'" v-html="replaceKey(keyword, post.title)"></span>
-        <span v-else> {{ post.title }} </span>
-      </a>
-      <!-- <nuxt-link :to="localePath(`/blog/${post.slug}`)" :title="post.title" class="flex-fill text-left" >
+      <nuxt-link :to="localePath(`/blog/${post.slug}`)" :title="post.title" class="flex-fill text-left" >
+          <!-- {{ replaceKey(keyword, post.title) }} -->
           <span v-if="searchrange !== 'ranged'" v-html="replaceKey(keyword, post.title)"></span>
           <span v-else> {{ post.title }} </span>
-      </nuxt-link> -->
+      </nuxt-link>
       <div class="pl-2 custom-mw1">
           <fa :icon="['fa-solid', 'pen']" class="mr-1" />
           <span>{{ formatDate(post.createdAt) }}</span>

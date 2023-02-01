@@ -140,7 +140,7 @@ export default {
             <p>{{ post.title }}</p>
             <p>
               <a :href="$nuxt.$route.path" class="ud">
-                https://{{ host }}/reikama{{ $nuxt.$route.path }}
+                {{ host }}{{ $nuxt.$route.path }}
               </a>
             </p>
           </div>
@@ -177,22 +177,14 @@ export default {
     </div>
     <div class="prev-next d-flex flex-wrap">
       <div class="col-12 col-custom-6">
-        <!-- <NuxtLink v-if="prev" :to="localePath({ params: { slug: prev.slug } })">
+        <NuxtLink v-if="prev" :to="localePath({ params: { slug: prev.slug } })">
           <div class="pn-item card-widget">
             <p class="mb-0 p-prev">←&ensp;{{ $t("previouspage") }}</p>
             <div>
               {{ prev.title }}
             </div>
           </div>
-        </NuxtLink> -->
-        <a v-if="prev" :href="`https://${ host }/reikama${localePath({ params: { slug: prev.slug } })}`">
-          <div class="pn-item card-widget">
-            <p class="mb-0 p-prev">←&ensp;{{ $t("previouspage") }}</p>
-            <div>
-              {{ prev.title }}
-            </div>
-          </div>
-        </a>
+        </NuxtLink>
         <div v-else class="pn-item card-widget">
           <div>
             <span> {{ $t("startpage") }} </span>
@@ -200,22 +192,14 @@ export default {
         </div>
       </div>
       <div class="col-12 col-custom-6">
-        <!-- <NuxtLink v-if="next" :to="localePath({ params: { slug: next.slug } })">
+        <NuxtLink v-if="next" :to="localePath({ params: { slug: next.slug } })">
           <div class="pn-item card-widget">
               <p class="mb-0 p-next">{{ $t("nextpage") }}&ensp;→</p>
               <div>
                 {{ next.title }}
               </div>
           </div>
-        </NuxtLink> -->
-        <a v-if="next" :href="`https://${ host }/reikama${localePath({ params: { slug: next.slug } })}`">
-          <div class="pn-item card-widget">
-              <p class="mb-0 p-next">{{ $t("nextpage") }}&ensp;→</p>
-              <div>
-                {{ next.title }}
-              </div>
-          </div>
-        </a>
+        </NuxtLink>
         <div v-else class="pn-item card-widget">
           <div>
             <span> {{ $t("endpage") }} </span>
