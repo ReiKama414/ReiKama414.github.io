@@ -56,11 +56,13 @@ export default {
             if (document.hidden) {
                 this.documentTitle = document.title;
                 document.title = "I am watching you...";
-                document.querySelector("link[rel~='icon']").href = "/reikama/favicon2.ico";
+                // document.querySelector("link[rel~='icon']").href = "/reikama/favicon2.ico";
+                document.querySelector("link[rel~='icon']").href = "/favicon2.ico";
             }
             else {
                 document.title = this.documentTitle;
-                document.querySelector("link[rel~='icon']").href = "/reikama/favicon.ico";
+                // document.querySelector("link[rel~='icon']").href = "/reikama/favicon.ico";
+                document.querySelector("link[rel~='icon']").href = "/favicon.ico";
             }
             ;
         },
