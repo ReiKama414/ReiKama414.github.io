@@ -1,0 +1,28 @@
+<svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.pictogram_vier{fill:#E54D2E;}
+	.pictogram_een{fill:#F4D6B0;}
+	.pictogram_twee{fill:#F8AD89;}
+	.pictogram_zes{fill:#0C6667;}
+	.pictogram_vijf{fill:#01A59C;}
+	.pictogram_drie{fill:#F27261;}
+	.st0{fill:#F8AD89;}
+	.st1{fill:#E54D2E;}
+	.st2{fill:none;}
+	.st3{fill:#01A59C;}
+	.st4{fill:#008A74;}
+</style>
+<g>
+	<path class="pictogram_zes" d="M32,29c0,1.65-1.35,3-3,3H3c-1.65,0-3-1.35-3-3V3c0-1.65,1.35-3,3-3h26c1.65,0,3,1.35,3,3V29z"/>
+	<path class="pictogram_vijf" d="M29,0H16v6c0,0,6.166,0,6.246,0c0.769,0,1.538,0.292,2.121,0.875L31.493,14H29v18
+		c1.65,0,3-1.35,3-3V3C32,1.35,30.65,0,29,0z"/>
+	<path class="pictogram_twee" d="M3,14v18h12V14H3z M12,24H6v-6h6V24z"/>
+	<path class="pictogram_een" d="M15,14v18h3V21c0-1.65,1.35-3,3-3h2c1.65,0,3,1.35,3,3v11h3V14H15z"/>
+	<rect x="6" y="18" class="pictogram_vijf" width="6" height="6"/>
+	<path class="pictogram_drie" d="M22,6.023V6H10v0.023C9.315,6.079,8.646,6.354,8.125,6.875L1,14h9h3l7.125-7.125
+		C20.646,6.354,21.315,6.079,22,6.023z"/>
+	<path class="pictogram_vier" d="M26,21v11h-8V21c0-1.65,1.35-3,3-3h2C24.65,18,26,19.35,26,21z M24.368,6.875
+		C23.784,6.292,23.015,6,22.246,6s-1.538,0.292-2.121,0.875L13,14h18.493L24.368,6.875z"/>
+</g>
+</svg>

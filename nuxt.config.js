@@ -6,6 +6,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  router: {
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/reikama/dist/' : '/'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Kama\'s Blog',
