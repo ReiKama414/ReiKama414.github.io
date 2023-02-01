@@ -51,7 +51,7 @@ export default {
             {{ post.title }}
         </nuxt-link> -->
         <a :href="`https://${host}/blog/${post.slug}`" :title="post.title">
-            {{ post.title }}
+            {{ post.title }} 
         </a>
       </h2>
       <div class="arc-info d-flex">
