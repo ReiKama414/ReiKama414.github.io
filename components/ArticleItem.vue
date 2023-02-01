@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       today: moment().format("YYYY-MM-DD HH:MM"),
+      host: null,
     };
   },
   computed: {
@@ -31,6 +32,9 @@ export default {
       return moment(this.today).diff(this.post.createdAt, "minutes");
     },
   },
+  mounted() {
+    this.host = window.location.host;
+  },
 };
 </script>
 
@@ -43,9 +47,12 @@ export default {
     </div>
     <div class="col-12 col-sm-8 arc-content p-3">
       <h2 class="arc-title">
-        <nuxt-link :to="localePath(`/blog/${post.slug}`)" :title="post.title">
+        <!-- <nuxt-link :to="localePath(`/blog/${post.slug}`)" :title="post.title">
             {{ post.title }}
-        </nuxt-link>
+        </nuxt-link> -->
+        <a :href="`https://${host}/blog/${post.slug}`" :title="post.title">
+            {{ post.title }}
+        </a>
       </h2>
       <div class="arc-info d-flex">
         <p v-if="(Countyear > 0)">{{ Countyear }}{{ $t("timeyy") }}</p>
