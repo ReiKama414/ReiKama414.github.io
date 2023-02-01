@@ -3,7 +3,7 @@ export default {
   data() {
     return {
       menuList: [
-        { title: "home", icon: "home.svg", route: "/home" },
+        { title: "home", icon: "home.svg", route: "/" },
         { title: "tech", icon: "blog.svg", route: "/tech" },
         { title: "daily", icon: "daily.svg", route: "/daily" },
         { title: "tags", icon: "tags.svg", route: "/tag" },
@@ -20,12 +20,6 @@ export default {
 <template>
   <nav class="nl">
     <ul class="nb">
-      <li>
-        <NuxtLink :to="localePath('/')">
-          <img src="~/assets/images/icons/icon-home.svg" alt="home menu icon`" />
-          <span> {{ $t('home') }} </span>
-        </NuxtLink>
-      </li>
       <li v-for="(ml, index) in menuList" :key="index">
         <NuxtLink :to="localePath(`${ml.route}`)">
           <img :src="require(`~/assets/images/icons/icon-${ml.icon}`)" :alt="`${ml.title} menu icon`" />

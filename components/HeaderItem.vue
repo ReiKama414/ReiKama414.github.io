@@ -46,7 +46,7 @@ export default {
         <button class="navtoggle ms-1 me-1" @click="NBToggle">
           <img alt="" src="~/assets/images/icons/icon-menu.svg" />
         </button>
-        <NuxtLink :to="localePath('/home')">
+        <NuxtLink :to="localePath('/')">
           <img alt="" src="~/assets/images/logo.png" />
         </NuxtLink>
       </div>
