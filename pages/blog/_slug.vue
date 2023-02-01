@@ -2,6 +2,7 @@
 import moment from 'moment';
 import slugEventBus from "assets/js/slugEventBus.js";
 export default {
+  name: 'Slug',
   beforeRouteLeave(to, form, next) {
     // window.confirm('ok?');
     slugEventBus.$emit("title", "");

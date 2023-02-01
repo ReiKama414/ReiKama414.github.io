@@ -4,6 +4,7 @@ import logJsonChs from '../assets/data/log_zh-CHS.json';
 import logJsonEn from '../assets/data/log_en.json';
 import logJsonJa from '../assets/data/log_ja.json';
 export default {
+    name: 'Log',
     data() {
         return {
             logs: [],

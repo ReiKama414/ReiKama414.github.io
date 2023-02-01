@@ -1,6 +1,7 @@
 <script>
 import moment from 'moment';
 export default {
+  name: 'About',
   data() {
     return {
       skill_Proficiency: ["HTML5", "Css3", "RWD", "Sass", "Less", "Bootstrap", "BootstrapVue", "TailwindCSS", "Vuetify", "Javascript", "jQuery", "Node.js", "Vue.js", "NuxtJS", "AJAX", "Json", "Python", "ASP.NET", "Git", "Markdown", "App Inventor"],
