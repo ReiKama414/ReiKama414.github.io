@@ -141,7 +141,7 @@ export default {
             <p>{{ post.title }}</p>
             <p>
               <a :href="$nuxt.$route.path" class="ud">
-                {{ host }}{{ $nuxt.$route.path }}
+                https://{{ host }}{{ $nuxt.$route.path }}
               </a>
             </p>
           </div>

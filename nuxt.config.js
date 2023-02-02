@@ -64,10 +64,10 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
+    'nuxt-content-git',
     'bootstrap-vue/nuxt',
     '@nuxtjs/i18n',
     '@nuxt/content',
-    'nuxt-content-git',
   ],
   
   hooks: {
