@@ -162,6 +162,8 @@ export default {
               </a>
             </p>
           </div>
+          <span>Posted: {{ formatDate(post.gitCreatedAt) }}</span>
+          <span>Updated: {{ formatDate(post.gitUpdatedAt) }}</span>
         </div>
       </div>
       

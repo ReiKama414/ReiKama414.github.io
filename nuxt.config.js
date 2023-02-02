@@ -66,7 +66,10 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxtjs/i18n',
-    'nuxt-content-git',
+    ['nuxt-content-git', {
+      createdAtName: 'gitCreatedAt',
+      updatedAtName: 'gitUpdatedAt',
+    }],
     '@nuxt/content',
   ],
   
