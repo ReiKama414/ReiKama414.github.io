@@ -28,6 +28,7 @@
     "cross-env": "^7.0.3",
     "markdown-it-anchor": "^8.6.6",
     "nuxt": "^2.15.8",
+    "nuxt-content-git": "^3.0.0",
     "reading-time": "^1.5.0",
     "sass-loader": "10",
     "vue": "2",

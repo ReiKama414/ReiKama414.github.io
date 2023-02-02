@@ -67,6 +67,7 @@ export default {
     'bootstrap-vue/nuxt',
     '@nuxtjs/i18n',
     '@nuxt/content',
+    'nuxt-content-git',
   ],
   
   hooks: {
