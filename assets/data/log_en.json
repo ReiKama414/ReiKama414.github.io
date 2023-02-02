@@ -1,5 +1,12 @@
 [ 
     {
+        "date" : "Feb 2, 2023",
+        "content" : "Move all the image paths in the article to the static folder, and redirect the Github Page to deploy.",
+        "content_list" : [
+            "Updated: Translate forms, Log Page translation."
+        ]
+    },
+    {
         "date" : "Feb 1, 2023",
         "content" : "Push the Blog deployment to the github page, fix version and compatible UI kit issues, find bugs and fix it. (Records: The biggest problem with routing jumps without rendering is... You need to give each Vue page a \"name\"!!! Very important ah ah ah!!!!!! I have been looking for a long time ;) )",
         "content_list" : [

@@ -1,5 +1,12 @@
 [ 
     {
+        "date" : "2023-02-02",
+        "content" : "將文章內圖像路徑全數轉移至 static 資料夾，以及將 Github Page 重定向部屬。",
+        "content_list" : [
+            "更新：翻譯表單、Log Page 翻譯"
+        ]
+    },
+    {
         "date" : "2023-02-01",
         "content" : "推送 Blog 部屬至 github page 上，修整版本與相容 UI 套件問題，找尋 Bug 並修復。(紀錄：路由跳轉無渲染最大問題為 ... 需要給每個 Vue 頁面一個 name !!! 很重要ㄚㄚㄚ !!!!!! 找了超久 (´;ω;`) )",
         "content_list" : [

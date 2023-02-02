@@ -126,7 +126,7 @@ export default {
                 <fa :icon="['fa-solid', 'location-dot']" style="margin-right: .25rem" title="Location"/>
                 Tainan, Taiwan
             </div>
-            <div class="profile-card-social mt-3">
+            <div class="profile-card-social mt-3 mb-3">
                 <a
                   href="#"
                   target="_blank"
@@ -192,6 +192,7 @@ export default {
                     <fa :icon="['fa-brands', 'weixin']" />
                 </a>
             </div>
+            <p>* {{ $t('profilecardsocial') }} σ`∀´)σ *</p>
             <!-- About Me -->
             <div class="divided-line p-r d-flex mt-5 font-weight-bold text-uppercase">
                 <span class="px-4">● About Me</span>
@@ -199,15 +200,9 @@ export default {
             <div class="d-flex flex-wrap justify-content-center">
                 <div class="col-10 px-2">
                     <div class="inner-wrapper mt-4 text-left px-3" :class="{readmore: state_readmore}">
-                        I'm Kama, a Front-End Developer located in Taiwan. I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences, and really enjoyed the continual learning that comes with coding.
+                        {{ $t('aboutme1') }}
 
-                        My main experience is in front-end development but I also have a passion for design. Given that producing a modern website requires the combination of design, server technology, and the layer that users interacts with. I believe having experience in both design and development allows for making the most optimal user experiences.
-
-                        Graduated from Computer Science and Information Engineering. During the school period, the main research field is the field of artificial intelligence (AI). My graduation project is to train AI algorithms to analyze different types of data and generate AI models and natural language processing (NLP) data crawlers, classification, various algorithms, etc. to combine web page presentation. As for the web page, use self-taught HTML, CSS, Javascript API serialization and interaction, and ASP.net to build and maintain, and develop App combined with web pages and additionally produced small games in App.
-
-                        During the production of web pages, my interest in creating a good experience for users and making various layout constructions and UI animations gradually grew, until I eventually decided to take my leap of faith! Decided to become a front-end engineer, keep learning and focus on fast, elegant and accessible user experiences.
-
-                        By the way → I'm a chatterbox sometimes. :(
+                        {{ $t('aboutme2') }}
 
                         Personality Test：<a href="https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC" target="_blank" class="ud">INFJ-A / INFJ-T (提倡者/Advocate/提唱者)</a> (Reference(?))
                         Contact Information：<a href="mailto:milu77704@gmail.com" target="_blank" class="ud">milu77704@gmail.com</a>
@@ -228,18 +223,13 @@ export default {
             <div class="d-flex flex-wrap justify-content-center">
                 <div class="col-10 px-2">
                     <div class="inner-wrapper site mt-4 text-left px-3">
-                        The content of the website blog is mainly to record some BUGs encountered, places and skills that are not understood, and most of them are notes rather than teaching.
+                        {{ $t('aboutsite1') }}
                         
-                        My understanding is biased toward a practitioner rather than a theorist.
-                        It would be very inefficient for me if I was going to learn a new technology purely for the sake of "learning".
-
-                        Accumulate all kinds of experience in the process of practice, and learn by yourself step by step by reading books and checking information on the Internet. You can learn a lot by building your own website without relying on any templates, and you will feel a sense of fulfillment and accomplishment. It feels like you built your own world with your own hands.
-
-                        <b>The writing of this site is purely a personal hobby, and the front and back ends are independently completed. It is mainly used to record notes on work, life, and study.</b>
+                        <b>{{ $t('aboutsite2') }}</b>
                         
                         <br /><br />
 
-                        <mark>🎃 Explanation：</mark> For the compatibility issues currently tested, all mainstream browser kernels are compatible.
+                        <mark>🎃 {{ $t('aboutsite3') }}：</mark> {{ $t('aboutsite4') }}
                     </div>
                 </div>
             </div>

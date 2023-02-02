@@ -442,7 +442,9 @@ $circle-color4: #7D81EA
     .profile-card-social
         @include d-flex-c
         flex-wrap: wrap
-        margin-bottom: 4.8rem
+        ~ p
+            margin-bottom: 4.8rem
+            font-size: .75rem
         a
             @include transition(transform var(--delay-time))
             @include size(3.6rem)
