@@ -84,77 +84,103 @@ A: 畢業口試前三天，教授看到我有修相關課程提議是否要設�
 頁面與畫面展示 (可以自己開啟網頁看看呦(´･ω･`))
 
 ### 主頁面
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-1.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-1.png" title="Index" />
+<a href="/blog/CSIE-Grammar-1.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-1.png "Index")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(1) 主頁面</p>
 
 ### 搜尋結果畫面
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-2.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-2.png" title="Index Search" />
+<a href="/blog/CSIE-Grammar-2.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-2.png "Index Search")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(2) 搜尋結果畫面</p>
 
 ### 聊天機器人畫面
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-3.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-3.png" title="ChatBot" />
+<a href="/blog/CSIE-Grammar-3.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-3.png "ChatBot")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(3) 聊天機器人畫面</p>
 
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-4.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-4.png" title="ChatBot" />
+<a href="/blog/CSIE-Grammar-4.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-4.png "ChatBot")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(4) 聊天機器人畫面</p>
 
 
 ### 相關資源頁面
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-5.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-5.png" title="Related resources" />
+<a href="/blog/CSIE-Grammar-5.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-5.png "Related resources")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(5) 相關資源頁面</p>
 
 
 ### 教授介紹頁面
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-6.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-6.png" title="Related resources" />
+<a href="/blog/CSIE-Grammar-6.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-6.png "Introducing the professor's page")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(6) 教授介紹頁面</p>
 
 ### APP 展示頁面
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-7.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-7.png" title="APP Game1" />
+<a href="/blog/CSIE-Grammar-7.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-7.png "APP Game1")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(7) APP 展示頁面 - 英語說讀測驗小遊戲</p>
 
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-8.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-8.png" title="APP Game2" />
+<a href="/blog/CSIE-Grammar-8.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-8.png "APP Game2")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(8) APP 展示頁面 - 英語益智小遊戲</p>
 
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-9.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-9.png" title="APP Game2" />
+<a href="/blog/CSIE-Grammar-9.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-9.png "APP Game3")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(9) APP 展示頁面 - 英語益智小遊戲</p>
 
 ---
 
 ### 畢業專題簡報部份截圖
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-10.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-10.png" title="Student Graduation Project" />
+<a href="/blog/CSIE-Grammar-10.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-10.png "Student Graduation Project")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(10) 人工智慧對話機器人</p>
 
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-11.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-11.png" title="Student Graduation Project" />
+<a href="/blog/CSIE-Grammar-11.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-11.png "Student Graduation Project")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(11) APP + 英文說讀測驗小遊戲</p>
 
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-12.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-12.png" title="Student Graduation Project" />
+<a href="/blog/CSIE-Grammar-12.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-12.png "Student Graduation Project")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(12) APP + 英文益智小遊戲</p>
 
-<a href="/_nuxt/assets/images/blog/CSIE-Grammar-13.png" target="_blank">
-    <img alt="Grammar Screenshot" src="/_nuxt/assets/images/blog/CSIE-Grammar-13.png" title="Student Graduation Project" />
+<a href="/blog/CSIE-Grammar-13.png" target="_blank">
+
+![Grammar Screenshot](/blog/CSIE-Grammar-13.png "Student Graduation Project")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(13) 平台 RWD</p>

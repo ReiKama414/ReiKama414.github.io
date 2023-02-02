@@ -20,7 +20,8 @@ export default {
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Kama\'s Blog' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/reikama/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    // link: [{ rel: 'icon', type: 'image/x-icon', href: 'reikama/favicon.ico' }],
   },
 
   publicRuntimeConfig: {

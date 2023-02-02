@@ -37,25 +37,33 @@ It's just a simple document processing management single page layout!
 主要展示 RWD 手機觀看視角畫面，模擬畫面為 Galaxy S8 。
 
 ### 主頁面
-<a href="/_nuxt/assets/images/blog/DPWE-1.png" target="_blank">
-    <img alt="What should I eat today? image" src="/_nuxt/assets/images/blog/DPWE-1.png" title="Index" />
+<a href="/blog/DPWE-1.png" target="_blank">
+
+![Document processing image](/blog/DPWE-1.png "Index")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(1) 主頁面</p>
 
 ### 開啟左側導覽列
-<a href="/_nuxt/assets/images/blog/DPWE-2.png" target="_blank">
-    <img alt="What should I eat today? image" src="/_nuxt/assets/images/blog/DPWE-2.png" title="Menu" />
+<a href="/blog/DPWE-2.png" target="_blank">
+
+![Document processing image](/blog/DPWE-2.png "Menu")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(2) 開啟左側導覽列畫面</p>
 
 ### 開啟右側導覽列
-<a href="/_nuxt/assets/images/blog/DPWE-3.png" target="_blank">
-    <img alt="What should I eat today? image" src="/_nuxt/assets/images/blog/DPWE-3.png" title="Aside" />
+<a href="/blog/DPWE-3.png" target="_blank">
+
+![Document processing image](/blog/DPWE-3.png "Aside")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(3) 開啟右側導覽列畫面</p>
 
 ### 主頁面影片部分
-<a href="/_nuxt/assets/images/blog/DPWE-4.png" target="_blank">
-    <img alt="What should I eat today? image" src="/_nuxt/assets/images/blog/DPWE-4.png" title="Video" />
+<a href="/blog/DPWE-4.png" target="_blank">
+
+![Document processing image](/blog/DPWE-4.png "Video")
+
 </a>
 <p class="img-origin mt-1 mb-3 text-center">(4) 主頁面影片部分</p>
