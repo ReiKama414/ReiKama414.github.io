@@ -16,19 +16,19 @@ export default {
   },
   computed: {
     Countyear() {
-      return moment(this.today).diff(this.post.createdAt, "years");
+      return moment(this.today).diff(this.post.createdAtTime, "years");
     },
     Countmonth() {
-      return moment(this.today).diff(this.post.createdAt, "months");
+      return moment(this.today).diff(this.post.createdAtTime, "months");
     },
     Countdate() {
-      return moment(this.today).diff(this.post.createdAt, "days");
+      return moment(this.today).diff(this.post.createdAtTime, "days");
     },
     Counthour() {
-      return moment(this.today).diff(this.post.createdAt, "hours");
+      return moment(this.today).diff(this.post.createdAtTime, "hours");
     },
     Countmin() {
-      return moment(this.today).diff(this.post.createdAt, "minutes");
+      return moment(this.today).diff(this.post.createdAtTime, "minutes");
     },
   },
 };

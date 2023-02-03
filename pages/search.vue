@@ -15,7 +15,7 @@ export default {
       memeState: true,
       memeGifLength: 6,
       memePngLength: 15,
-      sortType: 'createdAt',
+      sortType: 'createdAtTime',
       isReverse: false,
       showcontentTB: "ranget+d",
       showdescription: true,
@@ -29,15 +29,15 @@ export default {
     if (this.categorySelected === 'all') {
       this.posts = await this
         .$content('', { deep: true })
-        .only(['title', 'category', 'tags', 'slug', 'createdAt', 'body', 'description'])
-        .sortBy('createdAt', 'desc')
+        .only(['title', 'category', 'tags', 'slug', 'createdAtTime', 'body', 'description'])
+        .sortBy('createdAtTime', 'desc')
         .search(this.searchQuery)
         .fetch();
     } else {
       this.posts = await this
         .$content(this.categorySelected)
-        .only(['title', 'category', 'tags', 'slug', 'createdAt', 'body', 'description'])
-        .sortBy('createdAt', 'desc')
+        .only(['title', 'category', 'tags', 'slug', 'createdAtTime', 'body', 'description'])
+        .sortBy('createdAtTime', 'desc')
         .search(this.searchQuery)
         .fetch();
     }
@@ -364,8 +364,8 @@ export default {
             <!-- <fa v-else :icon="['fa-solid', 'arrow-up-z-a']" class="ml-1" /> -->
           </span>
         </p>
-        <p class="mb-0 p-2 custom-mw1 text-right" @click="ChangeType('createdAt')">
-          <span v-if="sortType === 'createdAt'" :class="{'inverse': isReverse}">
+        <p class="mb-0 p-2 custom-mw1 text-right" @click="ChangeType('createdAtTime')">
+          <span v-if="sortType === 'createdAtTime'" :class="{'inverse': isReverse}">
             <fa :icon="['fa-solid', 'arrow-up-wide-short']" />
             <!-- <fa v-else :icon="['fa-solid', 'arrow-up-9-1']" class="ml-1" /> -->
           </span>

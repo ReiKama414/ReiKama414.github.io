@@ -16,7 +16,7 @@ export default {
     this.posts = await this
       .$content('tech')
       .without(['body'])
-      .sortBy('createdAt', 'desc')
+      .sortBy('createdAtTime', 'desc')
       .fetch();
   },
   head() {

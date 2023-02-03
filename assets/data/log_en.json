@@ -1,9 +1,18 @@
 [ 
     {
+        "date" : "Feb 3, 2023",
+        "content" : "Use the Github Action deployment instead, and modify the timestamp method.",
+        "content_list" : [
+            "Updated: Log Page translation."
+        ]
+    },
+    {
         "date" : "Feb 2, 2023",
         "content" : "Move all the image paths in the article to the static folder, and redirect the Github Page to deploy.",
         "content_list" : [
-            "Updated: Translate forms, Log Page translation."
+            "Updated: Translate forms, Log Page translation.",
+            "Updated: Adjustments to UI spacing.",
+            "Modification: Change the timestamp of @nuxt/content to Git push time as the benchmark."
         ]
     },
     {

@@ -13,7 +13,7 @@ export default {
   async asyncData({ $content, params }) {
     const [prev, next] = await $content('', { deep: true })
       .only(['title', 'slug'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAtTime', 'asc')
       .surround(params.slug)
       .fetch()
     return {
@@ -92,15 +92,15 @@ export default {
     <div v-if="post" class="post-wrapper card-widget">
       <div class="header">
         <div class="info d-flex mt-2">
-          <p :title="formatDate2(post.createdAt)">
+          <p :title="formatDate2(post.createdAtTime)">
             <fa :icon="['fa-solid', 'calendar-days']" class="mr-1" />
             {{ $t("releasedin") }}
-            {{ formatDate(post.createdAt) }}
+            {{ formatDate(post.createdAtTime) }}
           </p>
-          <p :title="formatDate2(post.updatedAt)">
+          <p :title="formatDate2(post.updatedAtTime)">
             <fa :icon="['fa-solid', 'clock-rotate-left']" class="mr-1" />
             {{ $t("updatedin") }}
-            {{ formatDate(post.updatedAt) }}
+            {{ formatDate(post.updatedAtTime) }}
           </p>
           <NuxtLink :to="localePath(`/${post.category}`)" :title="$t('category')" class="pr-3">
             <fa :icon="['fa-solid', 'feather-pointed']" class="mr-1" />
@@ -151,7 +151,7 @@ export default {
           </div>
           <div class="col-6 col-sm-6 col-xl-3 p-0">
             <p>{{ $t("releasedin") }}</p>
-            <p><a href="#">{{ formatDate2(post.createdAt) }}</a></p>
+            <p><a href="#">{{ formatDate2(post.createdAtTime) }}</a></p>
           </div>
           <div class="col-12 col-xl-6 p-0">
             <p>{{ $t("agreement") }}</p>
@@ -162,8 +162,8 @@ export default {
               </a>
             </p>
           </div>
-          <span>Posted: {{ formatDate(post.gitCreatedAt) }}</span>
-          <span>Updated: {{ formatDate(post.gitUpdatedAt) }}</span>
+          <!-- <span>Posted: {{ formatDate(post.gitCreatedAt) }}</span>
+          <span>Updated: {{ formatDate(post.gitUpdatedAt) }}</span> -->
         </div>
       </div>
       

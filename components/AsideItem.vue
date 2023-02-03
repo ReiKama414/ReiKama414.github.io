@@ -181,7 +181,7 @@ export default {
             <img alt="article image" :src="require(`~/assets/images/blog/${post.image}`)" />
           </nuxt-link>
           <div>
-            <p class="mb-0">{{ formatDate(post.createdAt) }}</p>
+            <p class="mb-0">{{ formatDate(post.createdAtTime) }}</p>
             <h6 class="mb-1" :title="post.title">
               <nuxt-link :to="localePath(`/blog/${post.slug}`)">
                 {{ post.title }}
@@ -201,7 +201,7 @@ export default {
             <img alt="article image" :src="require(`~/assets/images/blog/${postlist[(n - 1)].image}`)" />
           </nuxt-link>
           <div>
-            <p class="mb-0">{{ formatDate(postlist[(n - 1)].createdAt) }}</p>
+            <p class="mb-0">{{ formatDate(postlist[(n - 1)].createdAtTime) }}</p>
             <h6 class="mb-1" :title="postlist[(n - 1)].title">
               <nuxt-link :to="localePath(`/blog/${postlist[(n - 1)].slug}`)">
                 {{ postlist[(n - 1)].title }}

@@ -1,9 +1,18 @@
 [ 
     {
+        "date" : "2023/02/03",
+        "content" : "改为使用 Github Action 部署，并修改时间戳方法。",
+        "content_list" : [
+            "更新：日志页面翻译"
+        ]
+    },
+    {
         "date" : "2023/02/02",
         "content" : "将文中所有图片路径移至 static 文件夹，和重定向 Github Page 进行部署。",
         "content_list" : [
-            "更新：翻译表格，日志页面翻译"
+            "更新：翻译表格，日志页面翻译",
+            "更新：调整 UI 间距",
+            "修改：将 @nuxt/content 的时间戳改为 Git 推送时间为基准"
         ]
     },
     {

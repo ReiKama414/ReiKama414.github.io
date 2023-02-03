@@ -16,8 +16,8 @@ export default {
     async fetch() {
         this.post = await this
             .$content("", { deep: true })
-            .only(["image", "title", "tags", "slug", "createdAt", "category"])
-            .sortBy("createdAt", "desc")
+            .only(["image", "title", "tags", "slug", "createdAtTime", "category"])
+            .sortBy("createdAtTime", "desc")
             .fetch();
         this.pl1 = this.post.length;
         const tl = [];

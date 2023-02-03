@@ -16,7 +16,7 @@ export default {
     this.posts = await this
       .$content('', { deep: true })
       .without(['body'])
-      .sortBy('createdAt', 'desc')
+      .sortBy('createdAtTime', 'desc')
       .fetch();
     this.posts = this.posts.filter(
       post => post.tags

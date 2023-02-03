@@ -39,7 +39,7 @@ export default {
       <div class="d-flex justify-content-between align-items-end">
         <div>
           <fa :icon="['fa-regular', 'calendar-check']" class="mr-1" />
-          {{ formatDate(post.createdAt) }}
+          {{ formatDate(post.createdAtTime) }}
         </div>
         <a :href="post.go" target="_blank">
           <fa :icon="['fa-solid', 'up-right-from-square']" />

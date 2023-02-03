@@ -49,7 +49,7 @@ export default {
       </nuxt-link>
       <div class="pl-2 custom-mw1">
           <fa :icon="['fa-solid', 'pen']" class="mr-1" />
-          <span>{{ formatDate(post.createdAt) }}</span>
+          <span>{{ formatDate(post.createdAtTime) }}</span>
       </div>
     </div>
     <div v-if="showd" class="col-12 text-left content mb-2 mt-1">

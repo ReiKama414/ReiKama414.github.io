@@ -1,9 +1,18 @@
 [ 
     {
+        "date" : "2023-02-03",
+        "content" : "採用 Github Action 部屬，將時間戳方式修改。",
+        "content_list" : [
+            "更新：Log Page 翻譯"
+        ]
+    },
+    {
         "date" : "2023-02-02",
         "content" : "將文章內圖像路徑全數轉移至 static 資料夾，以及將 Github Page 重定向部屬。",
         "content_list" : [
-            "更新：翻譯表單、Log Page 翻譯"
+            "更新：翻譯表單、Log Page 翻譯",
+            "更新：UI 間距調整",
+            "修改：將 @nuxt/content 的時間戳改為 Git 推送時間為基準。"
         ]
     },
     {

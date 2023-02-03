@@ -15,7 +15,7 @@ export default {
     this.posts = await this
       .$content('portfolio')
       .without(['body'])
-      .sortBy('createdAt', 'desc')
+      .sortBy('createdAtTime', 'desc')
       .fetch();
 
     this.posts.forEach(function(post) {
