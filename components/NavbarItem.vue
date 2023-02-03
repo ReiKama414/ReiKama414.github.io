@@ -30,10 +30,10 @@ export default {
     <p> {{ $t('other') }} </p>
     <ul class="nb">
       <li>
-        <a href="#">
+        <NuxtLink :to="localePath('/world')">
           <img src="~/assets/images/icons/icon-world.svg" alt="" />
           <span> {{ $t('world') }} </span>
-        </a>
+        </NuxtLink>
       </li>
     </ul>
   </nav>

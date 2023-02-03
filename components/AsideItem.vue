@@ -52,6 +52,15 @@ export default {
       if (this.windowScrollY >= this.filterHeightCount) return true;
       else return false;
     },
+    cg_locale() {
+      switch(this.$i18n.locale) {
+        case 'zh-CHS':
+        case 'zh-CHT':
+          return 'zh';
+        default:
+          return this.$i18n.locale;
+      }
+    },
   },
   updated() {
     this.filterHeightCount = this.$refs.ref_asdwrp.offsetHeight - this.$refs.ref_asdwrp.lastElementChild.offsetHeight; // - 86.4 + 16;
@@ -99,6 +108,10 @@ export default {
     goAuchor(id) {
       document.querySelector(id).scrollIntoView({behavior: 'smooth'});
     },
+    dateClass(ymd, date) {
+      const day = date.getDay();
+      return day === 0 || day === 6 ? 'table-secondary' : '';
+    }
   },
 };
 </script>
@@ -252,5 +265,19 @@ export default {
         </div>
       </div>
     </div>
+    
+    <b-row v-if="!postTitle" class="mb-4">
+      <b-col md="auto">
+        <b-calendar 
+          selected-variant="danger"
+          :locale="cg_locale"
+          hide-header
+          show-decade-nav
+          readonly
+          label-help
+          :date-info-fn="dateClass"
+        ></b-calendar>
+      </b-col>
+    </b-row>
   </div>
 </template>

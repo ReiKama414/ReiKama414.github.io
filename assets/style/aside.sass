@@ -201,3 +201,47 @@ $imgdeg: 720deg
             span, button
                 font-weight: bold
                 color: var(--tag-bg2-c)
+
+.b-calendar
+    .b-calendar-nav
+        margin-bottom: .65rem
+    .b-calendar-grid-caption
+        padding-top: 0.5rem
+    .btn-outline-light:hover
+        background-color: #FFCA98CF
+    .btn-outline-danger
+        color: #FFF
+        background-color: #dc3545
+    .form-control
+        border-color: #CED4DA
+        box-shadow: none
+    .b-calendar-grid-weekdays
+        margin-top: 0.25rem
+        padding-bottom: 0.25rem
+    .table-secondary
+        background-color: #E9E9E9
+    .btn-outline-secondary
+        @include transition(transform var(--delay-time))
+    .btn-outline-secondary:focus,
+    .btn-outline-secondary:active,
+    .btn-outline-secondary:hover
+        border-color: none
+        box-shadow: none
+        background-color: transparent
+    .btn-outline-secondary:hover
+        color: var(--primary-color)
+        transform: scale(1.25)
+    button[aria-keyshortcuts="Home"]
+        position: relative
+        svg
+            display: none
+        &:hover
+            background-color: transparent
+        &::after
+            content: ''
+            position: absolute
+            inset: 0
+            background-image: url(~/assets/images/icons/maple-leaf-svgrepo-com.svg)
+            background-repeat: no-repeat
+            background-size: contain
+            background-position: center
