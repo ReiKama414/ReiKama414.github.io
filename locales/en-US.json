@@ -84,5 +84,6 @@
   "aboutsite1": "The content of the website blog is mainly to record some BUGs encountered, places and skills that are not understood, and most of them are notes rather than teaching.\n                        \nMy understanding is biased toward a practitioner rather than a theorist.\nIt would be very inefficient for me if I was going to learn a new technology purely for the sake of \"learning\".\n\nAccumulate all kinds of experience in the process of practice, and learn by yourself step by step by reading books and checking information on the Internet. You can learn a lot by building your own website without relying on any templates, and you will feel a sense of fulfillment and accomplishment. It feels like you built your own world with your own hands.\n",
   "aboutsite2": "The writing of this site is purely a personal hobby, and the front and back ends are independently completed. It is mainly used to record notes on work, life, and study.",
   "aboutsite3": "Explanation",
-  "aboutsite4": "For the compatibility issues currently tested, all mainstream browser kernels are compatible."
+  "aboutsite4": "For the compatibility issues currently tested, all mainstream browser kernels are compatible.",
+  "nuxtcontent": "@nuxt/content"
 }
