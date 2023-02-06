@@ -57,7 +57,7 @@ export default {
         <span>|</span>
         <NuxtLink :to="localePath(`/${post.category}`)">{{ $t(`${post.category}`) }}</NuxtLink>
         &emsp;
-        <p class="rtw">{{ $t("about2") }}{{ post.readingTime.words }}{{ $t("word") }}</p>
+        <p class="rtw">{{ $t("about2") }} {{ post.readingTime.words }} {{ $t("word") }}</p>
       </div>
       <div class="arc-intro">
         <span class="multiline-ellipsis">{{ post.description }}</span>
