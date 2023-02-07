@@ -132,7 +132,7 @@
                 margin-top: .5rem
             + *:not(h3)
                 font-size: .9rem
-        h3, h5
+        h3, h5, h6
             font-weight: 700
             margin: 1.75rem 0 .75rem
             font-size: 1.1rem
@@ -144,11 +144,13 @@
             border-bottom: 1px solid var(--c-divider)
             &::before
                 content: '〃'
-                margin-right: .35rem
+                margin-right: .25rem
                 font-size: 1.75rem
-        h5::before
-            content: '#'
-            font-size: 1.45rem
+        h5, h6
+            &::before
+                content: '#'
+                margin-right: .35rem
+                font-size: 1.45rem
         ul, ol
             list-style-position: inside
             li
@@ -167,7 +169,7 @@
             padding: .5rem
             object-fit: contain
             max-height: 28.5rem
-        code
+        pre code
             color: var(--text-color)
         table
             margin-bottom: 1rem

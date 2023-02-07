@@ -91,7 +91,7 @@ export default {
       if (process.browser) {
         let tags = [];
         if (document.querySelector('.nuxt-content') !== null) {
-          tags = document.querySelector('.nuxt-content').querySelectorAll('h2, h3, h4, h5');
+          tags = document.querySelector('.nuxt-content').querySelectorAll('h2, h3, h4, h5, h6');
         }
         if (tags.length > 0) return tags;
         else return '';
@@ -249,7 +249,7 @@ export default {
           <span v-if="a[0] === 'H2' || a[0] == 'H4'">
             <fa :icon="['fa-solid', 'seedling']" class="mr-1" />
           </span>
-          <span v-else-if="a[0] === 'H3' || a[0] == 'H5'" class="ml-3">⦁</span>
+          <span v-else-if="a[0] === 'H3' || a[0] == 'H5' || a[0] == 'H6'" class="ml-3">⦁</span>
           <button @click="goAuchor(`#${a[1]}`)">{{ a[2] }}</button>
         </div>
       </div>
@@ -260,7 +260,7 @@ export default {
           <span v-if="a[0] == 'H2' || a[0] == 'H4'">
             <fa :icon="['fa-solid', 'seedling']" class="mr-1" />
           </span>
-          <span v-else-if="a[0] == 'H3' || a[0] == 'H5'" class="ml-3">⦁</span>
+          <span v-else-if="a[0] == 'H3' || a[0] == 'H5' || a[0] == 'H6'" class="ml-3">⦁</span>
           <button @click="goAuchor(`#${a[1]}`)">{{ a[2] }}</button>
         </div>
       </div>
