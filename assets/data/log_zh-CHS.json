@@ -1,5 +1,12 @@
 [ 
     {
+        "date" : "2023/02/07",
+        "content" : "",
+        "content_list" : [
+            "更新：调整 UI"
+        ]
+    },
+    {
         "date" : "2023/02/03",
         "content" : "改为使用 Github Action 部署，并修改时间戳方法。",
         "content_list" : [

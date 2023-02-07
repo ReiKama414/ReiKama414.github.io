@@ -1,5 +1,12 @@
 [ 
     {
+        "date" : "令和5年2月7日",
+        "content" : "",
+        "content_list" : [
+            "更新: UI を調整する"
+        ]
+    },
+    {
         "date" : "令和5年2月3日",
         "content" : "代わりに Github Action デプロイメントを使用し、タイムスタンプ メソッドを変更します。",
         "content_list" : [

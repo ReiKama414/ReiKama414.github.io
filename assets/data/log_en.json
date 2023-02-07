@@ -1,5 +1,12 @@
 [ 
     {
+        "date" : "Feb 7, 2023",
+        "content" : "",
+        "content_list" : [
+            "Updated: Adjustments to UI."
+        ]
+    },
+    {
         "date" : "Feb 3, 2023",
         "content" : "Use the Github Action deployment instead, and modify the timestamp method.",
         "content_list" : [

@@ -1,5 +1,12 @@
 [ 
     {
+        "date" : "2023-02-07",
+        "content" : "",
+        "content_list" : [
+            "更新：UI 調整"
+        ]
+    },
+    {
         "date" : "2023-02-03",
         "content" : "採用 Github Action 部屬，將時間戳方式修改。",
         "content_list" : [

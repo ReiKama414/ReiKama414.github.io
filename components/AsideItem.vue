@@ -91,7 +91,7 @@ export default {
       if (process.browser) {
         let tags = [];
         if (document.querySelector('.nuxt-content') !== null) {
-          tags = document.querySelector('.nuxt-content').querySelectorAll('h2, h3');
+          tags = document.querySelector('.nuxt-content').querySelectorAll('h2, h3, h4, h5');
         }
         if (tags.length > 0) return tags;
         else return '';
@@ -246,10 +246,10 @@ export default {
     <div v-if="postTitle && getNuxtHeading()" class="anchor card-widget mb-4 show" :class="{ fixed: FixedAnchor }">
       <div class="dot-widget text-left anchor-wrapper">
         <div v-for="(a, index) of getSlugTagsID()" :key="index" class="anchor-item py-2">
-          <span v-if="a[0] == 'H2'">
+          <span v-if="a[0] === 'H2' || a[0] == 'H4'">
             <fa :icon="['fa-solid', 'seedling']" class="mr-1" />
           </span>
-          <span v-else-if="a[0] == 'H3'" class="ml-3">⦁</span>
+          <span v-else-if="a[0] === 'H3' || a[0] == 'H5'" class="ml-3">⦁</span>
           <button @click="goAuchor(`#${a[1]}`)">{{ a[2] }}</button>
         </div>
       </div>
@@ -257,10 +257,10 @@ export default {
     <div v-if="postTitle && getNuxtHeading()" class="anchor card-widget mb-4 hide" :class="{ fixed: !FixedAnchor }">
       <div class="dot-widget text-left anchor-wrapper">
         <div v-for="(a, index) of getSlugTagsID()" :key="index" class="anchor-item py-2">
-          <span v-if="a[0] == 'H2'">
+          <span v-if="a[0] == 'H2' || a[0] == 'H4'">
             <fa :icon="['fa-solid', 'seedling']" class="mr-1" />
           </span>
-          <span v-else-if="a[0] == 'H3'" class="ml-3">⦁</span>
+          <span v-else-if="a[0] == 'H3' || a[0] == 'H5'" class="ml-3">⦁</span>
           <button @click="goAuchor(`#${a[1]}`)">{{ a[2] }}</button>
         </div>
       </div>
