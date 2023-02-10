@@ -4,7 +4,7 @@ title: "#4 Spock Rock Game - Rock Paper Scissors Lizard Spock"
 category: work
 type: "typeweb"
 description: "Rock, Paper, Scissors, Lizard, Spock is a game of chance that expands the traditional game of Rock, Paper, Scissors. It is first used to settle a dispute about what to watch on TV between Sheldon and Raj in \"The Lizard-Spock Expansion\"."
-tags: ["typeweb"]
+tags: ["typeweb", "nuxt"]
 name: "Spock Rock Game"
 introduction: "An expansion on the game Rock, Paper, Scissors."
 sourceimg1_n: Kama
