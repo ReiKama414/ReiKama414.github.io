@@ -1,6 +1,6 @@
 ---
 image: CSIE-Grammar.png
-title: "以聊天機器人之形式建置英語教學文章檢索系統 - 文法快E通"
+title: "#3 以聊天機器人之形式建置英語教學文章檢索系統 - 文法快E通"
 category: work
 type: "typeweb"
 description: "「文法快E通」是一款強大的文法搜尋系統，隨心所欲搜索你想搜索的英文文法教學。在現今科技進步飛速且發達的世代，於網路上蘊藏了巨量的資訊，包含的種類相當多元化。然而我們只需要搜尋一個關鍵字就有可能達到上億種不同的資料結果，但是，不代表所搜尋的每一筆資料或是結果都符合使用者需求。讓我們以英文學習為例，英文是國際通用語言，而為了精進自己的英文能力與國際銜接。許多使用者會在網路上搜尋英文相關文章學習，卻也時常找不到適合自己的教學內容以及理想文章，甚至搜尋出一些無關緊要的內容或廣告，這時候就需要我們團隊所研發的「文法快E通」。"
@@ -91,7 +91,7 @@ A: 畢業口試前三天，教授看到我有修相關課程提議是否要設�
 ![Grammar Screenshot](/blog/CSIE-Grammar-1.png "Index")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(1) 主頁面</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(1) 主頁面</p>
 
 ### 搜尋結果畫面
 <a href="/blog/CSIE-Grammar-2.png" target="_blank">
@@ -99,7 +99,7 @@ A: 畢業口試前三天，教授看到我有修相關課程提議是否要設�
 ![Grammar Screenshot](/blog/CSIE-Grammar-2.png "Index Search")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(2) 搜尋結果畫面</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(2) 搜尋結果畫面</p>
 
 ### 聊天機器人畫面
 <a href="/blog/CSIE-Grammar-3.png" target="_blank">
@@ -107,14 +107,14 @@ A: 畢業口試前三天，教授看到我有修相關課程提議是否要設�
 ![Grammar Screenshot](/blog/CSIE-Grammar-3.png "ChatBot")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(3) 聊天機器人畫面</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(3) 聊天機器人畫面</p>
 
 <a href="/blog/CSIE-Grammar-4.png" target="_blank">
 
 ![Grammar Screenshot](/blog/CSIE-Grammar-4.png "ChatBot")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(4) 聊天機器人畫面</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(4) 聊天機器人畫面</p>
 
 
 ### 相關資源頁面
@@ -123,7 +123,7 @@ A: 畢業口試前三天，教授看到我有修相關課程提議是否要設�
 ![Grammar Screenshot](/blog/CSIE-Grammar-5.png "Related resources")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(5) 相關資源頁面</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(5) 相關資源頁面</p>
 
 
 ### 教授介紹頁面
@@ -132,7 +132,7 @@ A: 畢業口試前三天，教授看到我有修相關課程提議是否要設�
 ![Grammar Screenshot](/blog/CSIE-Grammar-6.png "Introducing the professor's page")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(6) 教授介紹頁面</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(6) 教授介紹頁面</p>
 
 ### APP 展示頁面
 <a href="/blog/CSIE-Grammar-7.png" target="_blank">
@@ -140,21 +140,21 @@ A: 畢業口試前三天，教授看到我有修相關課程提議是否要設�
 ![Grammar Screenshot](/blog/CSIE-Grammar-7.png "APP Game1")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(7) APP 展示頁面 - 英語說讀測驗小遊戲</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(7) APP 展示頁面 - 英語說讀測驗小遊戲</p>
 
 <a href="/blog/CSIE-Grammar-8.png" target="_blank">
 
 ![Grammar Screenshot](/blog/CSIE-Grammar-8.png "APP Game2")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(8) APP 展示頁面 - 英語益智小遊戲</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(8) APP 展示頁面 - 英語益智小遊戲</p>
 
 <a href="/blog/CSIE-Grammar-9.png" target="_blank">
 
 ![Grammar Screenshot](/blog/CSIE-Grammar-9.png "APP Game3")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(9) APP 展示頁面 - 英語益智小遊戲</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(9) APP 展示頁面 - 英語益智小遊戲</p>
 
 ---
 
@@ -164,25 +164,25 @@ A: 畢業口試前三天，教授看到我有修相關課程提議是否要設�
 ![Grammar Screenshot](/blog/CSIE-Grammar-10.png "Student Graduation Project")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(10) 人工智慧對話機器人</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(10) 人工智慧對話機器人</p>
 
 <a href="/blog/CSIE-Grammar-11.png" target="_blank">
 
 ![Grammar Screenshot](/blog/CSIE-Grammar-11.png "Student Graduation Project")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(11) APP + 英文說讀測驗小遊戲</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(11) APP + 英文說讀測驗小遊戲</p>
 
 <a href="/blog/CSIE-Grammar-12.png" target="_blank">
 
 ![Grammar Screenshot](/blog/CSIE-Grammar-12.png "Student Graduation Project")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(12) APP + 英文益智小遊戲</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(12) APP + 英文益智小遊戲</p>
 
 <a href="/blog/CSIE-Grammar-13.png" target="_blank">
 
 ![Grammar Screenshot](/blog/CSIE-Grammar-13.png "Student Graduation Project")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(13) 平台 RWD</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(13) 平台 RWD</p>

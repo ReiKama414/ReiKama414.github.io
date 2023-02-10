@@ -1,6 +1,6 @@
 ---
 image: DPWE.png
-title: "Document processing - Slicing Only"
+title: "#2 Document processing - Slicing Only"
 category: work
 type: "typewebnn"
 description: "It's just a simple document processing management single page layout."
@@ -44,7 +44,7 @@ It's just a simple document processing management single page layout!
 ![Document processing image](/blog/DPWE-1.png "Index")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(1) 主頁面</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(1) 主頁面</p>
 
 ### 開啟左側導覽列
 <a href="/blog/DPWE-2.png" target="_blank">
@@ -52,7 +52,7 @@ It's just a simple document processing management single page layout!
 ![Document processing image](/blog/DPWE-2.png "Menu")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(2) 開啟左側導覽列畫面</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(2) 開啟左側導覽列畫面</p>
 
 ### 開啟右側導覽列
 <a href="/blog/DPWE-3.png" target="_blank">
@@ -60,7 +60,7 @@ It's just a simple document processing management single page layout!
 ![Document processing image](/blog/DPWE-3.png "Aside")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(3) 開啟右側導覽列畫面</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(3) 開啟右側導覽列畫面</p>
 
 ### 主頁面影片部分
 <a href="/blog/DPWE-4.png" target="_blank">
@@ -68,4 +68,4 @@ It's just a simple document processing management single page layout!
 ![Document processing image](/blog/DPWE-4.png "Video")
 
 </a>
-<p class="img-origin mt-1 mb-3 text-center">(4) 主頁面影片部分</p>
+<p class="img-origin mt-1 mb-3 text-center px-5">(4) 主頁面影片部分</p>
