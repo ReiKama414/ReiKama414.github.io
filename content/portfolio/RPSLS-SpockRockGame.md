@@ -61,6 +61,7 @@ slug: "portfolio-RPSLS-SpockRockGame"
 - Nuxt 3
 - Sass
 - JavaScript
+- Tailwind CSS
 
 ## Reflection
 為什麼想做這個呢? 因為看到網路上有一篇文章叫做 「[JavaScript Web Projects: 20 Projects to Build Your Portfolio](https://zerotomastery.io/courses/javascript-projects/)」的付費課程，滑到底下好奇看了一下怎樣的作品 (因為在想練習 Nuxt 3 和累積一些作品集中)。
