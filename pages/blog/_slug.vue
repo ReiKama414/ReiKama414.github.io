@@ -27,6 +27,10 @@ export default {
       host: "",
       lbimg: "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=",
       sh: false,
+      relatedposts: [],
+      ctgr: "",
+      limitNum: 3,
+      catlength: 0,
     }
   },
   async fetch() {
@@ -37,6 +41,22 @@ export default {
         .limit(1)
         .fetch()
     )?.[0]
+
+    if (this.post.category === 'work') this.ctgr = 'portfolio';
+    else this.ctgr = this.post.category;
+
+    this.catlength = await this
+      .$content(this.ctgr)
+      .only('slug')
+      .fetch();
+    this.catlength = this.catlength.length;
+
+    this.relatedposts = await this
+      .$content(this.ctgr)
+      .only(['readingTime', 'title', 'category', 'description', 'createdAtTime', 'slug', 'image'])
+      .where({ slug: { $ne: this.$route.params.slug } })
+      .limit(this.limitNum)
+      .fetch();
   },
   head() {
     return {
@@ -104,7 +124,7 @@ export default {
           </p>
           <NuxtLink :to="localePath(`/${post.category}`)" :title="$t('category')" class="pr-3">
             <fa :icon="['fa-solid', 'feather-pointed']" class="mr-1" />
-            {{ $t(`${post.category}`) }}
+            {{ $t(post.category) }}
           </NuxtLink>
           <p class="prtw">
             <fa :icon="['fa-solid', 'book-open']" class="mr-1" />
@@ -178,7 +198,7 @@ export default {
         </span>
       </div>
     </div>
-    <div class="prev-next d-flex flex-wrap">
+    <div class="prev-next d-flex flex-wrap mb-4">
       <div class="col-12 col-custom-6">
         <NuxtLink v-if="prev" :to="localePath({ params: { slug: prev.slug } })">
           <div class="pn-item card-widget">
@@ -210,6 +230,14 @@ export default {
         </div>
       </div>
     </div>
+    
+    <RelatedItem v-for="(p, index) of relatedposts" :key="index" :post="p"></RelatedItem>
+
+    <NuxtLink v-if="catlength > limitNum" :to="localePath(`/${post.category}`)" class="rmcat d-inline-block mx-auto my-3 px-3 py-2">
+      <span>
+        Read more from {{ $t(post.category) }}
+      </span>
+    </NuxtLink>
 
     <section :class="{showstate: sh}" class="km-lightbox" @click="LBclose">
       <div class="mask"></div>

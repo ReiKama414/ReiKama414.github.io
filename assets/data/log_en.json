@@ -1,5 +1,12 @@
 [ 
     {
+        "date" : "Feb 13, 2023",
+        "content" : "",
+        "content_list" : [
+            "Added: The layout of related articles, the filtering algorithm and the function of \"Read more from related articles\"."
+        ]
+    },
+    {
         "date" : "Feb 7, 2023",
         "content" : "",
         "content_list" : [

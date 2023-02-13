@@ -567,7 +567,41 @@ main .v-pagination.theme--light
             .v-icon
                 color: var(--c-wb)
 
-    
+.rlt-card
+    > div:first-of-type
+        flex: 1
+        a
+            color: var(--text-color)
+        h2
+            @include font(700, 1.05rem, 1.4)
+            a
+                color: var(--text-color-darken)
+                &:hover
+                    color: var(--primary-color-lighter)
+    .rlt-img img
+        @include size(5.8rem)
+        object-fit: cover
+    .multiline-ellipsis
+        font-size: .9rem
+    .catrt
+        font-size: .8rem
+        div
+            width: max-content
+            background: var(--tag-bg5-c)
+            border-radius: var(--br)
+            &:hover,
+            &:active
+                background: var(--tag-bg4-c)
+    ~ .rmcat
+        @include transition(background var(--delay-time))
+        width: max-content
+        font-size: .85rem
+        color: var(--text-color-white2)
+        background: var(--tag-bg2-c)
+        border-radius: 5em
+        &:hover
+            background: var(--tag-bg1-c)
+            
 
 @media (max-width: 991.98px)
     .area-tf ~ .works-wrapper > .area-wks,
