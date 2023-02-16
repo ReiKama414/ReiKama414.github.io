@@ -44,7 +44,8 @@ slug: "portfolio-TMDBMVAPP-MoviesApp"
 - [ ] 2. 熱門電影 / 最新電影排序
 - [ ] 3. 卡片版面改造 round2
 - [ ] 4. 內頁改造
-- [ ] 5. 將搜尋 header 背景改造成純 css carousels 
+- [ ] 5. 將搜尋 header 背景改造成純 css carousels
+- [ ] 6. 搜尋排序方式與分類篩選功能
 ---
 
 ## Reference
