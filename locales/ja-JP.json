@@ -86,5 +86,6 @@
   "aboutsite3": "説明",
   "aboutsite4": "現在テストされている互換性の問題については、主流のブラウザ カーネルはすべて互換性があります。",
   "nuxtcontent": "@nuxt/content",
-  "typeios": "IOS"
+  "typeios": "IOS",
+  "typepractice": "練習"
 }

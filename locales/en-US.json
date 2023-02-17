@@ -86,5 +86,6 @@
   "aboutsite3": "Explanation",
   "aboutsite4": "For the compatibility issues currently tested, all mainstream browser kernels are compatible.",
   "nuxtcontent": "@nuxt/content",
-  "typeios": "IOS"
+  "typeios": "IOS",
+  "typepractice": "Practice"
 }

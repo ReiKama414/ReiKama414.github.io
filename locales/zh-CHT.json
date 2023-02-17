@@ -86,5 +86,6 @@
   "aboutsite3": "說明",
   "aboutsite4": "目前測試的兼容性問題，所有主流瀏覽器內核都是兼容的。",
   "nuxtcontent": "@nuxt/content",
-  "typeios": "IOS"
+  "typeios": "IOS",
+  "typepractice": "練習類"
 }
