@@ -1,5 +1,14 @@
 [ 
     {
+        "date" : "Feb 17, 2023",
+        "content" : "",
+        "content_list" : [
+            "Updated: Fix the BUG that appeared in the jump of the content navigation directory.",
+            "Updated: Translate forms",
+            "Updated: Adjustments to Header UI for style."
+        ]
+    },
+    {
         "date" : "Feb 13, 2023",
         "content" : "",
         "content_list" : [

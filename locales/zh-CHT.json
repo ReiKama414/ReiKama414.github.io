@@ -85,5 +85,6 @@
   "aboutsite2": "本站純屬個人愛好，前後端獨立完成。 主要用於記錄工作、生活、學習的筆記。",
   "aboutsite3": "說明",
   "aboutsite4": "目前測試的兼容性問題，所有主流瀏覽器內核都是兼容的。",
-  "nuxtcontent": "@nuxt/content"
+  "nuxtcontent": "@nuxt/content",
+  "typeios": "IOS"
 }

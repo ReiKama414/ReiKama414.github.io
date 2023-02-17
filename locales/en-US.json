@@ -85,5 +85,6 @@
   "aboutsite2": "The writing of this site is purely a personal hobby, and the front and back ends are independently completed. It is mainly used to record notes on work, life, and study.",
   "aboutsite3": "Explanation",
   "aboutsite4": "For the compatibility issues currently tested, all mainstream browser kernels are compatible.",
-  "nuxtcontent": "@nuxt/content"
+  "nuxtcontent": "@nuxt/content",
+  "typeios": "IOS"
 }
