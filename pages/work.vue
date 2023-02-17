@@ -85,7 +85,7 @@ export default {
         <div class="d-inline-block" :class="{skeleton: loadState}">
           <input id="tagsChoice1" v-model="tagFilter" type="radio" name="tagsChoice" value="all">
           <label for="tagsChoice1" class="mx-1">
-            {{ $t("all") }} ({{ Object.keys(tagList).length }})
+            {{ $t("all") }} ({{ posts.length }})
           </label>
         </div>
 
