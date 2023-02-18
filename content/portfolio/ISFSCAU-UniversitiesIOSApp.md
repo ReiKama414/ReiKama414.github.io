@@ -13,7 +13,7 @@ sourceimg2_n: Kama
 sourceimg2_u: '/'
 demo: "https://youtu.be/7SOc4Uzoruc"
 createdAtTime: '2023-02-17 11:21:52'
-updatedAtTime: '2023-02-17 14:13:36'
+updatedAtTime: '2023-02-18 11:34:56'
 slug: "portfolio-ISFSCAU-UniversitiesIOSApp"
 ---
 
@@ -26,6 +26,8 @@ slug: "portfolio-ISFSCAU-UniversitiesIOSApp"
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7SOc4Uzoruc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 </iframe>
+
+> 草圖可在右側目錄導覽列 (手機要往下滑) 才能找到
 
 ## Abstract
 
@@ -242,6 +244,21 @@ Catgif 內存放 61 個 GIF 的動畫圖檔，因為 Asset 只能存放靜態所
 在做完全部以後的 1 月 1 日因為太無聊所以又藉由 collection view controller 實作了一個貓貓血統的瀏覽介面，這種傳遞會越做越上手的感覺這一次實作整體非常的順利！如果有時間的話想再去學習課本上搜尋的功能去實作，而菜單與貓種的頁面中出現的是德文而非英文，因為目前在學習德文所以結合稍微註明了一下。
 
 整體而言，期末專題是一個很好的自我學習方法，而過程會遇到許許多多的狀況，藉由自己去解決困難學到的知識是什麼都無法比擬的，而且越做有點越上癮想要做更多類型的，程式真的是會讓人上癮的東西呢！
+
+
+## 設計思考練習草圖
+
+<a href="/blog/ISFSCAU-15.jpg" target="_blank">
+
+![App image](/blog/ISFSCAU-15.jpg)
+
+</a>
+
+<a href="/blog/ISFSCAU-16.jpg" target="_blank">
+
+![App image](/blog/ISFSCAU-16.jpg)
+
+</a>
 
 ## Reference
 
