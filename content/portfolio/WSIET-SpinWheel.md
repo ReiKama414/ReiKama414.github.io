@@ -4,7 +4,7 @@ title: "#1 What should I eat today? 今天吃什麼好?"
 category: work
 type: "typeweb"
 description: "\"What should I eat today\" helps people with various choice difficulties to randomly choose what to eat for lunch, combined with the card drawing system, allowing users to have entertainment while choosing lunch."
-tags: ["typeweb", "UIUX", "Vue"]
+tags: ["typeweb", "UIUX", "Vue3"]
 name: "What should I eat today?"
 introduction: "選擇困難救星"
 sourceimg1_n: Kama
