@@ -2,7 +2,10 @@
     {
         "date" : "2023-02-23",
         "content" : "將綁定錯誤的 key 值進行重新綁定。",
-        "content_list" : []
+        "content_list" : [
+            "更新：Loader Speed",
+            "更新：壓縮圖片提高效率"
+        ]
     },
     {
         "date" : "2023-02-17",

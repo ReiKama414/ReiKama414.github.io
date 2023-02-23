@@ -2,7 +2,10 @@
     {
         "date" : "Feb 23, 2023",
         "content" : "Modify the wrong key value and re-bind it.",
-        "content_list" : []
+        "content_list" : [
+            "Updated: Loader Speed.",
+            "Updated: Compress images for efficiency."
+        ]
     },
     {
         "date" : "Feb 17, 2023",

@@ -13,7 +13,7 @@ sourceimg2_n: Kama
 sourceimg2_u: '/'
 demo: "https://reikama414.github.io/WSIET/"
 createdAtTime: '2022-12-14 16:15:22'
-updatedAtTime: '2023-02-03 09:00:38'
+updatedAtTime: '2023-02-21 17:19:16'
 slug: "portfolio-WSIET-SpinWheel"
 ---
 
@@ -39,7 +39,7 @@ Then you really came to the right place! Hurry up and click the button to use ou
 - Jquery
 - ESLint
 - Confetti.js
-- Vue.js
+- Vue.js (Vue3)
 - Bootstrap
 - RWD
 - Observers
