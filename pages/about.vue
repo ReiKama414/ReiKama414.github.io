@@ -243,7 +243,7 @@ export default {
                         <h3 class="mb-3">Programming Language</h3>
                         <h5 class="mb-3"><span>Proficiency</span></h5>
                         <div class="d-flex flex-wrap mb-4">
-                            <div v-for="(sn, index) in skill_Proficiency" :key="index" class="skill-item">
+                            <div v-for="sn in skill_Proficiency" :key="sn" class="skill-item">
                                 <picture>
                                     <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
                                     <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
@@ -252,7 +252,7 @@ export default {
                         </div>
                         <h5 class="mb-3"><span>Familiarity</span></h5>
                         <div class="d-flex flex-wrap mb-4">
-                            <div v-for="(sn, index) in skill_Familiarity" :key="index" class="skill-item">
+                            <div v-for="sn in skill_Familiarity" :key="sn" class="skill-item">
                                 <picture>
                                     <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
                                     <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
@@ -261,7 +261,7 @@ export default {
                         </div>
                         <h5 class="mb-3"><span>Tools</span></h5>
                         <div class="d-flex flex-wrap mb-3">
-                            <div v-for="(sn, index) in skill_Tools" :key="index" class="skill-item">
+                            <div v-for="sn in skill_Tools" :key="sn" class="skill-item">
                                 <picture>
                                     <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
                                     <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
@@ -270,7 +270,7 @@ export default {
                         </div>
                         <h3 class="mb-3">Database</h3>
                         <div class="d-flex flex-wrap justify-content-center mb-3">
-                            <div v-for="(sn, index) in skill_Database" :key="index" class="skill-item">
+                            <div v-for="sn in skill_Database" :key="sn" class="skill-item">
                                 <picture>
                                     <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
                                     <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
@@ -279,7 +279,7 @@ export default {
                         </div>
                         <h3 class="mb-3">Office Application</h3>
                         <div class="d-flex flex-wrap justify-content-center mb-3">
-                            <div v-for="(sn, index) in skill_Office" :key="index" class="skill-item">
+                            <div v-for="sn in skill_Office" :key="sn" class="skill-item">
                                 <picture>
                                     <source :srcset="require('~/assets/images/icons/logo-' + sn + '.webp')" type="image/webp">
                                     <img :alt="'logo ' + sn" :src="require('~/assets/images/icons/logo-' + sn + '.png')" :title="sn"/>
@@ -295,7 +295,7 @@ export default {
             </div>
             <div class="d-flex flex-wrap justify-content-center">
                 <div class="d-inline-flex flex-wrap justify-content-center col-10 px-2 mt-3">
-                    <div v-for="(hobby, index) of hobbies" :key="index" class="hby-box m-2">
+                    <div v-for="hobby of hobbies" :key="hobby.title" class="hby-box m-2">
                         <fa :icon="['fa-solid', hobby.icon]" :title="hobby.title" />
                     </div>
                 </div>
@@ -326,7 +326,7 @@ export default {
                 <!-- Work Experience -->
                 <h3 class="col-12 my-4 font-weight-bold"><span class="underline--effect1">&nbsp;💻Work Experience&nbsp;</span></h3>
                 <div class="col-11 p-2">
-                    <div v-for="(wkei, index) of wkeList" :key="index" class="ex-wrapper wke align-items-start pb-3 mb-3">
+                    <div v-for="wkei of wkeList" :key="wkei.begindate" class="ex-wrapper wke align-items-start pb-3 mb-3">
                         <img alt="company-logo" :src="require('~/assets/images/icons/' + wkei.img)" class="mr-3 mb-3" />
                         <div class="d-flex flex-column w-100 text-left">
                             <h3 class="font-weight-bold mb-1">{{ wkei.title }}</h3>

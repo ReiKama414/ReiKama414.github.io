@@ -1,5 +1,10 @@
 [ 
     {
+        "date" : "2023-02-23",
+        "content" : "將綁定錯誤的 key 值進行重新綁定。",
+        "content_list" : []
+    },
+    {
         "date" : "2023-02-17",
         "content" : "",
         "content_list" : [

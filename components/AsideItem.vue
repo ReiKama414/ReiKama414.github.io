@@ -189,7 +189,7 @@ export default {
     <div v-else class="aside-item recent_post_area p-2 text-left mb-1">
       <h3 class="font-weight-bold pb-1 mb-3">近期貼文</h3>
       <div v-if="pl <= recentpostLimit">
-        <div v-for="(post, index) of postlist" :key="index" class="rp_item d-flex my-4">
+        <div v-for="post of postlist" :key="post.slug" class="rp_item d-flex my-4">
           <nuxt-link :to="localePath(`/blog/${post.slug}`)" class="mr-2">
             <img alt="article image" :src="require(`~/assets/images/blog/${post.image}`)" />
           </nuxt-link>
@@ -233,7 +233,7 @@ export default {
     <div class="aside-item tag_area p-2 text-left mb-4">
       <h3 class="font-weight-bold pb-1 mb-3">標籤</h3>
       <div class="d-flex flex-wrap">
-        <div v-for="(tag, key, index) of taglist" :key="index" class="tags-item mr-2">
+        <div v-for="(tag, key) of taglist" :key="key" class="tags-item mr-2">
           <NuxtLink :to="localePath(`/tags/${key}`)" class="tags">
             <div v-if="$te(key)"> {{ $t(`${key}`) }} </div>
             <div v-else> {{ key }} </div>

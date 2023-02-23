@@ -89,7 +89,7 @@ export default {
           </label>
         </div>
 
-        <div v-for="(tn, index) of tagName" :key="index" class="d-inline-block" :class="{skeleton: loadState}">
+        <div v-for="(tn, index) of tagName" :key="tn" class="d-inline-block" :class="{skeleton: loadState}">
           <input :id="`tagsChoice${index + 2}`" v-model="tagFilter" type="radio" name="tagsChoice" :value="tn">
           <label :for="`tagsChoice${index + 2}`" class="mx-1">
             {{ $t(`${tn}`) }}
@@ -110,7 +110,7 @@ export default {
     </div>
 
     <div ref="wksc" :class="{show: !loadState}" class="niam works-wrapper d-flex flex-wrap position-relative">
-      <PortfolioItem v-for="(post, index) of posts" :key="index" :post="post"></PortfolioItem>
+      <PortfolioItem v-for="post of posts" :key="post.slug" :post="post"></PortfolioItem>
     </div>
   </div>
 </template>

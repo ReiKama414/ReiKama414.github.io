@@ -20,7 +20,7 @@ export default {
 <template>
   <nav class="nl">
     <ul class="nb">
-      <li v-for="(ml, index) in menuList" :key="index">
+      <li v-for="ml in menuList" :key="ml.title">
         <NuxtLink :to="localePath(`${ml.route}`)">
           <img :src="require(`~/assets/images/icons/icon-${ml.icon}`)" :alt="`${ml.title} menu icon`" />
           <span> {{ $t(`${ml.title}`) }} </span>

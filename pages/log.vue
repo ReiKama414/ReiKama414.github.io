@@ -74,7 +74,7 @@ export default {
 
     <div class="timeline-wrapper card-widget text-left p-3 pl-4 position-relative" :class="{showmore: sm_state}">
         <ul class="timeline pb-4">
-            <li v-for="(log, index) of i18nlogjson" :key="index" class="tl-item">
+            <li v-for="log of i18nlogjson" :key="log.date" class="tl-item">
                 <div class="tl-content ml-4">
                     <span>{{ log.date }}</span>
                     <div v-if="log.content">{{ log.content }}</div>

@@ -71,7 +71,7 @@ export default {
             <img alt="" src="~/assets/images/icons/icon-translate.svg" />
           </button>
           <ul>
-            <li v-for="(l, index) in lang" :key="index">
+            <li v-for="l in lang" :key="l.lg">
               <a href="#" @click.prevent.stop="$i18n.setLocale(l.lg)">
                 {{ l.lgt }}
               </a>

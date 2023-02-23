@@ -298,7 +298,7 @@ export default {
       </v-app>
 
       <fieldset class="d-flex flex-wrap text-left mt-4">
-        <label v-for="(ctb, index) of ctbList" :key="index">
+        <label v-for="ctb of ctbList" :key="ctb">
           <input v-model="showcontentTB" type="radio" :value="ctb" @click="updatePage(1)">
           {{ $t(ctb) }}
         </label>
@@ -372,7 +372,7 @@ export default {
           {{ $t('date') }}
         </p>
       </article>
-      <SearchItem v-for="(post, index) of HistoryList" :key="index" :post="post" :keyword="searchQuery" :showd="showdescription" :searchrange="showcontentTB"></SearchItem>
+      <SearchItem v-for="post of HistoryList" :key="post.slug" :post="post" :keyword="searchQuery" :showd="showdescription" :searchrange="showcontentTB"></SearchItem>
       <v-app v-if="CountResult > pageSize" class="mt-3">
         <v-pagination
           v-model="page"

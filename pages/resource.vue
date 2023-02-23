@@ -102,7 +102,7 @@ export default {
           </div>
         </div>
       </div>
-      <ResourceItem v-for="(post, index) of HistoryList" :key="index" class="niam" :class="{show: !loadState2}" :post="post"></ResourceItem>
+      <ResourceItem v-for="post of HistoryList" :key="post.slug" class="niam" :class="{show: !loadState2}" :post="post"></ResourceItem>
     </div>
 
     <v-app v-if="posts.length > pageSize" class="mt-4">

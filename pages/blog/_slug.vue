@@ -231,7 +231,7 @@ export default {
       </div>
     </div>
     
-    <RelatedItem v-for="(p, index) of relatedposts" :key="index" :post="p"></RelatedItem>
+    <RelatedItem v-for="p of relatedposts" :key="p.slug" :post="p"></RelatedItem>
 
     <NuxtLink v-if="catlength > limitNum" :to="localePath(`/${post.category}`)" class="rmcat d-inline-block mx-auto my-3 px-3 py-2">
       <span>

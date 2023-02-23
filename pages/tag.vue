@@ -65,7 +65,7 @@ export default {
       <h3 v-if="loadState" class="mb-3"></h3>
       <h3 v-else class="mb-3"> {{ $t("tags") }} </h3>
       <div class="d-flex flex-wrap justify-content-start">
-        <div v-for="(tag, key, index) of tagsList" :key="index" class="tags-item mr-2">
+        <div v-for="(tag, key) of tagsList" :key="key" class="tags-item mr-2">
           <NuxtLink :to="localePath(`/tags/${key}`)" class="tags" :class="{load: loadState}">
             <div v-if="$te(key)"> {{ $t(`${key}`) }} </div>
             <div v-else> {{ key }} </div>
