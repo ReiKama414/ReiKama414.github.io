@@ -192,7 +192,27 @@
         pre[class*="language-"]
             margin-bottom: 1rem
             font-size: .95rem
-            background: rgb(223, 223, 223)
+        .contains-task-list
+            margin-bottom: 1rem
+        input[type="checkbox"]
+            @include size(1.05rem)
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            margin-right: .45rem
+            border: .125rem solid var(--text-color-lighter)
+            border-radius: .125rem
+            transform: translateY(-.05rem)
+            appearance: none
+            &::before
+                @include size(.55rem)
+                content: ""
+                display: block
+                box-shadow: inset 1em 1em var(--tag-bg2-c)
+                transform: scale(0)
+                clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%)
+            &:checked::before
+                transform: scale(1)
     .licensing
         @include font(500, .85rem)
         text-align: left

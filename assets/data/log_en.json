@@ -1,5 +1,13 @@
 [ 
     {
+        "date" : "Feb 24, 2023",
+        "content" : "",
+        "content_list" : [
+            "Added: Checkbox style setting.",
+            "Updated: The number of articles displayed on the Home / Tech / Daily page changed from 5 to 7."
+        ]
+    },
+    {
         "date" : "Feb 23, 2023",
         "content" : "Modify the wrong key value and re-bind it.",
         "content_list" : [

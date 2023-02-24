@@ -4,7 +4,7 @@ title: "#9 Example - RESTful API with Nuxt3"
 category: work
 type: "typepractice"
 description: "This is an example of \"RESTful API with Nuxt3\"."
-tags: ["Nuxt3", "RESTfulAPI"]
+tags: ["typepractice", "Nuxt3", "RESTfulAPI"]
 name: "RESTful API with Nuxt3"
 introduction: "Example"
 sourceimg1_n: Kama
