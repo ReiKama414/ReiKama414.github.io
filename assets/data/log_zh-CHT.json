@@ -1,5 +1,13 @@
 [ 
     {
+        "date" : "2023-03-07",
+        "content" : "",
+        "content_list" : [
+            "更新：UI 調整",
+            "更新：壓縮圖片提高效率"
+        ]
+    },
+    {
         "date" : "2023-02-24",
         "content" : "",
         "content_list" : [

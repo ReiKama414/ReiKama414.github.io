@@ -1,5 +1,13 @@
 [ 
     {
+        "date" : "Mar 7, 2023",
+        "content" : "",
+        "content_list" : [
+            "Updated: Adjustments to UI.",
+            "Updated: Compress images for efficiency."
+        ]
+    },
+    {
         "date" : "Feb 24, 2023",
         "content" : "",
         "content_list" : [
