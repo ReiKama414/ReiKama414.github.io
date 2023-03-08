@@ -1,5 +1,10 @@
 [ 
     {
+        "date" : "Mar 8, 2023",
+        "content" : "Updated: The number of articles displayed on the Home / Tech / Daily page changed from 7 to 8.",
+        "content_list" : []
+    },
+    {
         "date" : "Mar 7, 2023",
         "content" : "",
         "content_list" : [

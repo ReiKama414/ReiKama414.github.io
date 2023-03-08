@@ -5,9 +5,9 @@ export default {
     return {
       posts: [],
       page: 1,
-      pageSize: 7,
+      pageSize: 8,
       startIndex: 0,
-      endIndex: 7, // same as pageSize
+      endIndex: 8, // same as pageSize
       loadState: true,
       loadState2: false,
     };
