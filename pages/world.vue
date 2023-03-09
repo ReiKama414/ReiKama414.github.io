@@ -25,5 +25,6 @@ export default {
 <template>
   <div class="main pfl">
     <div class="h-bg"></div>
+    <h2>施工中</h2>
   </div>
 </template>
