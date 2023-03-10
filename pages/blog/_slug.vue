@@ -103,6 +103,9 @@ export default {
     handleScroll(e) {
       slugEventBus.$emit("windowScrollY", window.scrollY);
     },
+    tTheme(style) {
+      this.utterancesTheme = style;
+    },
   },
 }
 </script>
@@ -238,6 +241,14 @@ export default {
         Read more from {{ $t(post.category) }}
       </span>
     </NuxtLink>
+
+    <component :is="'script'" src="https://utteranc.es/client.js"
+      repo="ReiKama414/ReiKama414.github.io"
+      issue-term="pathname"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </component>
 
     <section :class="{showstate: sh}" class="km-lightbox" @click="LBclose">
       <div class="mask"></div>
