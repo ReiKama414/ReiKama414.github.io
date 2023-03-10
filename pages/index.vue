@@ -74,6 +74,7 @@ export default {
   <div class="main position-relative">
     <div v-if="loadState" class="position-absolute w-100">
       <div class="SkeletonCarouse mb-4"></div>
+      <div class="SkeletonAnnouncement" style="margin-bottom: 2rem;"></div>
       <div v-for="n in HistoryList.length" :key="n" class="SkeletonArticle arc-card card-widget d-flex">
         <div class="col-12 col-sm-4 arc-img"></div>
         <div class="col-12 col-sm-8 arc-content p-3">
@@ -86,6 +87,7 @@ export default {
     </div>
     <div class="niam" :class="{show: !loadState}">
       <CarouselItem />
+      <AnnouncementItem />
       <div class="al position-relative">
         <div v-if="loadState2" class="position-absolute w-100">
           <div v-for="n in HistoryList.length" :key="n" class="SkeletonArticle arc-card card-widget d-flex">

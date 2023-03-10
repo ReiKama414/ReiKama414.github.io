@@ -1,5 +1,13 @@
 [ 
     {
+        "date" : "Mar 10, 2023",
+        "content" : "",
+        "content_list" : [
+            "Added: message system function.",
+            "Added: announcement function."
+        ]
+    },
+    {
         "date" : "Mar 8, 2023",
         "content" : "Updated: The number of articles displayed on the Home / Tech / Daily page changed from 7 to 8.",
         "content_list" : []

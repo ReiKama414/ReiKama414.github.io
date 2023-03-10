@@ -242,12 +242,15 @@ export default {
       </span>
     </NuxtLink>
 
-    <component :is="'script'" src="https://utteranc.es/client.js"
+    <component
+      :is="'script'"
+      src="https://utteranc.es/client.js"
       repo="ReiKama414/ReiKama414.github.io"
       issue-term="pathname"
       theme="github-light"
       crossorigin="anonymous"
-      async>
+      async
+    >
     </component>
 
     <section :class="{showstate: sh}" class="km-lightbox" @click="LBclose">

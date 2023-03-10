@@ -81,6 +81,7 @@
                     @include size(1.75rem, .55rem)
                     background-color: var(--primary-color-lighten)
 
+
 .post-wrapper
     .header
         .info
@@ -819,6 +820,10 @@ $blur_length: 1
 .SkeletonCarouse
     @extend %skeleton
     aspect-ratio: 18/9
+.SkeletonAnnouncement
+    @include size(100%, 2.85rem)
+    @extend %skeleton
+    border-radius: 1.85rem
 .SkeletonArticle
     .arc-img,
     .arc-content *
