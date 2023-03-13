@@ -19,7 +19,8 @@
             @include size(100%)
             object-fit: cover
             transform: scale(1)
-            filter: brightness(1) saturate(1) contrast(1)
+            // filter: brightness(1) saturate(1) contrast(1)
+            filter: brightness(0.85) saturate(1.15) contrast(0.75)
         a > div
             @include transition(transform .4s)
             @include d-flex-c(column)
@@ -79,7 +80,8 @@
             &.slick-active
                 button::before
                     @include size(1.75rem, .55rem)
-                    background-color: var(--primary-color-lighten)
+                    // background-color: var(--primary-color-lighten)
+                    background-color: var(--slick-color)
 
 
 .post-wrapper

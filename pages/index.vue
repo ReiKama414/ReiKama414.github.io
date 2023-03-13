@@ -87,7 +87,7 @@ export default {
     </div>
     <div class="niam" :class="{show: !loadState}">
       <CarouselItem />
-      <AnnouncementItem />
+      <BulletinboardItem />
       <div class="al position-relative">
         <div v-if="loadState2" class="position-absolute w-100">
           <div v-for="n in HistoryList.length" :key="n" class="SkeletonArticle arc-card card-widget d-flex">

@@ -1,10 +1,18 @@
 [ 
     {
+        "date" : "Mar 13, 2023",
+        "content" : "",
+        "content_list" : [
+            "Updated: Improved bulletin board carousel function.",
+            "Updated: carousel style modification, photo and text replacement."
+        ]
+    },
+    {
         "date" : "Mar 10, 2023",
         "content" : "",
         "content_list" : [
             "Added: message system function.",
-            "Added: announcement function."
+            "Added: bulletin board function."
         ]
     },
     {

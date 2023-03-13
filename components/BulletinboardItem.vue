@@ -3,9 +3,9 @@ export default {
   data() {
     return {
       noticeArr: [
-        { title: '分享你的想法！全新建立的留言系統，等你來發掘！' },
-        { title: '貼文下方新增查看更多相關貼文功能，帶你走過更豐富多元的世界！' },
-        { title: '右上搜尋功能，輕鬆搜尋，一鍵即現，讓你快速找到你所需的資訊！' },
+        { title: 'noticeArr1' },
+        { title: 'noticeArr2' },
+        { title: 'noticeArr3' },
       ],
       number: 0,
       isHover: false,
@@ -21,7 +21,11 @@ export default {
     },
   },
   mounted() {
+    document.addEventListener("visibilitychange", this.handleVisibility, false);
     this.startScroll();
+  },
+  beforeDestroy() {
+    clearTimeout(this.timer);
   },
   methods: {
     startScroll() {
@@ -37,6 +41,13 @@ export default {
     stopScroll() {
       clearTimeout(this.timer);
     },
+    handleVisibility(e) {
+      if (document.hidden) {
+        this.stopScroll();
+      } else {
+        this.startScroll();
+      };
+    },
   },
 };
 </script>
@@ -45,8 +56,8 @@ export default {
   <div class="notice-box" @mouseover="stopScroll" @mouseleave="startScroll">
     <img src="~/assets/images/icons/marketing-speaker-svgrepo-com.svg" class="mr-2" />
     <transition name="notice-slide">
-      <p :key="noticeList.id" class="notice-item">
-        {{ noticeList.text }}
+      <p :key="noticeList.id" class="notice-item" :title="$t(noticeList.text)">
+        {{ $t(noticeList.text) }}
       </p>
     </transition>
   </div>
