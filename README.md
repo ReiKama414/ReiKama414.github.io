@@ -1,6 +1,7 @@
 # reikama_v2
 
 Visitor Count： ![Visitor Count](https://profile-counter.glitch.me/ReiKama414/count.svg)
+![](https://komarev.com/ghpvc/?username=ReiKama414)
 
 
 ## Build Setup
