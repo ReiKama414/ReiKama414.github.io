@@ -1,6 +1,6 @@
 # reikama_v2
 
-![Visitor Count](https://profile-counter.glitch.me/ReiKama414/count.svg)
+Visitor Count： ![Visitor Count](https://profile-counter.glitch.me/ReiKama414/count.svg)
 
 
 ## Build Setup
