@@ -181,8 +181,8 @@ export default {
           </a>
         </p>
 
-        <!-- <img :src="badgeUrl" />
-        <p v-if="!fetchError">{{ visitorCount }}</p>
+        <img :src="badgeUrl" />
+        <!-- <p v-if="!fetchError">{{ visitorCount }}</p>
         <span v-else>Unable to fetch visitor count.</span> -->
       </div>
       <nuxt-content :document="post" />
