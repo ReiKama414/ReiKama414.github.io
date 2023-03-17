@@ -1,6 +1,7 @@
 <script>
 import moment from 'moment';
 import slugEventBus from "assets/js/slugEventBus.js";
+
 export default {
   name: 'Slug',
   beforeRouteLeave(to, form, next) {
@@ -11,14 +12,29 @@ export default {
     next();
   },
   async asyncData({ $content, params }) {
+    const pageSlug = params.slug;
     const [prev, next] = await $content('', { deep: true })
       .only(['title', 'slug'])
       .sortBy('createdAtTime', 'asc')
-      .surround(params.slug)
-      .fetch()
-    return {
-      prev,
-      next
+      .surround(pageSlug)
+      .fetch();
+
+    try {
+      const response = await fetch(
+        `https://visitor-badge.glitch.me/badge?page_id=ReiKama414.ReiKama414.github.io.blog/${pageSlug}`
+      );
+      if (response.ok) {
+        const text = await response.text();
+        const regex = /<text.*?>(\d+)<\/text>/; 
+        const match = text.match(regex);
+        const visitorCount = match ? match[1] : ''; 
+        return { prev, next, visitorCount };
+      } else {
+        throw new Error("Unable to fetch visitor count.");
+      }
+    } catch (error) {
+      // console.error(error);
+      return { prev, next, fetchError: true };
     }
   },
   data() {
@@ -31,6 +47,7 @@ export default {
       ctgr: "",
       limitNum: 3,
       catlength: 0,
+      fetchError: false,
     }
   },
   async fetch() {
@@ -72,11 +89,16 @@ export default {
       ],
     };
   },
+  computed: {
+    badgeUrl() {
+      return `https://visitor-badge.glitch.me/badge?page_id=ReiKama414.ReiKama414.github.io.blog/${this.post.slug}`;
+    },
+  },
   beforeMount () {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll);
   },
   beforeDestroy () {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll);
   },
   mounted() {
     this.host = window.location.host;
@@ -106,6 +128,9 @@ export default {
     tTheme(style) {
       this.utterancesTheme = style;
     },
+    badgeFailed() {
+      this.badgeLoaded = false;
+    },
   },
 }
 </script>
@@ -134,10 +159,10 @@ export default {
             {{ $t("about2") }}{{ post.readingTime.words }}{{ $t("word") }}
             ({{ Math.ceil(post.readingTime.minutes) }}{{ $t("minread") }})
           </p>
-          <!-- <p class="pl-3">
+          <p v-if="!fetchError">
             <fa :icon="['fa-solid', 'eye']" class="mr-1" />
-            {{ $t("visits") }} xxx {{ $t("times") }}
-          </p> -->
+            {{ $t("visits") }} {{ visitorCount }} {{ $t("times") }}
+          </p>
         </div>
         <div class="pt-4 pb-1">
           <h1 class="title pl-3 pr-3">{{ post.title }}</h1>
@@ -155,6 +180,10 @@ export default {
             {{ post.sourceimg2_n }}
           </a>
         </p>
+
+        <!-- <img :src="badgeUrl" />
+        <p v-if="!fetchError">{{ visitorCount }}</p>
+        <span v-else>Unable to fetch visitor count.</span> -->
       </div>
       <nuxt-content :document="post" />
 
