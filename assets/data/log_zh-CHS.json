@@ -1,5 +1,10 @@
 [ 
     {
+        "date" : "2023/03/17",
+        "content" : "新增：博客文章的访问者计数功能。",
+        "content_list" : []
+    },
+    {
         "date" : "2023/03/13",
         "content" : "",
         "content_list" : [

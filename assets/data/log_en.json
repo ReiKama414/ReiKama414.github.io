@@ -1,5 +1,10 @@
 [ 
     {
+        "date" : "Mar 17, 2023",
+        "content" : "Added: Visitor count feature for blog posts.",
+        "content_list" : []
+    },
+    {
         "date" : "Mar 13, 2023",
         "content" : "",
         "content_list" : [

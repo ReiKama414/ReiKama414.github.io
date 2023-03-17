@@ -18,24 +18,7 @@ export default {
       .sortBy('createdAtTime', 'asc')
       .surround(pageSlug)
       .fetch();
-
-    try {
-      const response = await fetch(
-        `https://visitor-badge.glitch.me/badge?page_id=ReiKama414.ReiKama414.github.io.blog/${pageSlug}`
-      );
-      if (response.ok) {
-        const text = await response.text();
-        const regex = /<text.*?>(\d+)<\/text>/; 
-        const match = text.match(regex);
-        const visitorCount = match ? match[1] : ''; 
-        return { prev, next, visitorCount };
-      } else {
-        throw new Error("Unable to fetch visitor count.");
-      }
-    } catch (error) {
-      // console.error(error);
-      return { prev, next, fetchError: true };
-    }
+    return { prev, next};
   },
   data() {
     return {
@@ -47,7 +30,7 @@ export default {
       ctgr: "",
       limitNum: 3,
       catlength: 0,
-      fetchError: false,
+      showImage: true,
     }
   },
   async fetch() {
@@ -91,7 +74,7 @@ export default {
   },
   computed: {
     badgeUrl() {
-      return `https://visitor-badge.glitch.me/badge?page_id=ReiKama414.ReiKama414.github.io.blog/${this.post.slug}`;
+      return `https://visitor-badge.glitch.me/badge?page_id=ReiKama414.ReiKama414.github.io.blog/${this.post.slug}&left_color&right_color=4B4B4B`;
     },
   },
   beforeMount () {
@@ -131,6 +114,9 @@ export default {
     badgeFailed() {
       this.badgeLoaded = false;
     },
+    onImageError() {
+      this.showImage = false;
+    },
   },
 }
 </script>
@@ -159,10 +145,12 @@ export default {
             {{ $t("about2") }}{{ post.readingTime.words }}{{ $t("word") }}
             ({{ Math.ceil(post.readingTime.minutes) }}{{ $t("minread") }})
           </p>
-          <p v-if="!fetchError">
+          <div v-if="showImage" class="d-flex align-items-center">
             <fa :icon="['fa-solid', 'eye']" class="mr-1" />
-            {{ $t("visits") }} {{ visitorCount }} {{ $t("times") }}
-          </p>
+            <!-- {{ $t("visits") }}  -->
+            <img :src="badgeUrl" @error="onImageError" alt="readerCounter" />
+            <!-- {{ $t("times") }} -->
+          </div>
         </div>
         <div class="pt-4 pb-1">
           <h1 class="title pl-3 pr-3">{{ post.title }}</h1>
@@ -180,10 +168,6 @@ export default {
             {{ post.sourceimg2_n }}
           </a>
         </p>
-
-        <img :src="badgeUrl" />
-        <!-- <p v-if="!fetchError">{{ visitorCount }}</p>
-        <span v-else>Unable to fetch visitor count.</span> -->
       </div>
       <nuxt-content :document="post" />
 
