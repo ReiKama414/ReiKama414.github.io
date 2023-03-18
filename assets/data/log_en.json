@@ -1,5 +1,10 @@
 [ 
     {
+        "date" : "Mar 18, 2023",
+        "content" : "Redirect incorrect routes to the correct one.",
+        "content_list" : []
+    },
+    {
         "date" : "Mar 17, 2023",
         "content" : "Added: Visitor count feature for blog posts.",
         "content_list" : []
