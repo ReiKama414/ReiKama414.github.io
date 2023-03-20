@@ -1,5 +1,15 @@
 [ 
     {
+        "date" : "Mar 20, 2023",
+        "content" : "",
+        "content_list" : [
+            "Added: Visitors Counter block.",
+            "Updated: Add a personal photo into the ranks of random pictures.",
+            "Updated: left navigation bar UI and RWD tweaks.",
+            "Added: New page for language learning. Classify \"daily\" more precisely into two categories: \"daily\" and \"language\"."
+        ]
+    },
+    {
         "date" : "Mar 18, 2023",
         "content" : "Redirect incorrect routes to the correct one.",
         "content_list" : []

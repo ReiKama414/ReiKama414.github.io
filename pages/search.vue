@@ -8,7 +8,7 @@ export default {
       toolsJg: false,
       tagsList: [],
       tagsSelected: '',
-      categoryList: ['all', 'tech', 'daily', 'portfolio', 'resource'],
+      categoryList: ['all', 'tech', 'daily', 'portfolio', 'resource', 'languagelearning'],
       categorySelected: 'all',
       ctbList: ['rangea', 'ranget', 'ranged', 'ranget+d'],
       memeList: [],

@@ -9,7 +9,7 @@ nav.nl
         margin: 0
         padding: 1.75rem .5rem .75rem
         color: var(--text-color-darken)
-    a
+    li a
         @include transition((color .15s, background .15s))
         @include size(100%, 2.4rem)
         display: flex
@@ -28,4 +28,24 @@ nav.nl
             background: var(--module-bg-5)
         &.nuxt-link-exact-active
             color: var(--primary-color)
-            background: var(--module-bg-7)
+            background: var(--module-bg-7) 
+    .dividing_line
+        @include size(100%, 24px)
+        margin: .75rem 0
+        background-image: url(~/assets/images/icons/timetree-svgrepo-com.svg)
+        background-size: contain
+        background-repeat: space no-repeat
+    .visitor
+        padding: 0.5rem .25rem
+        background: #E8E8E8
+        border: 3px dashed var(--text-color-lighter)
+        border-radius: 12px
+        h5
+            padding: .25rem
+            font-size: .875rem
+            font-weight: bold
+            color: var(--text-color-darken)
+        a.m__darken
+            display: none
+        a:not(.m__darken):not(.m__lighten)
+            transform: translateX(-1.55rem)

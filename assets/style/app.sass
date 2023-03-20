@@ -125,6 +125,16 @@ $bg: url(assets/images/background/bg.jpg)
     filter: invert(1)
   .post-wrapper .header .info > div img
     filter: none
+  nav.nl .visitor
+    background: #191212
+    border-radius: .5rem
+    a.m__
+      &darken
+        display: block
+      &lighten
+        display: none
+    a:not(.m__darken):not(.m__lighten)
+      filter: invert(1)
 
 
 *, *::before, *::after
@@ -312,9 +322,13 @@ footer
       visibility: visible !important
       opacity: 1 !important
       transform: translateY(0) !important
-  nav.nl a
-    border-radius: 0
-    background: transparent !important
+  nav.nl
+    a
+      border-radius: 0
+      background: transparent !important
+    .visitor,
+    .dividing_line
+      display: none !important
   main .main.pfl ~ .shown-btn
     display: none
   .vue-back-to-top

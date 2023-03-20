@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      profileList: ["MyLive2D.png", "MyPaint.png"],
+      profileList: ["MyLive2D.png", "MyPaint.png", "MyPhotoToAIimage.jpg"],
       recentpostLimit: 2,
       postTitle: "",
       postReadTime: "",
@@ -45,7 +45,7 @@ export default {
   },
   computed: {
     profilerandom() {
-      return this.profileList[Math.floor(Math.random() * 2)];
+      return this.profileList[Math.floor(Math.random() * 3)];
     },
     FixedAnchor() {
       // console.log(this.windowScrollY, this.filterHeightCount);
