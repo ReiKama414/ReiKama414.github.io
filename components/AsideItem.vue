@@ -41,11 +41,12 @@ export default {
       postReadTimeWord: "",
       windowScrollY: 0,
       filterHeightCount: 0,
+      randomNumber: 0,
     };
   },
   computed: {
     profilerandom() {
-      return this.profileList[Math.floor(Math.random() * 3)];
+      return this.profileList[this.randomNumber];
     },
     FixedAnchor() {
       // console.log(this.windowScrollY, this.filterHeightCount);
@@ -68,6 +69,9 @@ export default {
   },
   created() {
     this.getFromBrother();
+  },
+  mounted() {
+    this.generateRandomNumber();
   },
   methods: {
     formatDate(date) {
@@ -111,7 +115,10 @@ export default {
     dateClass(ymd, date) {
       const day = date.getDay();
       return day === 0 || day === 6 ? 'table-secondary' : '';
-    }
+    },
+    generateRandomNumber() {
+      this.randomNumber = Math.floor(Math.random() * 3);
+    },
   },
 };
 </script>

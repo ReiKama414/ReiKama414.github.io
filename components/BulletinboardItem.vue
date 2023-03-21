@@ -6,6 +6,8 @@ export default {
         { title: 'noticeArr1' },
         { title: 'noticeArr2' },
         { title: 'noticeArr3' },
+        { title: 'noticeArr4' },
+        { title: 'noticeArr5' },
       ],
       number: 0,
       isHover: false,
@@ -36,7 +38,7 @@ export default {
           this.number += 1;
         }
         this.startScroll();
-      }, 3000);
+      }, 5000);
     },
     stopScroll() {
       clearTimeout(this.timer);
