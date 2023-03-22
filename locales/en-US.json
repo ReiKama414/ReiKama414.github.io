@@ -22,6 +22,7 @@
   "demo": "DEMO",
   "description": "Description",
   "display": "Display",
+  "drawing": "Drawing",
   "endpage": "This is already the latest article :)",
   "frontend": "Front End",
   "goback": "Go back",
