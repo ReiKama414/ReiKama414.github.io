@@ -30,7 +30,7 @@ export default {
       ctgr: "",
       limitNum: 3,
       catlength: 0,
-      showImage: true,
+      // showImage: true,
     }
   },
   async fetch() {
@@ -72,11 +72,11 @@ export default {
       ],
     };
   },
-  computed: {
-    badgeUrl() {
-      return `https://visitor-badge.glitch.me/badge?page_id=ReiKama414.ReiKama414.github.io.blog/${this.post.slug}&left_color&right_color=4B4B4B`;
-    },
-  },
+  // computed: {
+  //   badgeUrl() {
+  //     return `https://visitor-badge.glitch.me/badge?page_id=ReiKama414.ReiKama414.github.io.blog/${this.post.slug}&left_color&right_color=4B4B4B`;
+  //   },
+  // },
   beforeMount () {
     window.addEventListener('scroll', this.handleScroll);
   },
@@ -114,9 +114,9 @@ export default {
     badgeFailed() {
       this.badgeLoaded = false;
     },
-    onImageError() {
-      this.showImage = false;
-    },
+    // onImageError() {
+    //   this.showImage = false;
+    // },
   },
 }
 </script>
@@ -145,12 +145,12 @@ export default {
             {{ $t("about2") }}{{ post.readingTime.words }}{{ $t("word") }}
             ({{ Math.ceil(post.readingTime.minutes) }}{{ $t("minread") }})
           </p>
-          <div v-if="showImage" class="d-flex align-items-center">
+          <!-- <div v-if="showImage" class="d-flex align-items-center">
             <fa :icon="['fa-solid', 'eye']" class="mr-1" />
-            <!-- {{ $t("visits") }}  -->
+            !-- {{ $t("visits") }}  --
             <img :src="badgeUrl" @error="onImageError" alt="readerCounter" />
-            <!-- {{ $t("times") }} -->
-          </div>
+            !-- {{ $t("times") }} --
+          </div> -->
         </div>
         <div class="pt-4 pb-1">
           <h1 class="title pl-3 pr-3">{{ post.title }}</h1>
