@@ -44,7 +44,7 @@ export default {
             title: "Front-end developer",
             jobname: "台景達金融科技股份有限公司",
             begindate: "2022/6",
-            enddate: "2022/3",
+            enddate: "2023/3",
             jobtitle: "軟體設計工程師",
             jobwhere: "臺北市內湖區",
             content: "",
