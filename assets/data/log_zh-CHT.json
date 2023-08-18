@@ -1,5 +1,10 @@
 [ 
     {
+        "date" : "2023-08-17",
+        "content" : "修復 Github Action 'Error: Process completed with exit code 134. JavaScript heap out of memory' 問題，在構建期間為 Node.js 進程分配更多內存。在 GitHub Action 工作流配置中，為特定作業設置 node_args 增加內存分配。",
+        "content_list" : []
+    },
+    {
         "date" : "2023-03-20",
         "content" : "",
         "content_list" : [

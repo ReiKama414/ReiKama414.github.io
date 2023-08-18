@@ -1,5 +1,10 @@
 [ 
     {
+        "date" : "Aug 17, 2023",
+        "content" : "Fix the 'Error: Process completed with exit code 134. JavaScript heap out of memory' issue in GitHub Actions by allocating more memory to the Node.js process during the build phase. In the GitHub Actions workflow configuration, set node_args to increase memory allocation for the specific job.",
+        "content_list" : []
+    },
+    {
         "date" : "Mar 20, 2023",
         "content" : "",
         "content_list" : [
