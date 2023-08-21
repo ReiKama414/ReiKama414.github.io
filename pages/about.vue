@@ -222,7 +222,9 @@ export default {
                     <div class="inner-wrapper mt-4 text-left px-3" :class="{readmore: state_readmore}">
                         {{ $t('aboutme1') }}
 
-                        {{ $t('aboutme2') }}
+                        {{ $t('aboutme2') }} 
+
+                        {{ $t('aboutme3') }}
 
                         Personality Test：<a href="https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC" target="_blank" class="ud">INFJ-A / INFJ-T (提倡者/Advocate/提唱者)</a> (Reference(?))
                         Contact Information：<a href="mailto:milu77704@gmail.com" target="_blank" class="ud">milu77704@gmail.com</a>

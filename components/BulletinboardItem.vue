@@ -8,6 +8,7 @@ export default {
         { title: 'noticeArr3' },
         { title: 'noticeArr4' },
         { title: 'noticeArr5' },
+        { title: 'noticeArr6' },
       ],
       number: 0,
       isHover: false,
