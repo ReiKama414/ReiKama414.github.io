@@ -4,8 +4,8 @@ export default {
   name: 'About',
   data() {
     return {
-      skill_Proficiency: ["HTML5", "Css3", "RWD", "Sass", "Less", "Bootstrap", "BootstrapVue", "TailwindCSS", "Vuetify", "Javascript", "jQuery", "Node.js", "Vue.js", "NuxtJS", "AJAX", "Json", "Python", "ASP.NET", "Git", "Markdown", "App Inventor"],
-      skill_Familiarity: ["Swift", "Java", "C", "C++", "CSharp", "Unity2D", "Django", "VB.NET", "Flask", "PHP", "PostCss", "MaterializeCSS", "React.js", "TypeScript"],
+      skill_Proficiency: ["React.js", "Vue.js", "NuxtJS", "Javascript", "jQuery", "Node.js", "Python", "HTML5", "Css3", "RWD", "Sass", "Less", "Bootstrap", "BootstrapVue", "TailwindCSS", "Vuetify", "AJAX", "Json", "Git", "Markdown", "App Inventor"],
+      skill_Familiarity: ["Swift", "Java", "C", "C++", "CSharp", "ASP.NET", "Unity2D", "Django", "VB.NET", "Flask", "PHP", "PostCss", "MaterializeCSS", "TypeScript"],
       skill_Tools: ["VSCode", "VisualStudio2017_2019_2022", "Anaconda", "Notepad++", "PyCharm", "colab", "Xcode", "Android (Android Studio)", "Sourcetree", "GitHub", "GitHubPages", "Heroku", "Trello", "WinSCP", "Proteus", "Arduino", "Raspberry Pi"],
       skill_Database: ["MSSQL", "MySQL", "GoogleSheets", "MongoDB", "PostgreSQL"],
       skill_Office: ["Word", "Excel", "PowerPoint", "Outlook", "OneDrive", "Teams"],
@@ -33,7 +33,8 @@ export default {
             content: "",
             contentlist: [
                 "負責串接 API 、程式邏輯、功能需求規劃、前端版面規劃與頁面呈現",
-                "同PM、後端工程師與UI/UX設計師合作針對企劃需求進行優化與改善。",
+                "改善現有專案，進行可重用性元件的設計，並進行更靈活的版面配置重構工作",
+                "同PM、後端工程師與UI/UX設計師合作針對企劃需求進行優化與改善",
                 "專案管理團隊 Git 版本控制",
                 "熱衷與同事技術交流，共同提升合作開發效率",
             ],
@@ -50,7 +51,7 @@ export default {
             content: "",
             contentlist: [
                 "負責串接 API 與客製化專案維護與開發",
-                "將產品從原型開發至正式上線，並同後端工程師與UI/UX設計師合作針對企劃需求進行優化與改善。",
+                "將產品從原型開發至正式上線，並同後端工程師與UI/UX設計師合作針對企劃需求進行優化與改善",
                 "使用 Sourcetree 進行專案管理團隊 Git 版本控制",
                 "熱衷與同事技術分享，共同改善開發效率",
             ],
