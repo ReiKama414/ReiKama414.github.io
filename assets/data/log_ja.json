@@ -1,5 +1,10 @@
 [
     {
+        "date" : "令和5年8月21日",
+        "content": "「世界」のルートを追加する。",
+        "content_list": []
+    },
+    {
         "date" : "令和5年8月17日",
         "content": "GitHub Actionの 'Error: Process completed with exit code 134. JavaScript heap out of memory' 問題を修正するには、ビルドフェーズ中にNode.jsプロセスにより多くのメモリを割り当てます。GitHub Actionのワークフロー設定で、特定のジョブのnode_argsを設定してメモリ割り当てを増やしてください。",
         "content_list": []
