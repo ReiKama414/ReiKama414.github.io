@@ -38,10 +38,10 @@ export default {
     <ul class="nb">
       <li>
         <!-- NuxtLink :to="localePath('/world')" -->
-        <NuxtLink to="/Globe">
+        <a href="/Globe">
           <img src="~/assets/images/icons/icon-world.svg" alt="" />
           <span> {{ $t('world') }} </span>
-        </NuxtLink>
+        </a>
       </li>
     </ul>
 
